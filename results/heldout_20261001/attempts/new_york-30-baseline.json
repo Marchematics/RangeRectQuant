@@ -1,0 +1,116 @@
+{
+  "id": "new_york-30-baseline",
+  "site": "new_york",
+  "configuration": {
+    "family": "baseline",
+    "config": {
+      "backend": "qpet",
+      "dtype": "float64",
+      "level": 0,
+      "base_bound": 10000.0,
+      "bound": 0.49,
+      "transform": "direct"
+    }
+  },
+  "status": "DECODED_AND_AUDITED",
+  "source": "data/heldout_20261001/new_york.npz",
+  "source_sha256": "f1b296dd839b277db9027c9f2daddb67be480e453d4977610d2d6c4c9c5afdfd",
+  "packet_bytes": 376276,
+  "fees": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 548,
+    "body_bytes": 375640
+  },
+  "encode_seconds": 0.08284283299872186,
+  "encoder_info": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 548,
+    "body_bytes": 375640,
+    "raw_native_pointwise_max_error": 0.48999999999997135,
+    "raw_native_negative_values": 34793,
+    "raw_native_above_range_values": 4
+  },
+  "native_commands": [
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "compress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-6s8hdopb/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-6s8hdopb/output",
+        "512",
+        "512",
+        "0",
+        "10000.0",
+        "0.49",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-6s8hdopb/qoi.config"
+      ],
+      "input_sha256": "b6a7da368cc3fa134c8f04d16e7326c17b38aa4d06b7abc3f19855b878e2e1d4",
+      "returncode": 0,
+      "stdout": "====================================== BEGIN TUNING ================================\nABS QoI eb: 0.49\nLorenzo ratio = 2.2840\ninterp best interpAlgo = LINEAR\ninterp best direction = 0\nInterp ratio = 2.5626\nchoose interp\nsz3 tuning time = 0.008111s\nTuning time = 0.00831s\n====================================== END TUNING ======================================\nAPI_COMPRESS_PASS bytes=375640\n",
+      "stderr": "",
+      "seconds": 0.03704566699889256,
+      "emitted_output_bytes": 375640,
+      "emitted_output_sha256": "13354f2a6abd77c320b4697cd32b69eb116a3ee86f6e69245181efa16dc4f894",
+      "emitted_output_retained": "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/native/new_york-30-baseline/encoder/00-qpet-encode/output"
+    },
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "decompress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-o9uhz_x_/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-o9uhz_x_/output"
+      ],
+      "input_sha256": "13354f2a6abd77c320b4697cd32b69eb116a3ee86f6e69245181efa16dc4f894",
+      "returncode": 0,
+      "stdout": "API_DECOMPRESS_PASS samples=262144\n",
+      "stderr": "",
+      "seconds": 0.026075165998918237,
+      "emitted_output_bytes": 2097152,
+      "emitted_output_sha256": "a7eee846ec1dd5917cde319322b4264a06c7d6ef769021ae03a3a3309f65652c",
+      "emitted_output_retained": "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/native/new_york-30-baseline/encoder/01-qpet-decode/output"
+    }
+  ],
+  "packet": "results/heldout_20261001/packets/new_york-30-baseline.packet",
+  "packet_sha256": "06e1edb12827aaf832e54810d567e528ca263b581c73adc159d46ebf4acfe1d6",
+  "body": "results/heldout_20261001/bodies/new_york-30-baseline.body",
+  "body_sha256": "13354f2a6abd77c320b4697cd32b69eb116a3ee86f6e69245181efa16dc4f894",
+  "worker_argv": [
+    "/Users/nathmath/dcc/LinewiseROI/.venv/bin/python",
+    "/Users/nathmath/dcc/LinewiseROI/experiments/built_area_discrete_worker.py",
+    "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/packets/new_york-30-baseline.packet",
+    "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/decodes/new_york-30-baseline.npz",
+    "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/workers/new_york-30-baseline.json",
+    "--queries",
+    "/Users/nathmath/dcc/RangeRectQuant/data/queries.npy",
+    "--native-evidence",
+    "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/native/new_york-30-baseline/decoder"
+  ],
+  "worker_returncode": 0,
+  "contracts": {
+    "100": {
+      "status": "LEGAL",
+      "mask_ok": true,
+      "range_ok": true,
+      "all_rectangle_query_error_exact": 0,
+      "integer_cache_query_exact": true,
+      "changed_values": 0
+    },
+    "1000": {
+      "status": "LEGAL",
+      "mask_ok": true,
+      "range_ok": true,
+      "all_rectangle_query_error_exact": 0,
+      "integer_cache_query_exact": true,
+      "changed_values": 0
+    }
+  },
+  "direct_queries_checked": 1024,
+  "output": "results/heldout_20261001/decodes/new_york-30-baseline.npz",
+  "output_sha256": "4d1eac3f63dad43e5ca9521579504e45c802f40043cddca7803b0a8522213166",
+  "worker_report": "results/heldout_20261001/workers/new_york-30-baseline.json",
+  "worker_report_sha256": "b97c2cd10756be688ae5f0fe6964f76ce8a10d5a24d83be5b54a89991fd72c58"
+}

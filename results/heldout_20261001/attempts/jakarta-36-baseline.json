@@ -1,0 +1,116 @@
+{
+  "id": "jakarta-36-baseline",
+  "site": "jakarta",
+  "configuration": {
+    "family": "baseline",
+    "config": {
+      "backend": "qpet",
+      "dtype": "float64",
+      "level": 3,
+      "base_bound": 10000.0,
+      "bound": 4.0,
+      "transform": "direct"
+    }
+  },
+  "status": "DECODED_AND_AUDITED",
+  "source": "data/heldout_20261001/jakarta.npz",
+  "source_sha256": "d7fb59ce9d064a4dd38cea458582c6d228492221902e9acd5b16ba444617a153",
+  "packet_bytes": 264740,
+  "fees": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 547,
+    "body_bytes": 264105
+  },
+  "encode_seconds": 0.07970558300075936,
+  "encoder_info": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 547,
+    "body_bytes": 264105,
+    "raw_native_pointwise_max_error": 4.0,
+    "raw_native_negative_values": 31953,
+    "raw_native_above_range_values": 1
+  },
+  "native_commands": [
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "compress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-usup85_j/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-usup85_j/output",
+        "512",
+        "512",
+        "3",
+        "10000.0",
+        "4.0",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-usup85_j/qoi.config"
+      ],
+      "input_sha256": "6e7aad1394a17c76d0abf036a5717e42fd89251f0efc78869a3dc631878c9348",
+      "returncode": 0,
+      "stdout": "====================================== BEGIN TUNING ================================\nABS QoI eb: 4\nPredictor tuning started.\nPredictor tuning finished.\nLevel: 5\n\tinterp best interpAlgo = LINEAR\n\tinterp best interpParadigm = 1D\n\tinterp best direction = 1\nLevel: 4\n\tinterp best interpAlgo = LINEAR\n\tinterp best interpParadigm = 1D\n\tinterp best direction = 1\nLevel: 3\n\tinterp best interpAlgo = LINEAR\n\tinterp best interpParadigm = MD\nLevel: 2\n\tinterp best interpAlgo = LINEAR\n\tinterp best interpParadigm = 1D\n\tinterp best direction = 1\nLevel: 1\n\tinterp best interpAlgo = LINEAR\n\tinterp best interpParadigm = MD\nB-M tuning started.\nB-M step time = 0.012521s\nAutotuning finished.\nInterp selected. Selected alpha: 1.000000. Selected beta: 1.500000. Best bitrate: 19.180900. Best PSNR: 74.604696.\nTuning time = 0.013587s\n====================================== END TUNING ======================================\nAPI_COMPRESS_PASS bytes=264105\n",
+      "stderr": "",
+      "seconds": 0.036583083998266375,
+      "emitted_output_bytes": 264105,
+      "emitted_output_sha256": "18dd5ed85fcfcccfd226d0b22627cbb204fce2f3191fa457fdeb1b6d59a8622f",
+      "emitted_output_retained": "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/native/jakarta-36-baseline/encoder/00-qpet-encode/output"
+    },
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "decompress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-t4k7lagz/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-t4k7lagz/output"
+      ],
+      "input_sha256": "18dd5ed85fcfcccfd226d0b22627cbb204fce2f3191fa457fdeb1b6d59a8622f",
+      "returncode": 0,
+      "stdout": "API_DECOMPRESS_PASS samples=262144\n",
+      "stderr": "",
+      "seconds": 0.02359187500042026,
+      "emitted_output_bytes": 2097152,
+      "emitted_output_sha256": "e671df57fdef641b5975c584b363d19c7e3b97e196176e6dff3d7a1fede0434c",
+      "emitted_output_retained": "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/native/jakarta-36-baseline/encoder/01-qpet-decode/output"
+    }
+  ],
+  "packet": "results/heldout_20261001/packets/jakarta-36-baseline.packet",
+  "packet_sha256": "c1eee35579499d178722c827c703b4789d69097e9d581b847a9113a52f6bb308",
+  "body": "results/heldout_20261001/bodies/jakarta-36-baseline.body",
+  "body_sha256": "18dd5ed85fcfcccfd226d0b22627cbb204fce2f3191fa457fdeb1b6d59a8622f",
+  "worker_argv": [
+    "/Users/nathmath/dcc/LinewiseROI/.venv/bin/python",
+    "/Users/nathmath/dcc/LinewiseROI/experiments/built_area_discrete_worker.py",
+    "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/packets/jakarta-36-baseline.packet",
+    "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/decodes/jakarta-36-baseline.npz",
+    "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/workers/jakarta-36-baseline.json",
+    "--queries",
+    "/Users/nathmath/dcc/RangeRectQuant/data/queries.npy",
+    "--native-evidence",
+    "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/native/jakarta-36-baseline/decoder"
+  ],
+  "worker_returncode": 0,
+  "contracts": {
+    "100": {
+      "status": "ILLEGAL",
+      "mask_ok": true,
+      "range_ok": true,
+      "all_rectangle_query_error_exact": 27655,
+      "integer_cache_query_exact": true,
+      "changed_values": 179686
+    },
+    "1000": {
+      "status": "ILLEGAL",
+      "mask_ok": true,
+      "range_ok": true,
+      "all_rectangle_query_error_exact": 27655,
+      "integer_cache_query_exact": true,
+      "changed_values": 179686
+    }
+  },
+  "direct_queries_checked": 1024,
+  "output": "results/heldout_20261001/decodes/jakarta-36-baseline.npz",
+  "output_sha256": "e24c73c07690dbbd14310e470365c435c44624baf926f820c9257c423fb6001c",
+  "worker_report": "results/heldout_20261001/workers/jakarta-36-baseline.json",
+  "worker_report_sha256": "868d336d11a423e2b0b06a55cd5b8606ac7627baf551206a505ee4b149ae06e7"
+}

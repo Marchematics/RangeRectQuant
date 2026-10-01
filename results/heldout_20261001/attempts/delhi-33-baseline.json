@@ -1,0 +1,116 @@
+{
+  "id": "delhi-33-baseline",
+  "site": "delhi",
+  "configuration": {
+    "family": "baseline",
+    "config": {
+      "backend": "qpet",
+      "dtype": "float64",
+      "level": 0,
+      "base_bound": 10000.0,
+      "bound": 16.0,
+      "transform": "direct"
+    }
+  },
+  "status": "DECODED_AND_AUDITED",
+  "source": "data/heldout_20261001/delhi.npz",
+  "source_sha256": "0bc0d13fe0e911273da5ebd0526f7a9df7bfde2380e2570841787c0dd1ff8445",
+  "packet_bytes": 209456,
+  "fees": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 546,
+    "body_bytes": 208822
+  },
+  "encode_seconds": 0.09484416700070142,
+  "encoder_info": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 546,
+    "body_bytes": 208822,
+    "raw_native_pointwise_max_error": 16.0,
+    "raw_native_negative_values": 42797,
+    "raw_native_above_range_values": 4
+  },
+  "native_commands": [
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "compress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-zzdlcke3/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-zzdlcke3/output",
+        "512",
+        "512",
+        "0",
+        "10000.0",
+        "16.0",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-zzdlcke3/qoi.config"
+      ],
+      "input_sha256": "5fd1baaa66528bf444634217687263cae9ed181c1e6b571fdf431a2ae1e4d00a",
+      "returncode": 0,
+      "stdout": "====================================== BEGIN TUNING ================================\nABS QoI eb: 16\nLorenzo ratio = 8.1325\ninterp best interpAlgo = LINEAR\ninterp best direction = 0\nInterp ratio = 8.9264\nchoose interp\nsz3 tuning time = 0.001744s\nTuning time = 0.0019s\n====================================== END TUNING ======================================\nAPI_COMPRESS_PASS bytes=208822\n",
+      "stderr": "",
+      "seconds": 0.025789249997615116,
+      "emitted_output_bytes": 208822,
+      "emitted_output_sha256": "425c400b6017449f2c7318db6fa9bbeb132a37ded17842084e5d62dbec8acabd",
+      "emitted_output_retained": "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/native/delhi-33-baseline/encoder/00-qpet-encode/output"
+    },
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "decompress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-7ecvucaz/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-7ecvucaz/output"
+      ],
+      "input_sha256": "425c400b6017449f2c7318db6fa9bbeb132a37ded17842084e5d62dbec8acabd",
+      "returncode": 0,
+      "stdout": "API_DECOMPRESS_PASS samples=262144\n",
+      "stderr": "",
+      "seconds": 0.047103500000957865,
+      "emitted_output_bytes": 2097152,
+      "emitted_output_sha256": "f5e84bc1dd59ecceed40997f0d9bb51d796d2231f7d814cc9ec4380991734091",
+      "emitted_output_retained": "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/native/delhi-33-baseline/encoder/01-qpet-decode/output"
+    }
+  ],
+  "packet": "results/heldout_20261001/packets/delhi-33-baseline.packet",
+  "packet_sha256": "fa845c4ce162dbec11ac3daf3eda8799a1d8067d3d6a291395c0044fc0b7ce3f",
+  "body": "results/heldout_20261001/bodies/delhi-33-baseline.body",
+  "body_sha256": "425c400b6017449f2c7318db6fa9bbeb132a37ded17842084e5d62dbec8acabd",
+  "worker_argv": [
+    "/Users/nathmath/dcc/LinewiseROI/.venv/bin/python",
+    "/Users/nathmath/dcc/LinewiseROI/experiments/built_area_discrete_worker.py",
+    "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/packets/delhi-33-baseline.packet",
+    "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/decodes/delhi-33-baseline.npz",
+    "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/workers/delhi-33-baseline.json",
+    "--queries",
+    "/Users/nathmath/dcc/RangeRectQuant/data/queries.npy",
+    "--native-evidence",
+    "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/native/delhi-33-baseline/decoder"
+  ],
+  "worker_returncode": 0,
+  "contracts": {
+    "100": {
+      "status": "ILLEGAL",
+      "mask_ok": true,
+      "range_ok": true,
+      "all_rectangle_query_error_exact": 219198,
+      "integer_cache_query_exact": true,
+      "changed_values": 211413
+    },
+    "1000": {
+      "status": "ILLEGAL",
+      "mask_ok": true,
+      "range_ok": true,
+      "all_rectangle_query_error_exact": 219198,
+      "integer_cache_query_exact": true,
+      "changed_values": 211413
+    }
+  },
+  "direct_queries_checked": 1024,
+  "output": "results/heldout_20261001/decodes/delhi-33-baseline.npz",
+  "output_sha256": "52c112442ce2a87c2fd9c72189063ae01c7dfe1df15b9bf5ee1a2b4e3893ff02",
+  "worker_report": "results/heldout_20261001/workers/delhi-33-baseline.json",
+  "worker_report_sha256": "808d4089fffe17aae1748390b5c475b052e95c23b0dcb05ac6dd08f579459dbe"
+}

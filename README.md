@@ -63,3 +63,15 @@ and `integration/heldout_assets_20261001.json`: fixed Cairo/Delhi/New York/
 Jakarta native windows, unchanged method parameters, full strong-control pool.
 Acquisition manifests and experiment results determine the actual run status;
 the existence of this protocol alone is not a completed held-out result.
+
+## Four-new-geography result (2026-10-01)
+
+The fixed Cairo/Delhi/New York/Jakarta experiment is now complete: **180 paid
+streams and cold source-free full decodes, zero exceptions**. All eight primary
+services are nontrivial and jointly legal; each budget wins4/4 against the
+smallest legal external-control stream, reducing paid storage **31.28%/55.77%**.
+This is actual geographical-transfer evidence with unchanged parameters.
+See `docs/HOLDOUT_RESULTS_20261001.md` and `docs/METHOD_MAIN_20261001.md`.
+The fixed pool includes native SZ3/QPET/MGARD and conditional Haar; broader
+codec-frontier claims remain a separate evaluation, not an excuse to discount
+the measured result.

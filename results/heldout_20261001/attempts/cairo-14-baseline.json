@@ -1,0 +1,127 @@
+{
+  "id": "cairo-14-baseline",
+  "site": "cairo",
+  "configuration": {
+    "family": "baseline",
+    "config": {
+      "backend": "sz3",
+      "dtype": "float64",
+      "algorithm": "INTERP",
+      "bound": 4.0,
+      "transform": "direct"
+    }
+  },
+  "status": "DECODED_AND_AUDITED",
+  "source": "data/heldout_20261001/cairo.npz",
+  "source_sha256": "4ad09905e6ae6f9e65e07ec6218160644b394e2acb3896967f723bc6d03f047d",
+  "packet_bytes": 269667,
+  "fees": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 543,
+    "body_bytes": 269036
+  },
+  "encode_seconds": 0.21773683299761615,
+  "encoder_info": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 543,
+    "body_bytes": 269036,
+    "raw_native_pointwise_max_error": 3.9999250890978146,
+    "raw_native_negative_values": 51422,
+    "raw_native_above_range_values": 5
+  },
+  "native_commands": [
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/native-controls-20261001/py/bin/python",
+        "/Users/nathmath/dcc/LinewiseROI/experiments/native_sz3_worker.py",
+        "encode",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-w4z82wi4/input.npy",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-w4z82wi4/output",
+        "--dtype",
+        "float64",
+        "--height",
+        "512",
+        "--width",
+        "512",
+        "--algorithm",
+        "INTERP",
+        "--bound",
+        "4.0"
+      ],
+      "input_sha256": "19a591d9fc24cb33357a6cad53c7e0334c0c3e47c76dd1d3b46943a0ffb3228b",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.09984037499816623,
+      "emitted_output_bytes": 269036,
+      "emitted_output_sha256": "f48699162eded04c8998b125bfe4265c1f890036b57c4d6bac927730d1623dac",
+      "emitted_output_retained": "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/native/cairo-14-baseline/encoder/00-sz3-encode/output"
+    },
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/native-controls-20261001/py/bin/python",
+        "/Users/nathmath/dcc/LinewiseROI/experiments/native_sz3_worker.py",
+        "decode",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-521n05dh/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-521n05dh/output.npy",
+        "--dtype",
+        "float64",
+        "--height",
+        "512",
+        "--width",
+        "512"
+      ],
+      "input_sha256": "f48699162eded04c8998b125bfe4265c1f890036b57c4d6bac927730d1623dac",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.09891108299780171,
+      "emitted_output_bytes": 2097280,
+      "emitted_output_sha256": "3df2d47abd86cad3544e28993a248404dcd50777b0cccbbd7881a9bbfb16c514",
+      "emitted_output_retained": "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/native/cairo-14-baseline/encoder/01-sz3-decode/output.npy"
+    }
+  ],
+  "packet": "results/heldout_20261001/packets/cairo-14-baseline.packet",
+  "packet_sha256": "68873a7b21383463ac031466175c844cd464e34f7dfaa54f8844faf5f5761115",
+  "body": "results/heldout_20261001/bodies/cairo-14-baseline.body",
+  "body_sha256": "f48699162eded04c8998b125bfe4265c1f890036b57c4d6bac927730d1623dac",
+  "worker_argv": [
+    "/Users/nathmath/dcc/LinewiseROI/.venv/bin/python",
+    "/Users/nathmath/dcc/LinewiseROI/experiments/built_area_discrete_worker.py",
+    "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/packets/cairo-14-baseline.packet",
+    "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/decodes/cairo-14-baseline.npz",
+    "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/workers/cairo-14-baseline.json",
+    "--queries",
+    "/Users/nathmath/dcc/RangeRectQuant/data/queries.npy",
+    "--native-evidence",
+    "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/native/cairo-14-baseline/decoder"
+  ],
+  "worker_returncode": 0,
+  "contracts": {
+    "100": {
+      "status": "ILLEGAL",
+      "mask_ok": true,
+      "range_ok": true,
+      "all_rectangle_query_error_exact": 62655,
+      "integer_cache_query_exact": true,
+      "changed_values": 176624
+    },
+    "1000": {
+      "status": "ILLEGAL",
+      "mask_ok": true,
+      "range_ok": true,
+      "all_rectangle_query_error_exact": 62655,
+      "integer_cache_query_exact": true,
+      "changed_values": 176624
+    }
+  },
+  "direct_queries_checked": 1024,
+  "output": "results/heldout_20261001/decodes/cairo-14-baseline.npz",
+  "output_sha256": "68cd534e4b64e134f04944fe32270a454bcb914e907f3db6eed73f725ac5e76a",
+  "worker_report": "results/heldout_20261001/workers/cairo-14-baseline.json",
+  "worker_report_sha256": "adccefc3a536758a72659337e0953b086bcf2bb215a2ccb30bd7a3920055272f"
+}

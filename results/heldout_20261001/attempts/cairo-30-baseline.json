@@ -1,0 +1,116 @@
+{
+  "id": "cairo-30-baseline",
+  "site": "cairo",
+  "configuration": {
+    "family": "baseline",
+    "config": {
+      "backend": "qpet",
+      "dtype": "float64",
+      "level": 0,
+      "base_bound": 10000.0,
+      "bound": 0.49,
+      "transform": "direct"
+    }
+  },
+  "status": "DECODED_AND_AUDITED",
+  "source": "data/heldout_20261001/cairo.npz",
+  "source_sha256": "4ad09905e6ae6f9e65e07ec6218160644b394e2acb3896967f723bc6d03f047d",
+  "packet_bytes": 390142,
+  "fees": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 548,
+    "body_bytes": 389506
+  },
+  "encode_seconds": 0.0962145839985169,
+  "encoder_info": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 548,
+    "body_bytes": 389506,
+    "raw_native_pointwise_max_error": 0.4899999999999989,
+    "raw_native_negative_values": 55472,
+    "raw_native_above_range_values": 6
+  },
+  "native_commands": [
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "compress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-ilit77gn/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-ilit77gn/output",
+        "512",
+        "512",
+        "0",
+        "10000.0",
+        "0.49",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-ilit77gn/qoi.config"
+      ],
+      "input_sha256": "b661295f6fa003c435512bedaee9919e7d5c0a2a16600c27a1354b2a707120e8",
+      "returncode": 0,
+      "stdout": "====================================== BEGIN TUNING ================================\nABS QoI eb: 0.49\nLorenzo ratio = 2.5203\ninterp best interpAlgo = LINEAR\ninterp best direction = 1\nInterp ratio = 2.8328\nchoose interp\nsz3 tuning time = 0.007802s\nTuning time = 0.008146s\n====================================== END TUNING ======================================\nAPI_COMPRESS_PASS bytes=389506\n",
+      "stderr": "",
+      "seconds": 0.05036712500077556,
+      "emitted_output_bytes": 389506,
+      "emitted_output_sha256": "63acf0468f271f911b3fc8e9299ad491cf341ee9044ddc96e64fbeb65cff4f7a",
+      "emitted_output_retained": "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/native/cairo-30-baseline/encoder/00-qpet-encode/output"
+    },
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "decompress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-pf8hor0r/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-pf8hor0r/output"
+      ],
+      "input_sha256": "63acf0468f271f911b3fc8e9299ad491cf341ee9044ddc96e64fbeb65cff4f7a",
+      "returncode": 0,
+      "stdout": "API_DECOMPRESS_PASS samples=262144\n",
+      "stderr": "",
+      "seconds": 0.02703454199945554,
+      "emitted_output_bytes": 2097152,
+      "emitted_output_sha256": "7d9e1814293462a23d80eebd2d64ab75147f84bc081290a4f1475b9a69bb5d23",
+      "emitted_output_retained": "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/native/cairo-30-baseline/encoder/01-qpet-decode/output"
+    }
+  ],
+  "packet": "results/heldout_20261001/packets/cairo-30-baseline.packet",
+  "packet_sha256": "171f1aaabadbba8e7298fc79ad41cf2b5d961cec10b38be63d5b4c6f8543b5cf",
+  "body": "results/heldout_20261001/bodies/cairo-30-baseline.body",
+  "body_sha256": "63acf0468f271f911b3fc8e9299ad491cf341ee9044ddc96e64fbeb65cff4f7a",
+  "worker_argv": [
+    "/Users/nathmath/dcc/LinewiseROI/.venv/bin/python",
+    "/Users/nathmath/dcc/LinewiseROI/experiments/built_area_discrete_worker.py",
+    "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/packets/cairo-30-baseline.packet",
+    "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/decodes/cairo-30-baseline.npz",
+    "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/workers/cairo-30-baseline.json",
+    "--queries",
+    "/Users/nathmath/dcc/RangeRectQuant/data/queries.npy",
+    "--native-evidence",
+    "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/native/cairo-30-baseline/decoder"
+  ],
+  "worker_returncode": 0,
+  "contracts": {
+    "100": {
+      "status": "LEGAL",
+      "mask_ok": true,
+      "range_ok": true,
+      "all_rectangle_query_error_exact": 0,
+      "integer_cache_query_exact": true,
+      "changed_values": 0
+    },
+    "1000": {
+      "status": "LEGAL",
+      "mask_ok": true,
+      "range_ok": true,
+      "all_rectangle_query_error_exact": 0,
+      "integer_cache_query_exact": true,
+      "changed_values": 0
+    }
+  },
+  "direct_queries_checked": 1024,
+  "output": "results/heldout_20261001/decodes/cairo-30-baseline.npz",
+  "output_sha256": "0ad382266353613c6544581047b7fe2866caa5a6b8355fa364a22da84b5fa912",
+  "worker_report": "results/heldout_20261001/workers/cairo-30-baseline.json",
+  "worker_report_sha256": "0b8e132ef320537fd4a153210e49960f711921610fdf19d1448d1f413ca44022"
+}

@@ -1,0 +1,113 @@
+{
+  "id": "delhi-28-baseline",
+  "site": "delhi",
+  "configuration": {
+    "family": "baseline",
+    "config": {
+      "backend": "mgard",
+      "dtype": "float64",
+      "reorder": 1,
+      "bound": 4.0,
+      "transform": "direct"
+    }
+  },
+  "status": "DECODED_AND_AUDITED",
+  "source": "data/heldout_20261001/delhi.npz",
+  "source_sha256": "0bc0d13fe0e911273da5ebd0526f7a9df7bfde2380e2570841787c0dd1ff8445",
+  "packet_bytes": 781611,
+  "fees": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 539,
+    "body_bytes": 780984
+  },
+  "encode_seconds": 0.15453737499774434,
+  "encoder_info": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 539,
+    "body_bytes": 780984,
+    "raw_native_pointwise_max_error": 10588.936074566043,
+    "raw_native_negative_values": 233238,
+    "raw_native_above_range_values": 0
+  },
+  "native_commands": [
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/native-controls-20261001/native-mgard-driver-attempt2",
+        "encode",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-wzekuwd9/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-wzekuwd9/output",
+        "512",
+        "512",
+        "4.0",
+        "1"
+      ],
+      "input_sha256": "5fd1baaa66528bf444634217687263cae9ed181c1e6b571fdf431a2ae1e4d00a",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.09021524999843678,
+      "emitted_output_bytes": 780984,
+      "emitted_output_sha256": "5482bfbb3837f5291967b79a4853b750fd20ffc039c9a47e3321fea8daab0636",
+      "emitted_output_retained": "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/native/delhi-28-baseline/encoder/00-mgard-encode/output"
+    },
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/native-controls-20261001/native-mgard-driver-attempt2",
+        "decode",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-b4grxzaw/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-b4grxzaw/output"
+      ],
+      "input_sha256": "5482bfbb3837f5291967b79a4853b750fd20ffc039c9a47e3321fea8daab0636",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.04589225000017905,
+      "emitted_output_bytes": 2097152,
+      "emitted_output_sha256": "97c58fd94992d60cc04c73b5b3e81670d9834f567507bd4856b49f10f8b4bcd7",
+      "emitted_output_retained": "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/native/delhi-28-baseline/encoder/01-mgard-decode/output"
+    }
+  ],
+  "packet": "results/heldout_20261001/packets/delhi-28-baseline.packet",
+  "packet_sha256": "5775a424502a09cd33f9b383be9785610c1926b72cd54bdf19a548a323ca1834",
+  "body": "results/heldout_20261001/bodies/delhi-28-baseline.body",
+  "body_sha256": "5482bfbb3837f5291967b79a4853b750fd20ffc039c9a47e3321fea8daab0636",
+  "worker_argv": [
+    "/Users/nathmath/dcc/LinewiseROI/.venv/bin/python",
+    "/Users/nathmath/dcc/LinewiseROI/experiments/built_area_discrete_worker.py",
+    "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/packets/delhi-28-baseline.packet",
+    "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/decodes/delhi-28-baseline.npz",
+    "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/workers/delhi-28-baseline.json",
+    "--queries",
+    "/Users/nathmath/dcc/RangeRectQuant/data/queries.npy",
+    "--native-evidence",
+    "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/native/delhi-28-baseline/decoder"
+  ],
+  "worker_returncode": 0,
+  "contracts": {
+    "100": {
+      "status": "ILLEGAL",
+      "mask_ok": true,
+      "range_ok": true,
+      "all_rectangle_query_error_exact": 478268013,
+      "integer_cache_query_exact": true,
+      "changed_values": 184845
+    },
+    "1000": {
+      "status": "ILLEGAL",
+      "mask_ok": true,
+      "range_ok": true,
+      "all_rectangle_query_error_exact": 478268013,
+      "integer_cache_query_exact": true,
+      "changed_values": 184845
+    }
+  },
+  "direct_queries_checked": 1024,
+  "output": "results/heldout_20261001/decodes/delhi-28-baseline.npz",
+  "output_sha256": "ddb34a6a90d97953d4293bb1587cea998d2095aebf0b8e9b8f9c8ce6ed773442",
+  "worker_report": "results/heldout_20261001/workers/delhi-28-baseline.json",
+  "worker_report_sha256": "31bfff1cd807f7ecc1d91512b3ef942727e1dd4716a999058f5b2527fd6b925c"
+}

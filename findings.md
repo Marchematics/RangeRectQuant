@@ -68,3 +68,19 @@ transfer and strong same-contract controls. New Cairo/Delhi/New York/Jakarta
 selection is frozen before loading pixels; `docs/HOLDOUT_PROTOCOL_20261001.md`
 specifies unchanged main parameters and180 complete paid attempts. Protocol
 and acquisition are not yet a method-performance result.
+
+## New-geography evaluation COMPLETE
+
+The subsequent fixed180-packet experiment actually completed, with180 cold
+source-free decodes and0 exceptions. Cairo/Delhi/New York/Jakarta primary
+services are8/8 legal/nontrivial. Against the smallest legal external-control
+stream, q20/q200 wins4/4 each and saves**31.2756%/55.7744%**; both geographic
+gates PASS. All360 judgments(174LEGAL/186ILLEGAL) are retained. This strengthens
+the joint-contract method story without changing its primitive provenance.
+
+Lightweight fine1487/1714(<0.17%) and changed677968/696854 confirm actual low-bit
+deletion on new fields. Full saved-fee/report/hash attribution passes720 SHA
+and441 bindings. No method tuning, new refinement, GPU or repeated encoder
+run was used; native controls and their failures remain available. See
+`docs/HOLDOUT_RESULTS_20261001.md`; this is geography transfer within GHS,
+not yet a cross-product or ZFP/SPERR-inclusive frontier result.

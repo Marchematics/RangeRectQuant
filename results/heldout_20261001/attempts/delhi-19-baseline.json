@@ -1,0 +1,127 @@
+{
+  "id": "delhi-19-baseline",
+  "site": "delhi",
+  "configuration": {
+    "family": "baseline",
+    "config": {
+      "backend": "sz3",
+      "dtype": "float64",
+      "algorithm": "LORENZO_REG",
+      "bound": 4.0,
+      "transform": "direct"
+    }
+  },
+  "status": "DECODED_AND_AUDITED",
+  "source": "data/heldout_20261001/delhi.npz",
+  "source_sha256": "0bc0d13fe0e911273da5ebd0526f7a9df7bfde2380e2570841787c0dd1ff8445",
+  "packet_bytes": 290057,
+  "fees": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 546,
+    "body_bytes": 289423
+  },
+  "encode_seconds": 0.2243091660020582,
+  "encoder_info": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 546,
+    "body_bytes": 289423,
+    "raw_native_pointwise_max_error": 4.0,
+    "raw_native_negative_values": 42002,
+    "raw_native_above_range_values": 4
+  },
+  "native_commands": [
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/native-controls-20261001/py/bin/python",
+        "/Users/nathmath/dcc/LinewiseROI/experiments/native_sz3_worker.py",
+        "encode",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-j3iybr5k/input.npy",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-j3iybr5k/output",
+        "--dtype",
+        "float64",
+        "--height",
+        "512",
+        "--width",
+        "512",
+        "--algorithm",
+        "LORENZO_REG",
+        "--bound",
+        "4.0"
+      ],
+      "input_sha256": "07560dfe67e193b1f053c62bce8b71e5c38041336092af5b6ee74ad68a645cb7",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.1038320420011587,
+      "emitted_output_bytes": 289423,
+      "emitted_output_sha256": "4f13a49d79ddbde672dfb6305bddb77292a22082a99368ff13076a893460b35c",
+      "emitted_output_retained": "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/native/delhi-19-baseline/encoder/00-sz3-encode/output"
+    },
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/native-controls-20261001/py/bin/python",
+        "/Users/nathmath/dcc/LinewiseROI/experiments/native_sz3_worker.py",
+        "decode",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-sq23bl_9/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-sq23bl_9/output.npy",
+        "--dtype",
+        "float64",
+        "--height",
+        "512",
+        "--width",
+        "512"
+      ],
+      "input_sha256": "4f13a49d79ddbde672dfb6305bddb77292a22082a99368ff13076a893460b35c",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.10047470800054725,
+      "emitted_output_bytes": 2097280,
+      "emitted_output_sha256": "669d834684b20d99c581762046617d5fee1f997ef338da558ce12a0105f1e6f6",
+      "emitted_output_retained": "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/native/delhi-19-baseline/encoder/01-sz3-decode/output.npy"
+    }
+  ],
+  "packet": "results/heldout_20261001/packets/delhi-19-baseline.packet",
+  "packet_sha256": "1066493e96f306092a0e375f39d8cf51ee49cf2e77e9af59dec5742bfbf8b29b",
+  "body": "results/heldout_20261001/bodies/delhi-19-baseline.body",
+  "body_sha256": "4f13a49d79ddbde672dfb6305bddb77292a22082a99368ff13076a893460b35c",
+  "worker_argv": [
+    "/Users/nathmath/dcc/LinewiseROI/.venv/bin/python",
+    "/Users/nathmath/dcc/LinewiseROI/experiments/built_area_discrete_worker.py",
+    "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/packets/delhi-19-baseline.packet",
+    "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/decodes/delhi-19-baseline.npz",
+    "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/workers/delhi-19-baseline.json",
+    "--queries",
+    "/Users/nathmath/dcc/RangeRectQuant/data/queries.npy",
+    "--native-evidence",
+    "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/native/delhi-19-baseline/decoder"
+  ],
+  "worker_returncode": 0,
+  "contracts": {
+    "100": {
+      "status": "ILLEGAL",
+      "mask_ok": true,
+      "range_ok": true,
+      "all_rectangle_query_error_exact": 82956,
+      "integer_cache_query_exact": true,
+      "changed_values": 188194
+    },
+    "1000": {
+      "status": "ILLEGAL",
+      "mask_ok": true,
+      "range_ok": true,
+      "all_rectangle_query_error_exact": 82956,
+      "integer_cache_query_exact": true,
+      "changed_values": 188194
+    }
+  },
+  "direct_queries_checked": 1024,
+  "output": "results/heldout_20261001/decodes/delhi-19-baseline.npz",
+  "output_sha256": "0dc62b44897d83302189870f8d03513b35204112f51fb3297ff3a2dc651f06c6",
+  "worker_report": "results/heldout_20261001/workers/delhi-19-baseline.json",
+  "worker_report_sha256": "a34e777018c47fe87e07e446ec2968b89cd4516922bbe99bf19853b759e6683e"
+}

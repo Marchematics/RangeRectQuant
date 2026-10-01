@@ -1,0 +1,116 @@
+{
+  "id": "new_york-37-baseline",
+  "site": "new_york",
+  "configuration": {
+    "family": "baseline",
+    "config": {
+      "backend": "qpet",
+      "dtype": "float64",
+      "level": 3,
+      "base_bound": 10000.0,
+      "bound": 16.0,
+      "transform": "direct"
+    }
+  },
+  "status": "DECODED_AND_AUDITED",
+  "source": "data/heldout_20261001/new_york.npz",
+  "source_sha256": "f1b296dd839b277db9027c9f2daddb67be480e453d4977610d2d6c4c9c5afdfd",
+  "packet_bytes": 186724,
+  "fees": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 547,
+    "body_bytes": 186089
+  },
+  "encode_seconds": 0.06957366699862177,
+  "encoder_info": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 547,
+    "body_bytes": 186089,
+    "raw_native_pointwise_max_error": 15.999801485017997,
+    "raw_native_negative_values": 45316,
+    "raw_native_above_range_values": 4
+  },
+  "native_commands": [
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "compress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-n4k2sd68/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-n4k2sd68/output",
+        "512",
+        "512",
+        "3",
+        "10000.0",
+        "16.0",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-n4k2sd68/qoi.config"
+      ],
+      "input_sha256": "b6a7da368cc3fa134c8f04d16e7326c17b38aa4d06b7abc3f19855b878e2e1d4",
+      "returncode": 0,
+      "stdout": "====================================== BEGIN TUNING ================================\nABS QoI eb: 16\nPredictor tuning started.\nPredictor tuning finished.\nLevel: 5\n\tinterp best interpAlgo = LINEAR\n\tinterp best interpParadigm = 1D\n\tinterp best direction = 1\nLevel: 4\n\tinterp best interpAlgo = CUBIC\n\tinterp best interpParadigm = MD\n\tinterp best cubic spline = 0\n\tinterp best adj = 0\nLevel: 3\n\tinterp best interpAlgo = LINEAR\n\tinterp best interpParadigm = 1D\n\tinterp best direction = 0\nLevel: 2\n\tinterp best interpAlgo = LINEAR\n\tinterp best interpParadigm = MD\nLevel: 1\n\tinterp best interpAlgo = LINEAR\n\tinterp best interpParadigm = 1D\n\tinterp best direction = 0\nB-M tuning started.\nB-M step time = 0.006433s\nAutotuning finished.\nInterp selected. Selected alpha: 1.250000. Selected beta: 4.000000. Best bitrate: 9.199878. Best PSNR: 63.172106.\nTuning time = 0.007424s\n====================================== END TUNING ======================================\nAPI_COMPRESS_PASS bytes=186089\n",
+      "stderr": "",
+      "seconds": 0.02802416600025026,
+      "emitted_output_bytes": 186089,
+      "emitted_output_sha256": "ada6f9e867c154bba60c6b8a7cb54acf1de4565cd557618d0c39357823cdd973",
+      "emitted_output_retained": "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/native/new_york-37-baseline/encoder/00-qpet-encode/output"
+    },
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "decompress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-odg4wnhh/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-odg4wnhh/output"
+      ],
+      "input_sha256": "ada6f9e867c154bba60c6b8a7cb54acf1de4565cd557618d0c39357823cdd973",
+      "returncode": 0,
+      "stdout": "API_DECOMPRESS_PASS samples=262144\n",
+      "stderr": "",
+      "seconds": 0.02214533299775212,
+      "emitted_output_bytes": 2097152,
+      "emitted_output_sha256": "0f6da52bc84e350914f5e10cda6ee1dc32375a5dc51910adb773740b57c11ea7",
+      "emitted_output_retained": "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/native/new_york-37-baseline/encoder/01-qpet-decode/output"
+    }
+  ],
+  "packet": "results/heldout_20261001/packets/new_york-37-baseline.packet",
+  "packet_sha256": "ddc72d1ccde4f4d16e6c8c17941912ec69ed8c6702c0bcee6873f425e55a027d",
+  "body": "results/heldout_20261001/bodies/new_york-37-baseline.body",
+  "body_sha256": "ada6f9e867c154bba60c6b8a7cb54acf1de4565cd557618d0c39357823cdd973",
+  "worker_argv": [
+    "/Users/nathmath/dcc/LinewiseROI/.venv/bin/python",
+    "/Users/nathmath/dcc/LinewiseROI/experiments/built_area_discrete_worker.py",
+    "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/packets/new_york-37-baseline.packet",
+    "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/decodes/new_york-37-baseline.npz",
+    "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/workers/new_york-37-baseline.json",
+    "--queries",
+    "/Users/nathmath/dcc/RangeRectQuant/data/queries.npy",
+    "--native-evidence",
+    "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/native/new_york-37-baseline/decoder"
+  ],
+  "worker_returncode": 0,
+  "contracts": {
+    "100": {
+      "status": "ILLEGAL",
+      "mask_ok": true,
+      "range_ok": true,
+      "all_rectangle_query_error_exact": 139710,
+      "integer_cache_query_exact": true,
+      "changed_values": 198510
+    },
+    "1000": {
+      "status": "ILLEGAL",
+      "mask_ok": true,
+      "range_ok": true,
+      "all_rectangle_query_error_exact": 139710,
+      "integer_cache_query_exact": true,
+      "changed_values": 198510
+    }
+  },
+  "direct_queries_checked": 1024,
+  "output": "results/heldout_20261001/decodes/new_york-37-baseline.npz",
+  "output_sha256": "60cec52f273d45e1d653d6da0d72360ad6e0f7637b5dcd8f9b0b27b18dcc77ee",
+  "worker_report": "results/heldout_20261001/workers/new_york-37-baseline.json",
+  "worker_report_sha256": "c2ab85a2f8e90b888c9dd3fe7f6e2aacdd0f3bf77c047f1d6bb38555b6131fc5"
+}

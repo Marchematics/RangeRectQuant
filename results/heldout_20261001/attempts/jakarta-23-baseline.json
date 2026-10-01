@@ -1,0 +1,113 @@
+{
+  "id": "jakarta-23-baseline",
+  "site": "jakarta",
+  "configuration": {
+    "family": "baseline",
+    "config": {
+      "backend": "mgard",
+      "dtype": "float64",
+      "reorder": 0,
+      "bound": 1.0,
+      "transform": "direct"
+    }
+  },
+  "status": "DECODED_AND_AUDITED",
+  "source": "data/heldout_20261001/jakarta.npz",
+  "source_sha256": "d7fb59ce9d064a4dd38cea458582c6d228492221902e9acd5b16ba444617a153",
+  "packet_bytes": 903287,
+  "fees": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 540,
+    "body_bytes": 902659
+  },
+  "encode_seconds": 0.1483734169996751,
+  "encoder_info": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 540,
+    "body_bytes": 902659,
+    "raw_native_pointwise_max_error": 10061.027628999667,
+    "raw_native_negative_values": 233238,
+    "raw_native_above_range_values": 0
+  },
+  "native_commands": [
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/native-controls-20261001/native-mgard-driver-attempt2",
+        "encode",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-e79fhvmj/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-e79fhvmj/output",
+        "512",
+        "512",
+        "1.0",
+        "0"
+      ],
+      "input_sha256": "6e7aad1394a17c76d0abf036a5717e42fd89251f0efc78869a3dc631878c9348",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.08638341700134333,
+      "emitted_output_bytes": 902659,
+      "emitted_output_sha256": "58ff7cfa6c2ef4726b6edbea3958048a070ef84808c77d7845af314cc8839669",
+      "emitted_output_retained": "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/native/jakarta-23-baseline/encoder/00-mgard-encode/output"
+    },
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/native-controls-20261001/native-mgard-driver-attempt2",
+        "decode",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-s4r34j7k/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-s4r34j7k/output"
+      ],
+      "input_sha256": "58ff7cfa6c2ef4726b6edbea3958048a070ef84808c77d7845af314cc8839669",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.04427166700043017,
+      "emitted_output_bytes": 2097152,
+      "emitted_output_sha256": "d81b60704ac3aa70f2bd61d43aa4a0ba666fc0afab0f0aac8a68a7bdfa780393",
+      "emitted_output_retained": "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/native/jakarta-23-baseline/encoder/01-mgard-decode/output"
+    }
+  ],
+  "packet": "results/heldout_20261001/packets/jakarta-23-baseline.packet",
+  "packet_sha256": "a9d866fc217332fbe96566e92d74e1cf45997ce63008f61ca1f99d3787616c37",
+  "body": "results/heldout_20261001/bodies/jakarta-23-baseline.body",
+  "body_sha256": "58ff7cfa6c2ef4726b6edbea3958048a070ef84808c77d7845af314cc8839669",
+  "worker_argv": [
+    "/Users/nathmath/dcc/LinewiseROI/.venv/bin/python",
+    "/Users/nathmath/dcc/LinewiseROI/experiments/built_area_discrete_worker.py",
+    "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/packets/jakarta-23-baseline.packet",
+    "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/decodes/jakarta-23-baseline.npz",
+    "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/workers/jakarta-23-baseline.json",
+    "--queries",
+    "/Users/nathmath/dcc/RangeRectQuant/data/queries.npy",
+    "--native-evidence",
+    "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/native/jakarta-23-baseline/decoder"
+  ],
+  "worker_returncode": 0,
+  "contracts": {
+    "100": {
+      "status": "ILLEGAL",
+      "mask_ok": true,
+      "range_ok": true,
+      "all_rectangle_query_error_exact": 572970021,
+      "integer_cache_query_exact": true,
+      "changed_values": 198707
+    },
+    "1000": {
+      "status": "ILLEGAL",
+      "mask_ok": true,
+      "range_ok": true,
+      "all_rectangle_query_error_exact": 572970021,
+      "integer_cache_query_exact": true,
+      "changed_values": 198707
+    }
+  },
+  "direct_queries_checked": 1024,
+  "output": "results/heldout_20261001/decodes/jakarta-23-baseline.npz",
+  "output_sha256": "bcc0fafc5547ed396aacfb2eefdafca418313cf12c67d0585d544b19351b8c7b",
+  "worker_report": "results/heldout_20261001/workers/jakarta-23-baseline.json",
+  "worker_report_sha256": "d908b72a396a4cb33ab00c72d0c28904cec6f7d81fea822359e4c8dfe6c345eb"
+}

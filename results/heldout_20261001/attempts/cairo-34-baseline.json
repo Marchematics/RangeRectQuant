@@ -1,0 +1,116 @@
+{
+  "id": "cairo-34-baseline",
+  "site": "cairo",
+  "configuration": {
+    "family": "baseline",
+    "config": {
+      "backend": "qpet",
+      "dtype": "float64",
+      "level": 3,
+      "base_bound": 10000.0,
+      "bound": 0.49,
+      "transform": "direct"
+    }
+  },
+  "status": "DECODED_AND_AUDITED",
+  "source": "data/heldout_20261001/cairo.npz",
+  "source_sha256": "4ad09905e6ae6f9e65e07ec6218160644b394e2acb3896967f723bc6d03f047d",
+  "packet_bytes": 415486,
+  "fees": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 549,
+    "body_bytes": 414849
+  },
+  "encode_seconds": 0.10515775000021677,
+  "encoder_info": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 549,
+    "body_bytes": 414849,
+    "raw_native_pointwise_max_error": 0.49,
+    "raw_native_negative_values": 46517,
+    "raw_native_above_range_values": 8
+  },
+  "native_commands": [
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "compress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-1httzczx/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-1httzczx/output",
+        "512",
+        "512",
+        "3",
+        "10000.0",
+        "0.49",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-1httzczx/qoi.config"
+      ],
+      "input_sha256": "b661295f6fa003c435512bedaee9919e7d5c0a2a16600c27a1354b2a707120e8",
+      "returncode": 0,
+      "stdout": "====================================== BEGIN TUNING ================================\nABS QoI eb: 0.49\nPredictor tuning started.\nPredictor tuning finished.\nLevel: 5\n\tinterp best interpAlgo = LINEAR\n\tinterp best interpParadigm = 1D\n\tinterp best direction = 0\nLevel: 4\n\tinterp best interpAlgo = LINEAR\n\tinterp best interpParadigm = 1D\n\tinterp best direction = 1\nLevel: 3\n\tinterp best interpAlgo = LINEAR\n\tinterp best interpParadigm = MD\nLevel: 2\n\tinterp best interpAlgo = LINEAR\n\tinterp best interpParadigm = MD\nLevel: 1\n\tinterp best interpAlgo = LINEAR\n\tinterp best interpParadigm = MD\nB-M tuning started.\nB-M step time = 0.030703s\nAutotuning finished.\nInterp selected. Selected alpha: 2.000000. Selected beta: 2.000000. Best bitrate: 39.076829. Best PSNR: 93.554832.\nTuning time = 0.03178s\n====================================== END TUNING ======================================\nAPI_COMPRESS_PASS bytes=414849\n",
+      "stderr": "",
+      "seconds": 0.06085870799870463,
+      "emitted_output_bytes": 414849,
+      "emitted_output_sha256": "18927336913656ca5fcfc4e65a586e1a7085a5c2b986bf950e2e305282a6e706",
+      "emitted_output_retained": "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/native/cairo-34-baseline/encoder/00-qpet-encode/output"
+    },
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "decompress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-ai_nj_in/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-ai_nj_in/output"
+      ],
+      "input_sha256": "18927336913656ca5fcfc4e65a586e1a7085a5c2b986bf950e2e305282a6e706",
+      "returncode": 0,
+      "stdout": "API_DECOMPRESS_PASS samples=262144\n",
+      "stderr": "",
+      "seconds": 0.02642987499712035,
+      "emitted_output_bytes": 2097152,
+      "emitted_output_sha256": "a97b903c875708083b5da3489eabdffe75ac60f4af205c24a682c34280036dde",
+      "emitted_output_retained": "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/native/cairo-34-baseline/encoder/01-qpet-decode/output"
+    }
+  ],
+  "packet": "results/heldout_20261001/packets/cairo-34-baseline.packet",
+  "packet_sha256": "5d5d1ffcbb454504f9999ffe7ec2343a1996e3744bb5f73335925af2267ff7a2",
+  "body": "results/heldout_20261001/bodies/cairo-34-baseline.body",
+  "body_sha256": "18927336913656ca5fcfc4e65a586e1a7085a5c2b986bf950e2e305282a6e706",
+  "worker_argv": [
+    "/Users/nathmath/dcc/LinewiseROI/.venv/bin/python",
+    "/Users/nathmath/dcc/LinewiseROI/experiments/built_area_discrete_worker.py",
+    "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/packets/cairo-34-baseline.packet",
+    "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/decodes/cairo-34-baseline.npz",
+    "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/workers/cairo-34-baseline.json",
+    "--queries",
+    "/Users/nathmath/dcc/RangeRectQuant/data/queries.npy",
+    "--native-evidence",
+    "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/native/cairo-34-baseline/decoder"
+  ],
+  "worker_returncode": 0,
+  "contracts": {
+    "100": {
+      "status": "LEGAL",
+      "mask_ok": true,
+      "range_ok": true,
+      "all_rectangle_query_error_exact": 0,
+      "integer_cache_query_exact": true,
+      "changed_values": 0
+    },
+    "1000": {
+      "status": "LEGAL",
+      "mask_ok": true,
+      "range_ok": true,
+      "all_rectangle_query_error_exact": 0,
+      "integer_cache_query_exact": true,
+      "changed_values": 0
+    }
+  },
+  "direct_queries_checked": 1024,
+  "output": "results/heldout_20261001/decodes/cairo-34-baseline.npz",
+  "output_sha256": "7d7d8d6897f26be7272a54dc7e03441f7a18346a2301bbb7cf32da49e1b6926d",
+  "worker_report": "results/heldout_20261001/workers/cairo-34-baseline.json",
+  "worker_report_sha256": "b23547f71ccc35544c85c69c437592321f51b2ed6a09731ff2eb2ff2f1e1a9cb"
+}

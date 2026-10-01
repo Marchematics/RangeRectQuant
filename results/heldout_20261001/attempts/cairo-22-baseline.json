@@ -1,0 +1,113 @@
+{
+  "id": "cairo-22-baseline",
+  "site": "cairo",
+  "configuration": {
+    "family": "baseline",
+    "config": {
+      "backend": "mgard",
+      "dtype": "float64",
+      "reorder": 0,
+      "bound": 0.49,
+      "transform": "direct"
+    }
+  },
+  "status": "DECODED_AND_AUDITED",
+  "source": "data/heldout_20261001/cairo.npz",
+  "source_sha256": "4ad09905e6ae6f9e65e07ec6218160644b394e2acb3896967f723bc6d03f047d",
+  "packet_bytes": 882829,
+  "fees": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 543,
+    "body_bytes": 882198
+  },
+  "encode_seconds": 0.1652743750018999,
+  "encoder_info": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 543,
+    "body_bytes": 882198,
+    "raw_native_pointwise_max_error": 10085.674760484042,
+    "raw_native_negative_values": 233238,
+    "raw_native_above_range_values": 0
+  },
+  "native_commands": [
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/native-controls-20261001/native-mgard-driver-attempt2",
+        "encode",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-mb1t_pe2/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-mb1t_pe2/output",
+        "512",
+        "512",
+        "0.49",
+        "0"
+      ],
+      "input_sha256": "b661295f6fa003c435512bedaee9919e7d5c0a2a16600c27a1354b2a707120e8",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.09648858299988206,
+      "emitted_output_bytes": 882198,
+      "emitted_output_sha256": "a11aa252ffab53613881869e8e285d124c6ab056b80d528b136d6fba7e90ec5f",
+      "emitted_output_retained": "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/native/cairo-22-baseline/encoder/00-mgard-encode/output"
+    },
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/native-controls-20261001/native-mgard-driver-attempt2",
+        "decode",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-ewio97lm/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-ewio97lm/output"
+      ],
+      "input_sha256": "a11aa252ffab53613881869e8e285d124c6ab056b80d528b136d6fba7e90ec5f",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.04796474999966449,
+      "emitted_output_bytes": 2097152,
+      "emitted_output_sha256": "756af5ee91decf812dbc73268d8ec556f9e5a2cb9985eff10269bf3da014a227",
+      "emitted_output_retained": "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/native/cairo-22-baseline/encoder/01-mgard-decode/output"
+    }
+  ],
+  "packet": "results/heldout_20261001/packets/cairo-22-baseline.packet",
+  "packet_sha256": "0c3f8a90f0c4e86621ed149236ced12eff013cdfcf198b698997e663aa4d2047",
+  "body": "results/heldout_20261001/bodies/cairo-22-baseline.body",
+  "body_sha256": "a11aa252ffab53613881869e8e285d124c6ab056b80d528b136d6fba7e90ec5f",
+  "worker_argv": [
+    "/Users/nathmath/dcc/LinewiseROI/.venv/bin/python",
+    "/Users/nathmath/dcc/LinewiseROI/experiments/built_area_discrete_worker.py",
+    "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/packets/cairo-22-baseline.packet",
+    "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/decodes/cairo-22-baseline.npz",
+    "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/workers/cairo-22-baseline.json",
+    "--queries",
+    "/Users/nathmath/dcc/RangeRectQuant/data/queries.npy",
+    "--native-evidence",
+    "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/native/cairo-22-baseline/decoder"
+  ],
+  "worker_returncode": 0,
+  "contracts": {
+    "100": {
+      "status": "ILLEGAL",
+      "mask_ok": true,
+      "range_ok": true,
+      "all_rectangle_query_error_exact": 394494192,
+      "integer_cache_query_exact": true,
+      "changed_values": 176491
+    },
+    "1000": {
+      "status": "ILLEGAL",
+      "mask_ok": true,
+      "range_ok": true,
+      "all_rectangle_query_error_exact": 394494192,
+      "integer_cache_query_exact": true,
+      "changed_values": 176491
+    }
+  },
+  "direct_queries_checked": 1024,
+  "output": "results/heldout_20261001/decodes/cairo-22-baseline.npz",
+  "output_sha256": "b8145299313d7ded148b46ee311ec924c0474ed22d3a2f3719366ffcbd0346e3",
+  "worker_report": "results/heldout_20261001/workers/cairo-22-baseline.json",
+  "worker_report_sha256": "fc8ce50d9ff96d34725cfbdd06a73cf4bd6675d5733aa1633b285869d7858273"
+}

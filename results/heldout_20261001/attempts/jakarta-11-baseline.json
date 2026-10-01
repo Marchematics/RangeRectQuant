@@ -1,0 +1,127 @@
+{
+  "id": "jakarta-11-baseline",
+  "site": "jakarta",
+  "configuration": {
+    "family": "baseline",
+    "config": {
+      "backend": "sz3",
+      "dtype": "int64",
+      "algorithm": "INTERP_LORENZO",
+      "bound": 0.49,
+      "transform": "direct"
+    }
+  },
+  "status": "DECODED_AND_AUDITED",
+  "source": "data/heldout_20261001/jakarta.npz",
+  "source_sha256": "d7fb59ce9d064a4dd38cea458582c6d228492221902e9acd5b16ba444617a153",
+  "packet_bytes": 462865,
+  "fees": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 554,
+    "body_bytes": 462223
+  },
+  "encode_seconds": 0.2339080420024402,
+  "encoder_info": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 554,
+    "body_bytes": 462223,
+    "raw_native_pointwise_max_error": 0.0,
+    "raw_native_negative_values": 0,
+    "raw_native_above_range_values": 0
+  },
+  "native_commands": [
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/native-controls-20261001/py/bin/python",
+        "/Users/nathmath/dcc/LinewiseROI/experiments/native_sz3_worker.py",
+        "encode",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-integer-sz3-e23il6i0/input.npy",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-integer-sz3-e23il6i0/output",
+        "--dtype",
+        "int64",
+        "--height",
+        "512",
+        "--width",
+        "512",
+        "--algorithm",
+        "INTERP_LORENZO",
+        "--bound",
+        "0.49"
+      ],
+      "input_sha256": "2d56c4a6b6dd5a49596bc8476a7ebc3ab8cfc26cd1bff2387c7e9970044cdd53",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.11408816699986346,
+      "emitted_output_bytes": 462223,
+      "emitted_output_sha256": "7c75abf7360c2d505599268f61f4672bd946d0e2503bc6c805a8739e4f1246bf",
+      "emitted_output_retained": "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/native/jakarta-11-baseline/encoder/00-sz3-int64-encode/output"
+    },
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/native-controls-20261001/py/bin/python",
+        "/Users/nathmath/dcc/LinewiseROI/experiments/native_sz3_worker.py",
+        "decode",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-integer-sz3-by27slu8/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-integer-sz3-by27slu8/output.npy",
+        "--dtype",
+        "int64",
+        "--height",
+        "512",
+        "--width",
+        "512"
+      ],
+      "input_sha256": "7c75abf7360c2d505599268f61f4672bd946d0e2503bc6c805a8739e4f1246bf",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.09705762500016135,
+      "emitted_output_bytes": 2097280,
+      "emitted_output_sha256": "2d56c4a6b6dd5a49596bc8476a7ebc3ab8cfc26cd1bff2387c7e9970044cdd53",
+      "emitted_output_retained": "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/native/jakarta-11-baseline/encoder/01-sz3-int64-decode/output.npy"
+    }
+  ],
+  "packet": "results/heldout_20261001/packets/jakarta-11-baseline.packet",
+  "packet_sha256": "ea15946a027601d13d19ffd933453d8f529c6a75735e337d05f9ddf140b11218",
+  "body": "results/heldout_20261001/bodies/jakarta-11-baseline.body",
+  "body_sha256": "7c75abf7360c2d505599268f61f4672bd946d0e2503bc6c805a8739e4f1246bf",
+  "worker_argv": [
+    "/Users/nathmath/dcc/LinewiseROI/.venv/bin/python",
+    "/Users/nathmath/dcc/LinewiseROI/experiments/built_area_discrete_worker.py",
+    "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/packets/jakarta-11-baseline.packet",
+    "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/decodes/jakarta-11-baseline.npz",
+    "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/workers/jakarta-11-baseline.json",
+    "--queries",
+    "/Users/nathmath/dcc/RangeRectQuant/data/queries.npy",
+    "--native-evidence",
+    "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/native/jakarta-11-baseline/decoder"
+  ],
+  "worker_returncode": 0,
+  "contracts": {
+    "100": {
+      "status": "LEGAL",
+      "mask_ok": true,
+      "range_ok": true,
+      "all_rectangle_query_error_exact": 0,
+      "integer_cache_query_exact": true,
+      "changed_values": 0
+    },
+    "1000": {
+      "status": "LEGAL",
+      "mask_ok": true,
+      "range_ok": true,
+      "all_rectangle_query_error_exact": 0,
+      "integer_cache_query_exact": true,
+      "changed_values": 0
+    }
+  },
+  "direct_queries_checked": 1024,
+  "output": "results/heldout_20261001/decodes/jakarta-11-baseline.npz",
+  "output_sha256": "da27e2cab684f5a359da257b95b62327caafc738434b6bb93416ff01772574d4",
+  "worker_report": "results/heldout_20261001/workers/jakarta-11-baseline.json",
+  "worker_report_sha256": "7259df856786a91cba22b9d6b9d7cdcf0a98abb65565b5a6fc69bcf73eb34939"
+}

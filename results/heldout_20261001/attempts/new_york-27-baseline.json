@@ -1,0 +1,113 @@
+{
+  "id": "new_york-27-baseline",
+  "site": "new_york",
+  "configuration": {
+    "family": "baseline",
+    "config": {
+      "backend": "mgard",
+      "dtype": "float64",
+      "reorder": 1,
+      "bound": 1.0,
+      "transform": "direct"
+    }
+  },
+  "status": "DECODED_AND_AUDITED",
+  "source": "data/heldout_20261001/new_york.npz",
+  "source_sha256": "f1b296dd839b277db9027c9f2daddb67be480e453d4977610d2d6c4c9c5afdfd",
+  "packet_bytes": 830573,
+  "fees": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 539,
+    "body_bytes": 829946
+  },
+  "encode_seconds": 0.15868845799923292,
+  "encoder_info": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 539,
+    "body_bytes": 829946,
+    "raw_native_pointwise_max_error": 10169.154842164337,
+    "raw_native_negative_values": 233238,
+    "raw_native_above_range_values": 0
+  },
+  "native_commands": [
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/native-controls-20261001/native-mgard-driver-attempt2",
+        "encode",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-v7hxa2x1/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-v7hxa2x1/output",
+        "512",
+        "512",
+        "1.0",
+        "1"
+      ],
+      "input_sha256": "b6a7da368cc3fa134c8f04d16e7326c17b38aa4d06b7abc3f19855b878e2e1d4",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.08882854100011173,
+      "emitted_output_bytes": 829946,
+      "emitted_output_sha256": "1864d3f6c9e5624cae7bc4887b4ee9dc8522b27957b744db71674fde796fdef8",
+      "emitted_output_retained": "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/native/new_york-27-baseline/encoder/00-mgard-encode/output"
+    },
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/native-controls-20261001/native-mgard-driver-attempt2",
+        "decode",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-fo9_g09u/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-fo9_g09u/output"
+      ],
+      "input_sha256": "1864d3f6c9e5624cae7bc4887b4ee9dc8522b27957b744db71674fde796fdef8",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.04773941700113937,
+      "emitted_output_bytes": 2097152,
+      "emitted_output_sha256": "d81b60704ac3aa70f2bd61d43aa4a0ba666fc0afab0f0aac8a68a7bdfa780393",
+      "emitted_output_retained": "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/native/new_york-27-baseline/encoder/01-mgard-decode/output"
+    }
+  ],
+  "packet": "results/heldout_20261001/packets/new_york-27-baseline.packet",
+  "packet_sha256": "7b9516a2316d0c33461fd2dbdbc2e5bcd92e569a860eec521032938cc4c4ef96",
+  "body": "results/heldout_20261001/bodies/new_york-27-baseline.body",
+  "body_sha256": "1864d3f6c9e5624cae7bc4887b4ee9dc8522b27957b744db71674fde796fdef8",
+  "worker_argv": [
+    "/Users/nathmath/dcc/LinewiseROI/.venv/bin/python",
+    "/Users/nathmath/dcc/LinewiseROI/experiments/built_area_discrete_worker.py",
+    "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/packets/new_york-27-baseline.packet",
+    "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/decodes/new_york-27-baseline.npz",
+    "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/workers/new_york-27-baseline.json",
+    "--queries",
+    "/Users/nathmath/dcc/RangeRectQuant/data/queries.npy",
+    "--native-evidence",
+    "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/native/new_york-27-baseline/decoder"
+  ],
+  "worker_returncode": 0,
+  "contracts": {
+    "100": {
+      "status": "ILLEGAL",
+      "mask_ok": true,
+      "range_ok": true,
+      "all_rectangle_query_error_exact": 433543405,
+      "integer_cache_query_exact": true,
+      "changed_values": 178339
+    },
+    "1000": {
+      "status": "ILLEGAL",
+      "mask_ok": true,
+      "range_ok": true,
+      "all_rectangle_query_error_exact": 433543405,
+      "integer_cache_query_exact": true,
+      "changed_values": 178339
+    }
+  },
+  "direct_queries_checked": 1024,
+  "output": "results/heldout_20261001/decodes/new_york-27-baseline.npz",
+  "output_sha256": "bcc0fafc5547ed396aacfb2eefdafca418313cf12c67d0585d544b19351b8c7b",
+  "worker_report": "results/heldout_20261001/workers/new_york-27-baseline.json",
+  "worker_report_sha256": "cf7b477451532064d2123b4f115a473d7c7f3501b607fe7d2cec9019942b4395"
+}

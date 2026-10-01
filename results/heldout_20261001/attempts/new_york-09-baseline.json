@@ -1,0 +1,127 @@
+{
+  "id": "new_york-09-baseline",
+  "site": "new_york",
+  "configuration": {
+    "family": "baseline",
+    "config": {
+      "backend": "sz3",
+      "dtype": "float64",
+      "algorithm": "INTERP_LORENZO",
+      "bound": 4.0,
+      "transform": "direct"
+    }
+  },
+  "status": "DECODED_AND_AUDITED",
+  "source": "data/heldout_20261001/new_york.npz",
+  "source_sha256": "f1b296dd839b277db9027c9f2daddb67be480e453d4977610d2d6c4c9c5afdfd",
+  "packet_bytes": 236936,
+  "fees": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 550,
+    "body_bytes": 236298
+  },
+  "encode_seconds": 0.22014745799970115,
+  "encoder_info": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 550,
+    "body_bytes": 236298,
+    "raw_native_pointwise_max_error": 4.0,
+    "raw_native_negative_values": 46287,
+    "raw_native_above_range_values": 3
+  },
+  "native_commands": [
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/native-controls-20261001/py/bin/python",
+        "/Users/nathmath/dcc/LinewiseROI/experiments/native_sz3_worker.py",
+        "encode",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-cim1jkx4/input.npy",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-cim1jkx4/output",
+        "--dtype",
+        "float64",
+        "--height",
+        "512",
+        "--width",
+        "512",
+        "--algorithm",
+        "INTERP_LORENZO",
+        "--bound",
+        "4.0"
+      ],
+      "input_sha256": "c722fcb25c36f3211cbcdc05954a13334e3b006ded320564b9f0a2f7b1192fbb",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.10234316599962767,
+      "emitted_output_bytes": 236298,
+      "emitted_output_sha256": "4730bbccab7a633ca6a7274c7eaa5f336e0704b7d8c4678d370c5e51eeb977cb",
+      "emitted_output_retained": "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/native/new_york-09-baseline/encoder/00-sz3-encode/output"
+    },
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/native-controls-20261001/py/bin/python",
+        "/Users/nathmath/dcc/LinewiseROI/experiments/native_sz3_worker.py",
+        "decode",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-fs6gjt37/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-fs6gjt37/output.npy",
+        "--dtype",
+        "float64",
+        "--height",
+        "512",
+        "--width",
+        "512"
+      ],
+      "input_sha256": "4730bbccab7a633ca6a7274c7eaa5f336e0704b7d8c4678d370c5e51eeb977cb",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.09777858300003572,
+      "emitted_output_bytes": 2097280,
+      "emitted_output_sha256": "fb7f1dde4e889859f9b27408cdcd4c84468d739ae9209f8d31909eb4d2c5896e",
+      "emitted_output_retained": "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/native/new_york-09-baseline/encoder/01-sz3-decode/output.npy"
+    }
+  ],
+  "packet": "results/heldout_20261001/packets/new_york-09-baseline.packet",
+  "packet_sha256": "b446f558cd65f68b083f88077d00c3561e7d694ae2f8eba842377eae14407a44",
+  "body": "results/heldout_20261001/bodies/new_york-09-baseline.body",
+  "body_sha256": "4730bbccab7a633ca6a7274c7eaa5f336e0704b7d8c4678d370c5e51eeb977cb",
+  "worker_argv": [
+    "/Users/nathmath/dcc/LinewiseROI/.venv/bin/python",
+    "/Users/nathmath/dcc/LinewiseROI/experiments/built_area_discrete_worker.py",
+    "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/packets/new_york-09-baseline.packet",
+    "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/decodes/new_york-09-baseline.npz",
+    "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/workers/new_york-09-baseline.json",
+    "--queries",
+    "/Users/nathmath/dcc/RangeRectQuant/data/queries.npy",
+    "--native-evidence",
+    "/Users/nathmath/dcc/RangeRectQuant/results/heldout_20261001/native/new_york-09-baseline/decoder"
+  ],
+  "worker_returncode": 0,
+  "contracts": {
+    "100": {
+      "status": "ILLEGAL",
+      "mask_ok": true,
+      "range_ok": true,
+      "all_rectangle_query_error_exact": 59034,
+      "integer_cache_query_exact": true,
+      "changed_values": 179656
+    },
+    "1000": {
+      "status": "ILLEGAL",
+      "mask_ok": true,
+      "range_ok": true,
+      "all_rectangle_query_error_exact": 59034,
+      "integer_cache_query_exact": true,
+      "changed_values": 179656
+    }
+  },
+  "direct_queries_checked": 1024,
+  "output": "results/heldout_20261001/decodes/new_york-09-baseline.npz",
+  "output_sha256": "3baeb4d3455222ab2660b4e24e78ea64e221f4b89408fff2da8168d4a99be9df",
+  "worker_report": "results/heldout_20261001/workers/new_york-09-baseline.json",
+  "worker_report_sha256": "61a037333f632265fffba24a3691651fbde54664f7e769bdd6877bd8076df8b9"
+}
