@@ -144,7 +144,8 @@ def run(out):
         (out / name).mkdir()
     write_json(out / 'launch.json', dict(commit=git('rev-parse', 'HEAD'), clean_pushed_tree=True,
                                         preflight_sha256=sha(PREFLIGHT), source_manifest_sha256=sha(MANIFEST),
-                                        environment=environment, started_utc=time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())))
+                                        environment={k: environment[k] for k in (*frozen['environment'], 'PYTHONPATH')},
+                                        started_utc=time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())))
     rows = []; started = time.perf_counter()
     for source in manifest['rows']:
         with np.load(ROOT / source['source'], allow_pickle=False) as bundle:
