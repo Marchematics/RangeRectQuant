@@ -15,3 +15,13 @@ tests.test_correctness tests.test_packet -v` (do not run supplied scripts in pla
 No project license is asserted for imported code/data; upstream rights and
 provenance are retained. Attribution and limitations: `docs/METHOD_20261001.md`.
 Original LinewiseROI manuscript/745 imported files remain unchanged.
+
+## Completed development gate (2026-10-01)
+
+All eight preassigned nontrivial services pass. Against the named stronger
+prior including paid conditional Haar, complete storage falls **30.79% / 56.14%**
+at the two engineering budgets. This is not a held-out or SOTA result.
+See `docs/RESULTS_20261001.md`, `docs/REVIEW_AND_NEXT_GATE_20261001.md`, and
+`docs/REPRODUCIBILITY_20261001.md`; raw packets, full decoded fields, fees,
+failures and fresh replay are under `results/`. The initial sweep is unchanged;
+no refinement was added after it passed. No GPU was used.
