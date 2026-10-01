@@ -1,4 +1,4 @@
-# Current findings and non-claims
+# Research findings
 
 ## 2026-10-01 — original A/B PASS, exact-DP necessity FAIL
 
@@ -36,3 +36,35 @@ Independent AI review found no material numerical/accounting defect; no
 standardized integrity audit or human review is available, so its scoped
 verdict is provisional. Original43/745 supplied files and historical20 JPEG
 failures remain unchanged. Private AI traces are not a public research artifact.
+
+## Latest decision — continue the lightweight method family
+
+User clarified: “不要太过防御性，不是从0发明才叫创新”. Accordingly,
+the earlier requirement to discover an additional nonclassical primitive
+**before** advancing held-out evaluation is withdrawn. The failed DP necessity
+gate selects a simpler main implementation; it does not reject the direct-field
+joint problem or its measured30.42%/55.77% operational-rate advantage.
+
+The contribution under investigation is direct construction of a usable
+in-range integer field with a deterministic all-rectangle budget, paid missing
+semantics and low-bit deletion. Classical components are properly attributed;
+novelty is assessed at the precise formulation/construction/rate-tradeoff level.
+The new scoped secondary literature assessment supports proceeding. Its fresh
+Asano access found a floor/ceil rounding object and two-laminar-family practical
+construction, not automatic duplication of this operational codec contract.
+See `docs/RESEARCH_POSITION_20261001.md`.
+
+The homogeneous resave falsifier completed120 new paid streams/decodes,0
+exceptions,112 locally legal primary transitions but112 original-cumulative
+failures. All16 primary chains fail atpass2 and stabilize bypass6; paid savings
+only0.2190%/0.4346%(DP),0.6000%/1.1504%(greedy). Independent geometry,
+480 hashes,120 input lineages and122880 queries pass. This is a workflow
+boundary, not a bug or new main-method requirement. Old single-pass gains stand.
+
+Fixed-quotient remainder-free headroom is below2% on bothgreedy budgets.
+Fine-only optimization is not the next paid-rate bottleneck. Keep exact DP as
+oracle/ablation and focus on the efficient coordinated construction, geographic
+transfer and strong same-contract controls. New Cairo/Delhi/New York/Jakarta
+selection is frozen before loading pixels; `docs/HOLDOUT_PROTOCOL_20261001.md`
+specifies unchanged main parameters and180 complete paid attempts. Protocol
+and acquisition are not yet a method-performance result.

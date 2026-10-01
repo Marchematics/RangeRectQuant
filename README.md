@@ -37,8 +37,29 @@ that expensive DP is necessary. Its exact conditional objective remains valid.
 Current decision and complete32-packet evidence:
 `docs/VIABLE_GREEDY_CONTROL_RESULTS_20261001.md`,
 `docs/EXACT_OBJECT_NOVELTY_20261001.md`, and `findings.md`.
-The earlier post-A/B next-gate document is historical; identify an important
-nonclassical bottleneck surviving this control before expanding the method.
+The earlier post-A/B next-gate document is historical. The failed necessity
+test favors the lightweight realization; it does not reject the joint-contract
+method family. Innovation need not replace every classical primitive.
 No new sources, refinement or held-out/SOTA claim. QF01 decoder smoke tests:
 `PYTHONPATH=.:src:experiments .venv/bin/python -m unittest
 tests.test_viable_greedy tests.test_correctness tests.test_packet -v`.
+
+## Current research direction
+
+Proceed with **direct, range-aware coordinated quantization for unknown
+rectangle queries**, using suffix-viable O(HW) as the main realization and
+conditional exact DP as its oracle/control. The contribution is the joint
+service/construction/paid-rate tradeoff, not invention of DP or four corners.
+See `docs/RESEARCH_POSITION_20261001.md` for the precise literature delta.
+
+The completed120-stream recompression diagnostic establishes a usage boundary:
+each save is locally legal, but the original-source budget does not compose.
+The observed violation stabilizes; it does not invalidate single-pass gains.
+It remains a caveat, not a new method pivot. Results and independent checks:
+`docs/RECOMPRESSION_DIAGNOSTIC_RESULTS_20261001.md`.
+
+New-geography evaluation is specified in `docs/HOLDOUT_PROTOCOL_20261001.md`
+and `integration/heldout_assets_20261001.json`: fixed Cairo/Delhi/New York/
+Jakarta native windows, unchanged method parameters, full strong-control pool.
+Acquisition manifests and experiment results determine the actual run status;
+the existence of this protocol alone is not a completed held-out result.
