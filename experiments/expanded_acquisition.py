@@ -142,9 +142,15 @@ def acquire_site(asset):
             if len(entries) != 1 or '..' in Path(entries[0]).parts:
                 raise ValueError('Unique TIFF')
         with rasterio.open(f'/vsizip/{archive}/{entries[0]}') as dataset:
-            if (dataset.shape != (10000,10000) or dataset.count != 1 or dataset.dtypes != ('uint16',)
+            transform=tuple(dataset.transform)[:6]
+            row_shift=(transform[5]-asset['top'])/100
+            col_shift=(asset['left']-transform[2])/100
+            if (min(dataset.shape)<1 or max(dataset.shape)>10000 or dataset.count != 1 or dataset.dtypes != ('uint16',)
                 or dataset.nodata != 65535 or CRS(dataset.crs) != CRS.from_user_input('ESRI:54009')
-                or tuple(dataset.transform)[:6] != (100.,0.,asset['left'],0.,-100.,asset['top'])):
+                or transform[0]!=100 or transform[1]!=0 or transform[3]!=0 or transform[4]!=-100
+                or not row_shift.is_integer() or not col_shift.is_integer()
+                or row_shift>0 or col_shift>0
+                or -row_shift+dataset.height>10000 or -col_shift+dataset.width>10000):
                 raise ValueError('Native asset contract')
             windows = [(1024, asset['window'])]
             if asset['site'] == 'london':
@@ -155,21 +161,51 @@ def acquire_site(asset):
                 target = OUT / f"{asset['site']}-{size}.npz"
                 if target.exists():
                     raise ValueError('Refuse overwrite scientific source')
-                raw = dataset.read(1, window=Window(**win)); mask = raw == 65535
+                # Some official tiles omit outer NoData strips. Preserve the
+                # preselected geographic footprint; never move it using values.
+                actual=dict(win,row_off=win['row_off']+int(row_shift),col_off=win['col_off']+int(col_shift))
+                raw = dataset.read(1, window=Window(**actual),boundless=True,fill_value=65535)
+                mask = raw == 65535
                 if raw.shape != (size,size) or np.any(raw[~mask] > 10000):
                     raise ValueError('Window/range without resampling')
                 np.savez_compressed(target, raw=raw, mask=mask)
                 sources.append(dict(source=str(target.relative_to(ROOT)), source_sha256=sha(target),
                     shape=list(raw.shape), missing=int(mask.sum()), valid=int((~mask).sum()),
                     raw_uint16_sha256=hashlib.sha256(raw.astype('<u2').tobytes()).hexdigest(),
-                    window=win, geo=dict(crs=dataset.crs.to_wkt(),
-                        affine=list(dataset.window_transform(Window(**win)))[:6], units='m2',
+                    window=win, native_window=actual,native_tile_shape=list(dataset.shape),
+                    native_tile_affine=list(dataset.transform)[:6],
+                    geo=dict(crs=dataset.crs.to_wkt(),
+                        affine=list(dataset.window_transform(Window(**actual)))[:6], units='m2',
                         product='GHS-BUILT-S R2023A E2020', resampling=False)))
         result.update(status='PASS_NATIVE_SOURCE', sources=sources, archive_sha256=sha(archive),
                       archive_bytes=archive.stat().st_size)
     except Exception as e:
         result['error'] = type(e).__name__ + ': ' + str(e)
     return result
+
+
+def repair_trimmed_headers():
+    previous=OUT/'manifest.json'; target=OUT/'manifest_v2.json'
+    if target.exists():
+        raise ValueError('Refuse overwrite acquisition amendment')
+    original=json.loads(previous.read_text()); assets=json.loads(ASSETS.read_text())
+    source_by_site={a['site']:a for a in assets['sites']}; rows=[]
+    head=subprocess.check_output(['git','-C',str(ROOT),'rev-parse','HEAD'],text=True).strip()
+    if subprocess.check_output(['git','-C',str(ROOT),'status','--porcelain'],text=True):
+        raise ValueError('Clean amendment required')
+    for row in original['rows']:
+        if row['status']=='PASS_NATIVE_SOURCE':
+            for s in row['sources']:
+                if sha(ROOT/s['source'])!=s['source_sha256']:
+                    raise ValueError('Existing source changed')
+            rows.append(row)
+        else:
+            rows.append(acquire_site(source_by_site[row['site']]))
+        print(row['site'],rows[-1]['status'],rows[-1].get('error'),flush=True)
+    save(target,dict(status='PASS_40_NATIVE_LOCATIONS' if all(r['status']=='PASS_NATIVE_SOURCE' for r in rows) else 'PARTIAL',
+        rows=rows,launch_commit=head,previous_manifest_sha256=sha(previous),assets_sha256=sha(ASSETS),
+        amendment='Official native files can trim outer NoData strips; preserve nominal-grid footprint with boundless NoData padding',
+        no_pixel_dependent_selection=True,no_resampling=True,gpu_used=False))
 
 
 def run():
@@ -202,5 +238,8 @@ def run():
 
 
 if __name__ == '__main__':
-    p=argparse.ArgumentParser(); p.add_argument('action',choices=['freeze','run'])
-    args=p.parse_args(); freeze() if args.action=='freeze' else run()
+    p=argparse.ArgumentParser(); p.add_argument('action',choices=['freeze','run','repair-trimmed'])
+    args=p.parse_args()
+    if args.action=='freeze': freeze()
+    elif args.action=='run': run()
+    else: repair_trimmed_headers()
