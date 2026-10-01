@@ -74,20 +74,21 @@ class ColdDecoder:
                 self.process.wait(timeout=10)
             except subprocess.TimeoutExpired:
                 self.process.terminate(); self.process.wait(timeout=10)
+        self.process.stdout.close()
         self.log.close()
 
 
-def audit(x,y,mask,decoded_mask,protected,decoded_protected,denominator=1):
+def audit(x,y,mask,decoded_mask,protected,decoded_protected,denominator=1,cap=10000):
     if (x.shape!=y.shape or mask.shape!=x.shape or decoded_mask.shape!=x.shape
         or protected.shape!=x.shape or decoded_protected.shape!=x.shape):
         raise ValueError('Audit shapes')
     x=np.asarray(x,np.int64); y=np.asarray(y,np.int64)
-    if denominator<1 or 4*x.size*max(int(np.abs(y).max()),10000*denominator)>2**62:
+    if denominator<1 or cap<0 or 4*x.size*max(int(np.abs(y).max()),cap*denominator)>2**62:
         raise ValueError('Exact sum safety')
     d=y-x*denominator
     error=0 if not d.any() else int(_maximum_rectangle(d))
     prefix=d.cumsum(0).cumsum(1)
-    outside=int(np.count_nonzero((y<0)|(y>10000*denominator)))
+    outside=int(np.count_nonzero((y<0)|(y>cap*denominator)))
     fractional=int(np.count_nonzero(y%denominator))
     return dict(max_rectangle_numerator=error,denominator=denominator,
         max_rectangle_error=error/denominator,max_abs_prefix_numerator=int(np.abs(prefix).max()),

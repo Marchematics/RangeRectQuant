@@ -3,6 +3,7 @@ import itertools
 import json
 from pathlib import Path
 import sys
+import tempfile
 import unittest
 
 import numpy as np
@@ -13,6 +14,7 @@ from controls import research_packet as packet
 from controls.closest_mechanisms import sigma_delta,bitdepth,prefix_round,nearest_integer
 from controls.viable_greedy import reconstruct
 from experiments.research_common import feasible_widths,_maximum_rectangle
+from experiments.research_common import ColdDecoder
 
 
 def rectangles(d):
@@ -22,6 +24,21 @@ def rectangles(d):
 
 
 class ResearchControls(unittest.TestCase):
+    def test_source_free_endpoint(self):
+        y=np.array([[0,23],[14,0]],np.int64); mask=np.zeros(y.shape,bool)
+        p=mask.copy(); p[0,1]=True
+        blob,_=packet.encode(y,mask,5,100,{}, {},p)
+        with tempfile.TemporaryDirectory() as tmp:
+            folder=Path(tmp); target=folder/'field.packet'; target.write_bytes(blob)
+            worker=ColdDecoder(folder/'decoder')
+            try:
+                actual,m,protected,info=worker.decode(target)
+                self.assertFalse(info['source_provided'])
+                np.testing.assert_array_equal(actual,y)
+                np.testing.assert_array_equal(protected,p)
+            finally:
+                worker.close()
+
     def test_signed_rational_transport(self):
         y=np.array([[-10000,0,10000],[20000,2530000,2540000]],np.int64)
         mask=np.zeros(y.shape,bool); p=mask.copy(); p[0,1]=True
