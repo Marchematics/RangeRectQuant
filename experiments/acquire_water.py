@@ -63,6 +63,44 @@ def download(a):
     return a,target
 
 
+def extract(a,path):
+    import rasterio
+    from rasterio.windows import Window
+    row=dict(site=a['site'],status='FAIL',url=a['url'],tile_sha256=sha(path))
+    try:
+        with rasterio.open(path) as ds:
+            if (ds.count!=1 or ds.dtypes!=('uint8',) or ds.nodata not in (None,255) or ds.shape!=(40000,40000)
+                or ds.crs.to_epsg()!=4326
+                or not np.allclose(list(ds.transform)[:6],[.00025,0,a['left'],0,-.00025,a['top']],rtol=0,atol=1e-12)):
+                raise ValueError('Official raster header')
+            win=Window(**a['window']); raw=ds.read(1,window=win); mask=raw==255
+            if raw.shape!=(512,512) or np.any(raw[~mask]>100): raise ValueError('Occurrence range')
+            source=OUT/(a['site']+'.npz')
+            if source.exists(): raise ValueError('Refuse overwrite water source')
+            np.savez_compressed(source,raw=raw,mask=mask)
+            row.update(status='PASS_NATIVE_OCCURRENCE',source=str(source.relative_to(ROOT)),source_sha256=sha(source),
+                missing=int(mask.sum()),valid=int((~mask).sum()),native_nodata_tag=ds.nodata,
+                missing_semantics='255 from official product guide; zero is not water',
+                raw_uint8_sha256=hashlib.sha256(raw.tobytes()).hexdigest(),
+                geo=dict(crs=ds.crs.to_wkt(),affine=list(ds.window_transform(win))[:6],
+                         units='percentage points',product='JRC GSW occurrence v1.5 1984–2024',resampling=False))
+    except Exception as e: row['error']=str(e)
+    return row
+
+
+def repair_nodata_tag():
+    target=OUT/'manifest_v2.json'
+    if target.exists(): raise ValueError('Refuse overwrite water amendment')
+    assets=json.loads(ASSETS.read_text()); rows=[]
+    for a in assets['sites']:
+        row=extract(a,CACHE/a['filename']); rows.append(row)
+        print(a['site'],row['status'],row.get('error'),flush=True)
+    save(target,dict(status='PASS_EIGHT_OCCURRENCE_WINDOWS' if all(r['status']=='PASS_NATIVE_OCCURRENCE' for r in rows) else 'PARTIAL',
+        rows=rows,assets_sha256=sha(ASSETS),previous_manifest_sha256=sha(OUT/'manifest.json'),
+        amendment='Official files omit the TIFF NoData tag; the official guide defines the sentinel 255',
+        geographic_footprints_changed=False,pixels_resampled=False,gpu_used=False))
+
+
 def run():
     import rasterio
     from rasterio.windows import Window
@@ -75,22 +113,7 @@ def run():
     OUT.mkdir(); rows=[]; assets=json.loads(ASSETS.read_text())
     with ThreadPoolExecutor(max_workers=3) as pool:
         for a,path in pool.map(download,assets['sites']):
-            row=dict(site=a['site'],status='FAIL',url=a['url'],tile_sha256=sha(path))
-            try:
-                with rasterio.open(path) as ds:
-                    if (ds.count!=1 or ds.dtypes!=('uint8',) or ds.nodata!=255 or ds.shape!=(40000,40000)
-                        or ds.crs.to_epsg()!=4326
-                        or not np.allclose(list(ds.transform)[:6],[.00025,0,a['left'],0,-.00025,a['top']],rtol=0,atol=1e-12)):
-                        raise ValueError('Official raster header')
-                    win=Window(**a['window']); raw=ds.read(1,window=win); mask=raw==255
-                    if raw.shape!=(512,512) or np.any(raw[~mask]>100): raise ValueError('Occurrence range')
-                    source=OUT/(a['site']+'.npz'); np.savez_compressed(source,raw=raw,mask=mask)
-                    row.update(status='PASS_NATIVE_OCCURRENCE',source=str(source.relative_to(ROOT)),source_sha256=sha(source),
-                        missing=int(mask.sum()),valid=int((~mask).sum()),
-                        raw_uint8_sha256=hashlib.sha256(raw.tobytes()).hexdigest(),
-                        geo=dict(crs=ds.crs.to_wkt(),affine=list(ds.window_transform(win))[:6],
-                                 units='percentage points',product=assets['product'],resampling=False))
-            except Exception as e: row['error']=str(e)
+            row=extract(a,path)
             rows.append(row); save(OUT/'manifest.json',dict(status='RUNNING',launch_commit=head,rows=rows,assets_sha256=sha(ASSETS)))
             print(a['site'],row['status'],row.get('error'),flush=True)
     save(OUT/'manifest.json',dict(status='PASS_EIGHT_OCCURRENCE_WINDOWS' if all(r['status']=='PASS_NATIVE_OCCURRENCE' for r in rows) else 'PARTIAL',
@@ -98,5 +121,7 @@ def run():
 
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser(); p.add_argument('action',choices=['freeze','run']); a=p.parse_args()
-    freeze() if a.action=='freeze' else run()
+    p=argparse.ArgumentParser(); p.add_argument('action',choices=['freeze','run','repair-nodata']); a=p.parse_args()
+    if a.action=='freeze': freeze()
+    elif a.action=='run': run()
+    else: repair_nodata_tag()

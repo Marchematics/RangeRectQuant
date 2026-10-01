@@ -64,6 +64,8 @@ def protected():
     rows=read('results/protected_sweep_20261002/ledger.json')['rows']
     if report['joint_valid']!=40 or report['exceptions']:
         raise ValueError('Complete verified protected sweep required')
+    timing=read('results/protected_timing_20261002/report.json')
+    times={r['id']:r['median_seconds'] for r in timing['rows']}
     fig,axes=plt.subplots(1,3,figsize=(6,2.7))
     fractions=[0,.001,.01,.05,.1]
     for e,color,marker in ((100,'#D88F8A','s'),(1000,'#0F4D92','o')):
@@ -71,7 +73,7 @@ def protected():
                  r['configuration']['protected_fraction']==f] for f in fractions]
         metrics=[lambda r:8*r['packet_bytes']/512**2,
                  lambda r:100*r['mechanism']['off_lattice']/512**2,
-                 lambda r:r['construction_and_audit_seconds']]
+                 lambda r:times[r['id']]]
         for ax,metric in zip(axes,metrics):
             # Means over four locations; no fabricated seed uncertainty.
             values=[np.mean([metric(r) for r in group]) for group in matrix]
