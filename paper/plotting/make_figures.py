@@ -129,7 +129,7 @@ def plot_heldout_rates(data):
         ax.text(0.02, 1.03, f"({panel})  " + rf"$\epsilon={group['epsilon_m2']:,}\ \mathrm{{m}}^2$",
                 transform=ax.transAxes, ha="left", va="bottom", fontsize=10)
     axes[0].set_ylabel("Complete file size (KiB)")
-    fig.legend(handles=legend_handles(["Best external control", "Proposed"]),
+    fig.legend(handles=legend_handles(["Best external control", "RangeRectQuant"]),
                loc="upper center", bbox_to_anchor=(0.55, 1), ncols=2,
                columnspacing=1.8, handlelength=1.6)
     save_figure(fig, FIGURES / "heldout_rates")
@@ -297,7 +297,7 @@ def plot_precision_rate(data):
     axes[0].yaxis.set_major_formatter(StrMethodFormatter("{x:.2f}"))
     axes[1].set_ylim(0, 870)
     axes[1].set_yticks([0, 200, 400, 600, 800])
-    fig.legend(handles=legend_handles(["Exact row search", "Proposed"]), loc="upper center",
+    fig.legend(handles=legend_handles(["Exact row search", "RangeRectQuant"]), loc="upper center",
                bbox_to_anchor=(0.53, 1), ncols=2, columnspacing=2, handlelength=1.6)
     fig.text(0.53, 0.035, "Four development windows; same representation", fontsize=8.5,
              ha="center", va="bottom")
