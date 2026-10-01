@@ -23,7 +23,11 @@ failure records, a ten-page DCC article, and saved-data plotting scripts.
 Current result and reproduction guide: `docs/EXPANDED_RESULTS_20261002.md`
 and `docs/EXPANDED_REPRODUCIBILITY_20261002.md`. Article: `paper/main.tex`
 and `paper/main.pdf`; figures follow the requested shared-legend layouts.
-Private GitHub releases carry all original paid files and product downloads.
+The [verified private expanded release](https://github.com/Marchematics/RangeRectQuant/releases/tag/expanded-study-20261002-af0b24f)
+contains all 7066 original paid files, complete new product downloads, and the
+source/data/results snapshot `af0b24f`. Its extracted package passes all 36 tests;
+nine source-free decoding samples match the original decoded hashes. Archive
+checksums and GitHub asset digests are included in the release receipts.
 
 The supplied 43 files and 745 earlier originals are hash-verified and unchanged.
 Upstream data/code rights and plotting attribution are preserved. The dated
