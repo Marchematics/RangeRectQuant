@@ -49,7 +49,7 @@ def main():
     legacy=ROOT.parent/'LinewiseROI'
     dependency_names=['built_area_packet.py','built_area_discrete_packet.py','built_area_fiber_packet.py',
                       'built_area_integer_metrics.py','built_area_metrics.py','native_sz3_worker.py',
-                      'native_mgard_driver.cpp','native_qpet_api_v2_driver.cpp']
+                      'native_mgard_driver.cpp','native_qpet_api_v2_driver.cpp','built_area_acquire.py']
     vendor=[]
     with zipfile.ZipFile(source,'a',compression=zipfile.ZIP_DEFLATED,compresslevel=6) as archive:
         for name in dependency_names:
