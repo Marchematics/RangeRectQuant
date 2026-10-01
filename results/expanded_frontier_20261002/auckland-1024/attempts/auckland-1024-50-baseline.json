@@ -1,0 +1,162 @@
+{
+  "id": "auckland-1024-50-baseline",
+  "configuration": {
+    "family": "baseline",
+    "config": {
+      "backend": "qpet",
+      "dtype": "float64",
+      "level": 0,
+      "base_bound": 10000.0,
+      "bound": 16.0,
+      "transform": "direct"
+    }
+  },
+  "status": "DECODED_AND_AUDITED",
+  "native_encoder_info": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 546,
+    "body_bytes": 185214,
+    "raw_native_pointwise_max_error": 16.0,
+    "raw_native_negative_values": 323163,
+    "raw_native_above_range_values": 108
+  },
+  "native_encode_commands": [
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "compress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-5qnhrzip/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-5qnhrzip/output",
+        "1024",
+        "1024",
+        "0",
+        "10000.0",
+        "16.0",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-5qnhrzip/qoi.config"
+      ],
+      "input_sha256": "333418ed35fa450ebf4c2a30c54410e5b4214397c06d8121d1b6f16edb7207d0",
+      "returncode": 0,
+      "stdout": "====================================== BEGIN TUNING ================================\nABS QoI eb: 16\nLorenzo ratio = 32.8480\ninterp best interpAlgo = LINEAR\ninterp best direction = 0\nInterp ratio = 38.7287\nchoose interp\nsz3 tuning time = 0.010365s\nTuning time = 0.010548s\n====================================== END TUNING ======================================\nAPI_COMPRESS_PASS bytes=185214\n",
+      "stderr": "",
+      "seconds": 0.10668816700490424,
+      "emitted_output_bytes": 185214,
+      "emitted_output_sha256": "0f15c1ba232f55988e6c1b280b18f5376a3a005c0716550cc2216f9d1833d6da"
+    },
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "decompress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-59dq4qjf/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-59dq4qjf/output"
+      ],
+      "input_sha256": "0f15c1ba232f55988e6c1b280b18f5376a3a005c0716550cc2216f9d1833d6da",
+      "returncode": 0,
+      "stdout": "API_DECOMPRESS_PASS samples=1048576\n",
+      "stderr": "",
+      "seconds": 0.09006395900360076,
+      "emitted_output_bytes": 8388608,
+      "emitted_output_sha256": "b8700e185f26379657312cf709b5c9acaa72cb254507f9f9e4fe657737d3c7c6"
+    }
+  ],
+  "packet": ".aris/evidence/expanded_20261002/frontier/auckland-1024/auckland-1024-50-baseline.packet",
+  "packet_bytes": 185848,
+  "packet_sha256": "155c97df39ea51a738859a0a3cb341718faba2090656614005bd2c9099fd5743",
+  "fees": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 546,
+    "body_bytes": 185214
+  },
+  "encode_seconds": 0.2730924999996205,
+  "decoder": {
+    "status": "DECODED",
+    "source_provided": false,
+    "meta": {
+      "codec": {
+        "backend": "qpet",
+        "base_bound": 10000.0,
+        "bound": 16.0,
+        "dtype": "float64",
+        "level": 0,
+        "transform": "direct"
+      },
+      "common_full_field_query_service": 1,
+      "epsilons": [
+        100,
+        1000
+      ],
+      "geo": {
+        "affine": [
+          100.0,
+          0.0,
+          15201500.0,
+          0.0,
+          -100.0,
+          -4382900.0
+        ],
+        "crs": "PROJCS[\"World_Mollweide\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Mollweide\"],PARAMETER[\"central_meridian\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "product": "GHS-BUILT-S R2023A E2020",
+        "resampling": false,
+        "shape": [
+          1024,
+          1024
+        ],
+        "units": "m2"
+      },
+      "missing_zero": true,
+      "output": "float64_integer",
+      "postprocessor": "clip(nearest_even_rint(a),0,10000);masked_zero",
+      "units": "m2"
+    },
+    "packet_sha256": "155c97df39ea51a738859a0a3cb341718faba2090656614005bd2c9099fd5743",
+    "numerator_sha256": "5504eea1f41e52e504ddda04ad7f459cd4f0d4ad93b4a1195d9cb906ccbd6403",
+    "decode_seconds": 0.17301166600373108,
+    "native_commands": [
+      {
+        "argv": [
+          "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+          "decompress",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-96htzog5/input",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-96htzog5/output"
+        ],
+        "input_sha256": "0f15c1ba232f55988e6c1b280b18f5376a3a005c0716550cc2216f9d1833d6da",
+        "returncode": 0,
+        "stdout": "API_DECOMPRESS_PASS samples=1048576\n",
+        "stderr": "",
+        "seconds": 0.11709474999952363,
+        "emitted_output_bytes": 8388608,
+        "emitted_output_sha256": "b8700e185f26379657312cf709b5c9acaa72cb254507f9f9e4fe657737d3c7c6"
+      }
+    ],
+    "process_peak_rss_bytes": 288505856,
+    "rss_scope": "macOS peak bytes; persistent source-free decoder"
+  },
+  "audit": {
+    "max_rectangle_numerator": 453428,
+    "denominator": 1,
+    "max_rectangle_error": 453428.0,
+    "max_abs_prefix_numerator": 453428,
+    "range_violations": 0,
+    "range_violation_fraction": 0.0,
+    "integer_violations": 0,
+    "changed": 199241,
+    "mask_ok": true,
+    "protected_ok": true,
+    "valid_samples": 1048576
+  },
+  "mechanism": {},
+  "legal_at": {
+    "25": false,
+    "50": false,
+    "100": false,
+    "250": false,
+    "500": false,
+    "1000": false,
+    "2500": false,
+    "5000": false
+  },
+  "elapsed_seconds": 2.4720877500003553
+}

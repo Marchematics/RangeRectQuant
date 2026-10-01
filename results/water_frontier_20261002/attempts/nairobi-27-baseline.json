@@ -1,0 +1,156 @@
+{
+  "id": "nairobi-27-baseline",
+  "site": "nairobi",
+  "configuration": {
+    "family": "baseline",
+    "config": {
+      "backend": "sz3",
+      "dtype": "float64",
+      "algorithm": "LORENZO_REG",
+      "bound": 4.0,
+      "transform": "direct"
+    }
+  },
+  "status": "DECODED_AND_AUDITED",
+  "source_sha256": "2a626b607cc7c554ee0a2773d07b0c82dfd6a1069699e9507cf42e12954e8ef9",
+  "packet": ".aris/evidence/expanded_20261002/water/nairobi-27-baseline.packet",
+  "packet_bytes": 1604,
+  "fees": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "metadata_bytes": 454,
+    "body_bytes": 1062
+  },
+  "packet_sha256": "06aa6f31e34dc33ca140816bd24755d1f186b5d283f9596eb6e9973d6c75ff18",
+  "decoder": {
+    "status": "DECODED",
+    "source_provided": false,
+    "meta": {
+      "cap": 100,
+      "codec": {
+        "algorithm": "LORENZO_REG",
+        "backend": "sz3",
+        "bound": 4.0,
+        "dtype": "float64",
+        "transform": "direct"
+      },
+      "geo": {
+        "affine": [
+          0.00025,
+          0.0,
+          36.75250000000014,
+          0.0,
+          -0.00025,
+          -1.2192500000000568
+        ],
+        "crs": "GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0,AUTHORITY[\"EPSG\",\"8901\"]],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AXIS[\"Latitude\",NORTH],AXIS[\"Longitude\",EAST],AUTHORITY[\"EPSG\",\"4326\"]]",
+        "product": "JRC GSW occurrence v1.5 1984\u20132024",
+        "resampling": false,
+        "units": "percentage points"
+      },
+      "postprocess": "nearest-even integer;clip [0,100];missing zero",
+      "units": "percentage-point sums"
+    },
+    "decode_seconds": 0.18813091699848883,
+    "numerator_sha256": "43e9079d6b3bd4eabbb1416bc40d499ee4bf508008e30a111d79cddc568383a2",
+    "native_commands": [
+      {
+        "argv": [
+          "/Users/nathmath/dcc/LinewiseROI/.validation/native-controls-20261001/py/bin/python",
+          "/Users/nathmath/dcc/LinewiseROI/experiments/native_sz3_worker.py",
+          "decode",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-9ws_8h0a/input",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-9ws_8h0a/output.npy",
+          "--dtype",
+          "float64",
+          "--height",
+          "512",
+          "--width",
+          "512"
+        ],
+        "input_sha256": "131027e8efadc38054dd758d6cd82c78b80b10214d41a0195ef0214e8c08d7cf",
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "seconds": 0.1717305829952238,
+        "emitted_output_bytes": 2097280,
+        "emitted_output_sha256": "34851b373ce58f8498fb1eeee5dfec171be355c2da458690d30592318e2e6145"
+      }
+    ]
+  },
+  "audit": {
+    "max_rectangle_numerator": 3903,
+    "denominator": 1,
+    "max_rectangle_error": 3903.0,
+    "max_abs_prefix_numerator": 3852,
+    "range_violations": 0,
+    "range_violation_fraction": 0.0,
+    "integer_violations": 0,
+    "changed": 2783,
+    "mask_ok": true,
+    "protected_ok": true,
+    "valid_samples": 262144
+  },
+  "encode_seconds": 0.46917354199831607,
+  "legal_at": {
+    "5": false,
+    "10": false,
+    "25": false,
+    "50": false,
+    "100": false,
+    "250": false,
+    "500": false,
+    "1000": false
+  },
+  "native_encode_commands": [
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/native-controls-20261001/py/bin/python",
+        "/Users/nathmath/dcc/LinewiseROI/experiments/native_sz3_worker.py",
+        "encode",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-56z_v44b/input.npy",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-56z_v44b/output",
+        "--dtype",
+        "float64",
+        "--height",
+        "512",
+        "--width",
+        "512",
+        "--algorithm",
+        "LORENZO_REG",
+        "--bound",
+        "4.0"
+      ],
+      "input_sha256": "7980ebdb4a22880738d5805fc0b3f2e3314c6b1304b163e4f4a4af5aa617f5ec",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.2584498340002028,
+      "emitted_output_bytes": 1062,
+      "emitted_output_sha256": "131027e8efadc38054dd758d6cd82c78b80b10214d41a0195ef0214e8c08d7cf"
+    },
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/native-controls-20261001/py/bin/python",
+        "/Users/nathmath/dcc/LinewiseROI/experiments/native_sz3_worker.py",
+        "decode",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-_ywcizl3/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-_ywcizl3/output.npy",
+        "--dtype",
+        "float64",
+        "--height",
+        "512",
+        "--width",
+        "512"
+      ],
+      "input_sha256": "131027e8efadc38054dd758d6cd82c78b80b10214d41a0195ef0214e8c08d7cf",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.18947754099644953,
+      "emitted_output_bytes": 2097280,
+      "emitted_output_sha256": "34851b373ce58f8498fb1eeee5dfec171be355c2da458690d30592318e2e6145"
+    }
+  ]
+}

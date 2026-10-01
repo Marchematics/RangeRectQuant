@@ -1,0 +1,18 @@
+{
+  "id": "shanghai-256-48-baseline",
+  "configuration": {
+    "family": "baseline",
+    "config": {
+      "backend": "qpet",
+      "dtype": "float64",
+      "level": 0,
+      "base_bound": 10000.0,
+      "bound": 1.0,
+      "transform": "direct"
+    }
+  },
+  "status": "EXCEPTION",
+  "error": "RuntimeError: qpet encode return -6; output=False",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/nathmath/dcc/RangeRectQuant/experiments/run_expanded_research.py\", line 105, in attempt\n    blob,native_info=native_encode(x,mask,cfg['config'],geo,body_path,commands)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/nathmath/dcc/LinewiseROI/experiments/built_area_discrete_packet.py\", line 174, in encode\n    body = body_codec(cfg, 'encode', x, x.shape, commands, evidence_dir)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/nathmath/dcc/LinewiseROI/experiments/built_area_discrete_packet.py\", line 157, in body_codec\n    return native(cfg, operation, data, shape, commands, evidence_dir)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/nathmath/dcc/LinewiseROI/experiments/built_area_packet.py\", line 112, in native\n    raise RuntimeError(f'{backend} {operation} return {run.returncode}; output={output.exists()}')\nRuntimeError: qpet encode return -6; output=False\n",
+  "elapsed_seconds": 0.05767904099775478
+}

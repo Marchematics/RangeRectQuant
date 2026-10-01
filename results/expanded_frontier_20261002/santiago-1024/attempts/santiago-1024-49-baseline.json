@@ -1,0 +1,162 @@
+{
+  "id": "santiago-1024-49-baseline",
+  "configuration": {
+    "family": "baseline",
+    "config": {
+      "backend": "qpet",
+      "dtype": "float64",
+      "level": 0,
+      "base_bound": 10000.0,
+      "bound": 4.0,
+      "transform": "direct"
+    }
+  },
+  "status": "DECODED_AND_AUDITED",
+  "native_encoder_info": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 544,
+    "body_bytes": 335292,
+    "raw_native_pointwise_max_error": 4.0,
+    "raw_native_negative_values": 467893,
+    "raw_native_above_range_values": 14
+  },
+  "native_encode_commands": [
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "compress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-asc2gtpm/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-asc2gtpm/output",
+        "1024",
+        "1024",
+        "0",
+        "10000.0",
+        "4.0",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-asc2gtpm/qoi.config"
+      ],
+      "input_sha256": "b42113df67f3416124a1c86d0331014332a17f4de5cda25e14436466f1d822f7",
+      "returncode": 0,
+      "stdout": "====================================== BEGIN TUNING ================================\nABS QoI eb: 4\nLorenzo ratio = 27.8415\ninterp best interpAlgo = LINEAR\ninterp best direction = 0\nInterp ratio = 32.1210\nchoose interp\nsz3 tuning time = 0.00523s\nTuning time = 0.005544s\n====================================== END TUNING ======================================\nAPI_COMPRESS_PASS bytes=335292\n",
+      "stderr": "",
+      "seconds": 0.08474741700047161,
+      "emitted_output_bytes": 335292,
+      "emitted_output_sha256": "0c3b27bb65efefa8b4fc5c2c5faf1fc7e578932fdd08335a12f71f10e5af0c1f"
+    },
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "decompress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-pwnkgypa/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-pwnkgypa/output"
+      ],
+      "input_sha256": "0c3b27bb65efefa8b4fc5c2c5faf1fc7e578932fdd08335a12f71f10e5af0c1f",
+      "returncode": 0,
+      "stdout": "API_DECOMPRESS_PASS samples=1048576\n",
+      "stderr": "",
+      "seconds": 0.07130287500331178,
+      "emitted_output_bytes": 8388608,
+      "emitted_output_sha256": "2b561225f94cf3ae1b55b7bd1cd35b3e8424a0a474d13960a0bab23b701734f9"
+    }
+  ],
+  "packet": ".aris/evidence/expanded_20261002/frontier/santiago-1024/santiago-1024-49-baseline.packet",
+  "packet_bytes": 335924,
+  "packet_sha256": "c47709289bd86c1202e783305a97cfaab32755a7dd4fa397251ed39dbd30cf18",
+  "fees": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 544,
+    "body_bytes": 335292
+  },
+  "encode_seconds": 0.2284013749958831,
+  "decoder": {
+    "status": "DECODED",
+    "source_provided": false,
+    "meta": {
+      "codec": {
+        "backend": "qpet",
+        "base_bound": 10000.0,
+        "bound": 4.0,
+        "dtype": "float64",
+        "level": 0,
+        "transform": "direct"
+      },
+      "common_full_field_query_service": 1,
+      "epsilons": [
+        100,
+        1000
+      ],
+      "geo": {
+        "affine": [
+          100.0,
+          0.0,
+          -6379600.0,
+          0.0,
+          -100.0,
+          -4000000.0
+        ],
+        "crs": "PROJCS[\"World_Mollweide\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Mollweide\"],PARAMETER[\"central_meridian\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "product": "GHS-BUILT-S R2023A E2020",
+        "resampling": false,
+        "shape": [
+          1024,
+          1024
+        ],
+        "units": "m2"
+      },
+      "missing_zero": true,
+      "output": "float64_integer",
+      "postprocessor": "clip(nearest_even_rint(a),0,10000);masked_zero",
+      "units": "m2"
+    },
+    "packet_sha256": "c47709289bd86c1202e783305a97cfaab32755a7dd4fa397251ed39dbd30cf18",
+    "numerator_sha256": "b467c3294466fea73cc0c8434810b348dbbdbb840d7c64eb106bdac4a5ebb0f3",
+    "decode_seconds": 0.09720179199939594,
+    "native_commands": [
+      {
+        "argv": [
+          "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+          "decompress",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-hxa1jgem/input",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-hxa1jgem/output"
+        ],
+        "input_sha256": "0c3b27bb65efefa8b4fc5c2c5faf1fc7e578932fdd08335a12f71f10e5af0c1f",
+        "returncode": 0,
+        "stdout": "API_DECOMPRESS_PASS samples=1048576\n",
+        "stderr": "",
+        "seconds": 0.06196983299741987,
+        "emitted_output_bytes": 8388608,
+        "emitted_output_sha256": "2b561225f94cf3ae1b55b7bd1cd35b3e8424a0a474d13960a0bab23b701734f9"
+      }
+    ],
+    "process_peak_rss_bytes": 210714624,
+    "rss_scope": "macOS peak bytes; persistent source-free decoder"
+  },
+  "audit": {
+    "max_rectangle_numerator": 262535,
+    "denominator": 1,
+    "max_rectangle_error": 262535.0,
+    "max_abs_prefix_numerator": 262534,
+    "range_violations": 0,
+    "range_violation_fraction": 0.0,
+    "integer_violations": 0,
+    "changed": 370475,
+    "mask_ok": true,
+    "protected_ok": true,
+    "valid_samples": 1048576
+  },
+  "mechanism": {},
+  "legal_at": {
+    "25": false,
+    "50": false,
+    "100": false,
+    "250": false,
+    "500": false,
+    "1000": false,
+    "2500": false,
+    "5000": false
+  },
+  "elapsed_seconds": 5.1946450830000686
+}

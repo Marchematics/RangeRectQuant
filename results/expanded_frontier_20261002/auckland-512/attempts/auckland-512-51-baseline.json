@@ -1,0 +1,162 @@
+{
+  "id": "auckland-512-51-baseline",
+  "configuration": {
+    "family": "baseline",
+    "config": {
+      "backend": "qpet",
+      "dtype": "float64",
+      "level": 3,
+      "base_bound": 10000.0,
+      "bound": 0.49,
+      "transform": "direct"
+    }
+  },
+  "status": "DECODED_AND_AUDITED",
+  "native_encoder_info": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 549,
+    "body_bytes": 287576,
+    "raw_native_pointwise_max_error": 0.48999999999999977,
+    "raw_native_negative_values": 73733,
+    "raw_native_above_range_values": 76
+  },
+  "native_encode_commands": [
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "compress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-nsz3kny1/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-nsz3kny1/output",
+        "512",
+        "512",
+        "3",
+        "10000.0",
+        "0.49",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-nsz3kny1/qoi.config"
+      ],
+      "input_sha256": "cf47f9e4d259044b851586915d0eae2ec207138ee3fd81aed467f1dbfc7bdb19",
+      "returncode": 0,
+      "stdout": "====================================== BEGIN TUNING ================================\nABS QoI eb: 0.49\nPredictor tuning started.\nPredictor tuning finished.\nLevel: 5\n\tinterp best interpAlgo = LINEAR\n\tinterp best interpParadigm = 1D\n\tinterp best direction = 1\nLevel: 4\n\tinterp best interpAlgo = CUBIC\n\tinterp best interpParadigm = 1D\n\tinterp best direction = 1\n\tinterp best cubic spline = 0\n\tinterp best adj = 1\nLevel: 3\n\tinterp best interpAlgo = LINEAR\n\tinterp best interpParadigm = 1D\n\tinterp best direction = 1\nLevel: 2\n\tinterp best interpAlgo = LINEAR\n\tinterp best interpParadigm = MD\nLevel: 1\n\tinterp best interpAlgo = LINEAR\n\tinterp best interpParadigm = MD\nB-M tuning started.\nB-M step time = 0.041026s\nAutotuning finished.\nInterp selected. Selected alpha: 2.000000. Selected beta: 4.000000. Best bitrate: 34.852770. Best PSNR: 94.922098.\nTuning time = 0.042485s\n====================================== END TUNING ======================================\nAPI_COMPRESS_PASS bytes=287576\n",
+      "stderr": "",
+      "seconds": 0.08624350000172853,
+      "emitted_output_bytes": 287576,
+      "emitted_output_sha256": "3b9f4f9d2d82db936ee21a8ba10f91b589e9b56c6ef89abe8419ef376334db6f"
+    },
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "decompress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-28za1dmq/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-28za1dmq/output"
+      ],
+      "input_sha256": "3b9f4f9d2d82db936ee21a8ba10f91b589e9b56c6ef89abe8419ef376334db6f",
+      "returncode": 0,
+      "stdout": "API_DECOMPRESS_PASS samples=262144\n",
+      "stderr": "",
+      "seconds": 0.03700812500028405,
+      "emitted_output_bytes": 2097152,
+      "emitted_output_sha256": "e216373e836222f5b1ab72636793edd73f33396cc214b9d970a6bb1a5b469a4e"
+    }
+  ],
+  "packet": ".aris/evidence/expanded_20261002/frontier/auckland-512/auckland-512-51-baseline.packet",
+  "packet_bytes": 288213,
+  "packet_sha256": "aabf5dc1411d0428ac037709349c9c14d3ec905fdb4c3880bf73257ae8b07697",
+  "fees": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 549,
+    "body_bytes": 287576
+  },
+  "encode_seconds": 0.14683933299966156,
+  "decoder": {
+    "status": "DECODED",
+    "source_provided": false,
+    "meta": {
+      "codec": {
+        "backend": "qpet",
+        "base_bound": 10000.0,
+        "bound": 0.49,
+        "dtype": "float64",
+        "level": 3,
+        "transform": "direct"
+      },
+      "common_full_field_query_service": 1,
+      "epsilons": [
+        100,
+        1000
+      ],
+      "geo": {
+        "affine": [
+          100.0,
+          0.0,
+          15227100.0,
+          0.0,
+          -100.0,
+          -4408500.0
+        ],
+        "crs": "PROJCS[\"World_Mollweide\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Mollweide\"],PARAMETER[\"central_meridian\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "product": "GHS-BUILT-S R2023A E2020",
+        "resampling": false,
+        "shape": [
+          512,
+          512
+        ],
+        "units": "m2"
+      },
+      "missing_zero": true,
+      "output": "float64_integer",
+      "postprocessor": "clip(nearest_even_rint(a),0,10000);masked_zero",
+      "units": "m2"
+    },
+    "packet_sha256": "aabf5dc1411d0428ac037709349c9c14d3ec905fdb4c3880bf73257ae8b07697",
+    "numerator_sha256": "71ff1e98f18bd62cac60a46947879064c622788c537363ee1cf2222831fad53e",
+    "decode_seconds": 0.04432449999876553,
+    "native_commands": [
+      {
+        "argv": [
+          "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+          "decompress",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-9ceze3ca/input",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-9ceze3ca/output"
+        ],
+        "input_sha256": "3b9f4f9d2d82db936ee21a8ba10f91b589e9b56c6ef89abe8419ef376334db6f",
+        "returncode": 0,
+        "stdout": "API_DECOMPRESS_PASS samples=262144\n",
+        "stderr": "",
+        "seconds": 0.032504832997801714,
+        "emitted_output_bytes": 2097152,
+        "emitted_output_sha256": "e216373e836222f5b1ab72636793edd73f33396cc214b9d970a6bb1a5b469a4e"
+      }
+    ],
+    "process_peak_rss_bytes": 151191552,
+    "rss_scope": "macOS peak bytes; persistent source-free decoder"
+  },
+  "audit": {
+    "max_rectangle_numerator": 0,
+    "denominator": 1,
+    "max_rectangle_error": 0.0,
+    "max_abs_prefix_numerator": 0,
+    "range_violations": 0,
+    "range_violation_fraction": 0.0,
+    "integer_violations": 0,
+    "changed": 0,
+    "mask_ok": true,
+    "protected_ok": true,
+    "valid_samples": 262144
+  },
+  "mechanism": {},
+  "legal_at": {
+    "25": true,
+    "50": true,
+    "100": true,
+    "250": true,
+    "500": true,
+    "1000": true,
+    "2500": true,
+    "5000": true
+  },
+  "elapsed_seconds": 0.2053275409998605
+}

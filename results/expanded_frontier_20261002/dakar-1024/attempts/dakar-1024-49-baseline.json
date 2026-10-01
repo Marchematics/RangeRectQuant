@@ -1,0 +1,162 @@
+{
+  "id": "dakar-1024-49-baseline",
+  "configuration": {
+    "family": "baseline",
+    "config": {
+      "backend": "qpet",
+      "dtype": "float64",
+      "level": 0,
+      "base_bound": 10000.0,
+      "bound": 4.0,
+      "transform": "direct"
+    }
+  },
+  "status": "DECODED_AND_AUDITED",
+  "native_encoder_info": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 476,
+    "config_bytes": 545,
+    "body_bytes": 150129,
+    "raw_native_pointwise_max_error": 3.9998779296875,
+    "raw_native_negative_values": 537587,
+    "raw_native_above_range_values": 6
+  },
+  "native_encode_commands": [
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "compress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-xrmhhn9_/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-xrmhhn9_/output",
+        "1024",
+        "1024",
+        "0",
+        "10000.0",
+        "4.0",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-xrmhhn9_/qoi.config"
+      ],
+      "input_sha256": "720367a507fe37efe86db755e9e2c9f92016977492bc70c8063ba2574efc5ceb",
+      "returncode": 0,
+      "stdout": "====================================== BEGIN TUNING ================================\nABS QoI eb: 4\nLorenzo ratio = 92.3569\ninterp best interpAlgo = LINEAR\ninterp best direction = 1\nInterp ratio = 108.7349\nchoose interp\nsz3 tuning time = 0.004657s\nTuning time = 0.005161s\n====================================== END TUNING ======================================\nAPI_COMPRESS_PASS bytes=150129\n",
+      "stderr": "",
+      "seconds": 0.07106654200470075,
+      "emitted_output_bytes": 150129,
+      "emitted_output_sha256": "eaef0f30b9462751c5b9a76f93c5bd63b3b22705fbcc16559176e26a56887f56"
+    },
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "decompress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-ub383nfc/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-ub383nfc/output"
+      ],
+      "input_sha256": "eaef0f30b9462751c5b9a76f93c5bd63b3b22705fbcc16559176e26a56887f56",
+      "returncode": 0,
+      "stdout": "API_DECOMPRESS_PASS samples=1048576\n",
+      "stderr": "",
+      "seconds": 0.05805008400056977,
+      "emitted_output_bytes": 8388608,
+      "emitted_output_sha256": "f5b6ae16a223e0736fa1450d22a8022849a930d7a6cd2ea396949c087afc254e"
+    }
+  ],
+  "packet": ".aris/evidence/expanded_20261002/frontier/dakar-1024/dakar-1024-49-baseline.packet",
+  "packet_bytes": 151238,
+  "packet_sha256": "3235255567e4e52a712d6398b6f56b72caeb95dd79782319b1f0329c2f1f1ccd",
+  "fees": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 476,
+    "config_bytes": 545,
+    "body_bytes": 150129
+  },
+  "encode_seconds": 0.1983667919994332,
+  "decoder": {
+    "status": "DECODED",
+    "source_provided": false,
+    "meta": {
+      "codec": {
+        "backend": "qpet",
+        "base_bound": 10000.0,
+        "bound": 4.0,
+        "dtype": "float64",
+        "level": 0,
+        "transform": "direct"
+      },
+      "common_full_field_query_service": 1,
+      "epsilons": [
+        100,
+        1000
+      ],
+      "geo": {
+        "affine": [
+          100.0,
+          0.0,
+          -1764000.0,
+          0.0,
+          -100.0,
+          1860400.0
+        ],
+        "crs": "PROJCS[\"World_Mollweide\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Mollweide\"],PARAMETER[\"central_meridian\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "product": "GHS-BUILT-S R2023A E2020",
+        "resampling": false,
+        "shape": [
+          1024,
+          1024
+        ],
+        "units": "m2"
+      },
+      "missing_zero": true,
+      "output": "float64_integer",
+      "postprocessor": "clip(nearest_even_rint(a),0,10000);masked_zero",
+      "units": "m2"
+    },
+    "packet_sha256": "3235255567e4e52a712d6398b6f56b72caeb95dd79782319b1f0329c2f1f1ccd",
+    "numerator_sha256": "84d91b5b253cc81b236d6cfa5672773d4eeb01a37b6edf919716e990fc8fa0a5",
+    "decode_seconds": 0.09238449999975273,
+    "native_commands": [
+      {
+        "argv": [
+          "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+          "decompress",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-lko6zwta/input",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-lko6zwta/output"
+        ],
+        "input_sha256": "eaef0f30b9462751c5b9a76f93c5bd63b3b22705fbcc16559176e26a56887f56",
+        "returncode": 0,
+        "stdout": "API_DECOMPRESS_PASS samples=1048576\n",
+        "stderr": "",
+        "seconds": 0.05599204199825181,
+        "emitted_output_bytes": 8388608,
+        "emitted_output_sha256": "f5b6ae16a223e0736fa1450d22a8022849a930d7a6cd2ea396949c087afc254e"
+      }
+    ],
+    "process_peak_rss_bytes": 287981568,
+    "rss_scope": "macOS peak bytes; persistent source-free decoder"
+  },
+  "audit": {
+    "max_rectangle_numerator": 115904,
+    "denominator": 1,
+    "max_rectangle_error": 115904.0,
+    "max_abs_prefix_numerator": 115899,
+    "range_violations": 0,
+    "range_violation_fraction": 0.0,
+    "integer_violations": 0,
+    "changed": 162162,
+    "mask_ok": true,
+    "protected_ok": true,
+    "valid_samples": 813056
+  },
+  "mechanism": {},
+  "legal_at": {
+    "25": false,
+    "50": false,
+    "100": false,
+    "250": false,
+    "500": false,
+    "1000": false,
+    "2500": false,
+    "5000": false
+  },
+  "elapsed_seconds": 2.4157046250038547
+}

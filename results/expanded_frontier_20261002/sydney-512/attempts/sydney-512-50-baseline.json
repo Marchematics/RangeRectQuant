@@ -1,0 +1,162 @@
+{
+  "id": "sydney-512-50-baseline",
+  "configuration": {
+    "family": "baseline",
+    "config": {
+      "backend": "qpet",
+      "dtype": "float64",
+      "level": 0,
+      "base_bound": 10000.0,
+      "bound": 16.0,
+      "transform": "direct"
+    }
+  },
+  "status": "DECODED_AND_AUDITED",
+  "native_encoder_info": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 547,
+    "body_bytes": 140476,
+    "raw_native_pointwise_max_error": 15.999755859375,
+    "raw_native_negative_values": 85167,
+    "raw_native_above_range_values": 11
+  },
+  "native_encode_commands": [
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "compress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-x9jvgg4o/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-x9jvgg4o/output",
+        "512",
+        "512",
+        "0",
+        "10000.0",
+        "16.0",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-x9jvgg4o/qoi.config"
+      ],
+      "input_sha256": "e3ee2cde960c9a8f4ee2be21978ed8c2f805294dbd166f57a2c15f01d32834b1",
+      "returncode": 0,
+      "stdout": "====================================== BEGIN TUNING ================================\nABS QoI eb: 16\nLorenzo ratio = 12.7022\ninterp best interpAlgo = LINEAR\ninterp best direction = 0\nInterp ratio = 14.8317\nchoose interp\nsz3 tuning time = 0.001934s\nTuning time = 0.002099s\n====================================== END TUNING ======================================\nAPI_COMPRESS_PASS bytes=140476\n",
+      "stderr": "",
+      "seconds": 0.036800540998228826,
+      "emitted_output_bytes": 140476,
+      "emitted_output_sha256": "3af54dbaf6df2c40209d9f6451ba57ee5b6c9e6affc6b44e73cfb5f71f58a61e"
+    },
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "decompress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-ni604slk/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-ni604slk/output"
+      ],
+      "input_sha256": "3af54dbaf6df2c40209d9f6451ba57ee5b6c9e6affc6b44e73cfb5f71f58a61e",
+      "returncode": 0,
+      "stdout": "API_DECOMPRESS_PASS samples=262144\n",
+      "stderr": "",
+      "seconds": 0.03172312500100816,
+      "emitted_output_bytes": 2097152,
+      "emitted_output_sha256": "685b5447ff56ed0ddafdd34c3ca2d89496e62e2709efaf8cb95c47706e87b8b8"
+    }
+  ],
+  "packet": ".aris/evidence/expanded_20261002/frontier/sydney-512/sydney-512-50-baseline.packet",
+  "packet_bytes": 141111,
+  "packet_sha256": "72097e049497ba355f3e9d74902a8a3883c307b8758856d34321b18ae805f915",
+  "fees": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 547,
+    "body_bytes": 140476
+  },
+  "encode_seconds": 0.09040708300017286,
+  "decoder": {
+    "status": "DECODED",
+    "source_provided": false,
+    "meta": {
+      "codec": {
+        "backend": "qpet",
+        "base_bound": 10000.0,
+        "bound": 16.0,
+        "dtype": "float64",
+        "level": 0,
+        "transform": "direct"
+      },
+      "common_full_field_query_service": 1,
+      "epsilons": [
+        100,
+        1000
+      ],
+      "geo": {
+        "affine": [
+          100.0,
+          0.0,
+          13478700.0,
+          0.0,
+          -100.0,
+          -4067500.0
+        ],
+        "crs": "PROJCS[\"World_Mollweide\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Mollweide\"],PARAMETER[\"central_meridian\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "product": "GHS-BUILT-S R2023A E2020",
+        "resampling": false,
+        "shape": [
+          512,
+          512
+        ],
+        "units": "m2"
+      },
+      "missing_zero": true,
+      "output": "float64_integer",
+      "postprocessor": "clip(nearest_even_rint(a),0,10000);masked_zero",
+      "units": "m2"
+    },
+    "packet_sha256": "72097e049497ba355f3e9d74902a8a3883c307b8758856d34321b18ae805f915",
+    "numerator_sha256": "e0ce517fd57aeb121ed6d95c7a8d02cadc1f9a326d8ac8560077148ef9ab11a7",
+    "decode_seconds": 0.039953416999196634,
+    "native_commands": [
+      {
+        "argv": [
+          "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+          "decompress",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-daz4q71z/input",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-daz4q71z/output"
+        ],
+        "input_sha256": "3af54dbaf6df2c40209d9f6451ba57ee5b6c9e6affc6b44e73cfb5f71f58a61e",
+        "returncode": 0,
+        "stdout": "API_DECOMPRESS_PASS samples=262144\n",
+        "stderr": "",
+        "seconds": 0.0271733330009738,
+        "emitted_output_bytes": 2097152,
+        "emitted_output_sha256": "685b5447ff56ed0ddafdd34c3ca2d89496e62e2709efaf8cb95c47706e87b8b8"
+      }
+    ],
+    "process_peak_rss_bytes": 143704064,
+    "rss_scope": "macOS peak bytes; persistent source-free decoder"
+  },
+  "audit": {
+    "max_rectangle_numerator": 210252,
+    "denominator": 1,
+    "max_rectangle_error": 210252.0,
+    "max_abs_prefix_numerator": 210252,
+    "range_violations": 0,
+    "range_violation_fraction": 0.0,
+    "integer_violations": 0,
+    "changed": 169145,
+    "mask_ok": true,
+    "protected_ok": true,
+    "valid_samples": 262144
+  },
+  "mechanism": {},
+  "legal_at": {
+    "25": false,
+    "50": false,
+    "100": false,
+    "250": false,
+    "500": false,
+    "1000": false,
+    "2500": false,
+    "5000": false
+  },
+  "elapsed_seconds": 0.38100679100170964
+}

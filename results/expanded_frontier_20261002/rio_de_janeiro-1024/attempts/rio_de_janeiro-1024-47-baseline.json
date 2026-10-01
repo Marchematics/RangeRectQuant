@@ -1,0 +1,162 @@
+{
+  "id": "rio_de_janeiro-1024-47-baseline",
+  "configuration": {
+    "family": "baseline",
+    "config": {
+      "backend": "qpet",
+      "dtype": "float64",
+      "level": 0,
+      "base_bound": 10000.0,
+      "bound": 0.49,
+      "transform": "direct"
+    }
+  },
+  "status": "DECODED_AND_AUDITED",
+  "native_encoder_info": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 547,
+    "body_bytes": 565930,
+    "raw_native_pointwise_max_error": 0.48999999999999727,
+    "raw_native_negative_values": 361898,
+    "raw_native_above_range_values": 23
+  },
+  "native_encode_commands": [
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "compress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-yy53pln0/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-yy53pln0/output",
+        "1024",
+        "1024",
+        "0",
+        "10000.0",
+        "0.49",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-yy53pln0/qoi.config"
+      ],
+      "input_sha256": "7716dccd188baac35c5fdd490bf2787feb4a325de4b45d6005c5826409be0e4a",
+      "returncode": 0,
+      "stdout": "====================================== BEGIN TUNING ================================\nABS QoI eb: 0.49\nLorenzo ratio = 14.4523\ninterp best interpAlgo = LINEAR\ninterp best direction = 0\nInterp ratio = 16.8083\nchoose interp\nsz3 tuning time = 0.014361s\nTuning time = 0.015877s\n====================================== END TUNING ======================================\nAPI_COMPRESS_PASS bytes=565930\n",
+      "stderr": "",
+      "seconds": 0.10827683300158242,
+      "emitted_output_bytes": 565930,
+      "emitted_output_sha256": "1ca92d74e83349cf4c934e24bd01033b7a89ec0722b6b92acfd284fc09ac9440"
+    },
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "decompress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-w8v43_8l/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-w8v43_8l/output"
+      ],
+      "input_sha256": "1ca92d74e83349cf4c934e24bd01033b7a89ec0722b6b92acfd284fc09ac9440",
+      "returncode": 0,
+      "stdout": "API_DECOMPRESS_PASS samples=1048576\n",
+      "stderr": "",
+      "seconds": 0.0762438750025467,
+      "emitted_output_bytes": 8388608,
+      "emitted_output_sha256": "03a9234a5e541feb876b4891f5f4811dd2fd755c68e4e0bc0f660589480e72f8"
+    }
+  ],
+  "packet": ".aris/evidence/expanded_20261002/frontier/rio_de_janeiro-1024/rio_de_janeiro-1024-47-baseline.packet",
+  "packet_bytes": 566565,
+  "packet_sha256": "6401c0fd7cb9fe1b55ae043ccaf293e6072f7b1f58a08b34cde9826834241fd2",
+  "fees": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 547,
+    "body_bytes": 565930
+  },
+  "encode_seconds": 0.25783712500560796,
+  "decoder": {
+    "status": "DECODED",
+    "source_provided": false,
+    "meta": {
+      "codec": {
+        "backend": "qpet",
+        "base_bound": 10000.0,
+        "bound": 0.49,
+        "dtype": "float64",
+        "level": 0,
+        "transform": "direct"
+      },
+      "common_full_field_query_service": 1,
+      "epsilons": [
+        100,
+        1000
+      ],
+      "geo": {
+        "affine": [
+          100.0,
+          0.0,
+          -4164800.0,
+          0.0,
+          -100.0,
+          -2752000.0
+        ],
+        "crs": "PROJCS[\"World_Mollweide\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Mollweide\"],PARAMETER[\"central_meridian\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "product": "GHS-BUILT-S R2023A E2020",
+        "resampling": false,
+        "shape": [
+          1024,
+          1024
+        ],
+        "units": "m2"
+      },
+      "missing_zero": true,
+      "output": "float64_integer",
+      "postprocessor": "clip(nearest_even_rint(a),0,10000);masked_zero",
+      "units": "m2"
+    },
+    "packet_sha256": "6401c0fd7cb9fe1b55ae043ccaf293e6072f7b1f58a08b34cde9826834241fd2",
+    "numerator_sha256": "cc1a6217782bccbc16b44813195a50cc344125a09d3468c7f05419d0e3bc41c7",
+    "decode_seconds": 0.11158916599379154,
+    "native_commands": [
+      {
+        "argv": [
+          "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+          "decompress",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-3pk0_th7/input",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-3pk0_th7/output"
+        ],
+        "input_sha256": "1ca92d74e83349cf4c934e24bd01033b7a89ec0722b6b92acfd284fc09ac9440",
+        "returncode": 0,
+        "stdout": "API_DECOMPRESS_PASS samples=1048576\n",
+        "stderr": "",
+        "seconds": 0.07410979099950055,
+        "emitted_output_bytes": 8388608,
+        "emitted_output_sha256": "03a9234a5e541feb876b4891f5f4811dd2fd755c68e4e0bc0f660589480e72f8"
+      }
+    ],
+    "process_peak_rss_bytes": 211861504,
+    "rss_scope": "macOS peak bytes; persistent source-free decoder"
+  },
+  "audit": {
+    "max_rectangle_numerator": 0,
+    "denominator": 1,
+    "max_rectangle_error": 0.0,
+    "max_abs_prefix_numerator": 0,
+    "range_violations": 0,
+    "range_violation_fraction": 0.0,
+    "integer_violations": 0,
+    "changed": 0,
+    "mask_ok": true,
+    "protected_ok": true,
+    "valid_samples": 1048576
+  },
+  "mechanism": {},
+  "legal_at": {
+    "25": true,
+    "50": true,
+    "100": true,
+    "250": true,
+    "500": true,
+    "1000": true,
+    "2500": true,
+    "5000": true
+  },
+  "elapsed_seconds": 0.4132434999992256
+}

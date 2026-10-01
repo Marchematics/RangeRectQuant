@@ -1,0 +1,162 @@
+{
+  "id": "rome-512-52-baseline",
+  "configuration": {
+    "family": "baseline",
+    "config": {
+      "backend": "qpet",
+      "dtype": "float64",
+      "level": 3,
+      "base_bound": 10000.0,
+      "bound": 1.0,
+      "transform": "direct"
+    }
+  },
+  "status": "DECODED_AND_AUDITED",
+  "native_encoder_info": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 545,
+    "body_bytes": 98658,
+    "raw_native_pointwise_max_error": 1.0,
+    "raw_native_negative_values": 7874,
+    "raw_native_above_range_values": 0
+  },
+  "native_encode_commands": [
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "compress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-wltrfdsu/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-wltrfdsu/output",
+        "512",
+        "512",
+        "3",
+        "10000.0",
+        "1.0",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-wltrfdsu/qoi.config"
+      ],
+      "input_sha256": "f6fb0a3a4c5cb53e360e63214d80e9eac07805445a38d039b046d4e0b758383c",
+      "returncode": 0,
+      "stdout": "====================================== BEGIN TUNING ================================\nABS QoI eb: 1\nPredictor tuning started.\nPredictor tuning finished.\nLevel: 5\n\tinterp best interpAlgo = LINEAR\n\tinterp best interpParadigm = 1D\n\tinterp best direction = 0\nLevel: 4\n\tinterp best interpAlgo = LINEAR\n\tinterp best interpParadigm = 1D\n\tinterp best direction = 0\nLevel: 3\n\tinterp best interpAlgo = LINEAR\n\tinterp best interpParadigm = 1D\n\tinterp best direction = 0\nLevel: 2\n\tinterp best interpAlgo = LINEAR\n\tinterp best interpParadigm = 1D\n\tinterp best direction = 0\nLevel: 1\n\tinterp best interpAlgo = LINEAR\n\tinterp best interpParadigm = 1D\n\tinterp best direction = 0\nB-M tuning started.\nB-M step time = 0.005444s\nAutotuning finished.\nInterp selected. Selected alpha: 2.000000. Selected beta: 4.000000. Best bitrate: 0.105295. Best PSNR: inf.\nTuning time = 0.00918s\n====================================== END TUNING ======================================\nAPI_COMPRESS_PASS bytes=98658\n",
+      "stderr": "",
+      "seconds": 0.04708837499492802,
+      "emitted_output_bytes": 98658,
+      "emitted_output_sha256": "6af5a294a46c4a833a6cbd16c3b3b2798bdf9634d2227c9137a96deef3c26f9d"
+    },
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "decompress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-1a7y209s/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-1a7y209s/output"
+      ],
+      "input_sha256": "6af5a294a46c4a833a6cbd16c3b3b2798bdf9634d2227c9137a96deef3c26f9d",
+      "returncode": 0,
+      "stdout": "API_DECOMPRESS_PASS samples=262144\n",
+      "stderr": "",
+      "seconds": 0.03156908299570205,
+      "emitted_output_bytes": 2097152,
+      "emitted_output_sha256": "e3f9f190c521003acb8a8c28b6735c6e1d957bb8bac499446b03a2f1519f13b8"
+    }
+  ],
+  "packet": ".aris/evidence/expanded_20261002/frontier/rome-512/rome-512-52-baseline.packet",
+  "packet_bytes": 99291,
+  "packet_sha256": "ca5cf085a03b9c0d359c7e95cff6d6c6e2760f4ce90f7d4e635d8326f0ef7a01",
+  "fees": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 545,
+    "body_bytes": 98658
+  },
+  "encode_seconds": 0.10575249999965308,
+  "decoder": {
+    "status": "DECODED",
+    "source_provided": false,
+    "meta": {
+      "codec": {
+        "backend": "qpet",
+        "base_bound": 10000.0,
+        "bound": 1.0,
+        "dtype": "float64",
+        "level": 3,
+        "transform": "direct"
+      },
+      "common_full_field_query_service": 1,
+      "epsilons": [
+        100,
+        1000
+      ],
+      "geo": {
+        "affine": [
+          100.0,
+          0.0,
+          1018000.0,
+          0.0,
+          -100.0,
+          4974400.0
+        ],
+        "crs": "PROJCS[\"World_Mollweide\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Mollweide\"],PARAMETER[\"central_meridian\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "product": "GHS-BUILT-S R2023A E2020",
+        "resampling": false,
+        "shape": [
+          512,
+          512
+        ],
+        "units": "m2"
+      },
+      "missing_zero": true,
+      "output": "float64_integer",
+      "postprocessor": "clip(nearest_even_rint(a),0,10000);masked_zero",
+      "units": "m2"
+    },
+    "packet_sha256": "ca5cf085a03b9c0d359c7e95cff6d6c6e2760f4ce90f7d4e635d8326f0ef7a01",
+    "numerator_sha256": "1cb227f05cb7d17cc52c5b7943766d7e6e723d2dbd6b4a373bb1eff70c2c025d",
+    "decode_seconds": 0.038498083005833905,
+    "native_commands": [
+      {
+        "argv": [
+          "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+          "decompress",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-x1oi92wp/input",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-x1oi92wp/output"
+        ],
+        "input_sha256": "6af5a294a46c4a833a6cbd16c3b3b2798bdf9634d2227c9137a96deef3c26f9d",
+        "returncode": 0,
+        "stdout": "API_DECOMPRESS_PASS samples=262144\n",
+        "stderr": "",
+        "seconds": 0.027848459001688752,
+        "emitted_output_bytes": 2097152,
+        "emitted_output_sha256": "e3f9f190c521003acb8a8c28b6735c6e1d957bb8bac499446b03a2f1519f13b8"
+      }
+    ],
+    "process_peak_rss_bytes": 151732224,
+    "rss_scope": "macOS peak bytes; persistent source-free decoder"
+  },
+  "audit": {
+    "max_rectangle_numerator": 757,
+    "denominator": 1,
+    "max_rectangle_error": 757.0,
+    "max_abs_prefix_numerator": 757,
+    "range_violations": 0,
+    "range_violation_fraction": 0.0,
+    "integer_violations": 0,
+    "changed": 12112,
+    "mask_ok": true,
+    "protected_ok": true,
+    "valid_samples": 262144
+  },
+  "mechanism": {},
+  "legal_at": {
+    "25": false,
+    "50": false,
+    "100": false,
+    "250": false,
+    "500": false,
+    "1000": true,
+    "2500": true,
+    "5000": true
+  },
+  "elapsed_seconds": 0.3869828749957378
+}

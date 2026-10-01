@@ -1,0 +1,162 @@
+{
+  "id": "brisbane-512-50-baseline",
+  "configuration": {
+    "family": "baseline",
+    "config": {
+      "backend": "qpet",
+      "dtype": "float64",
+      "level": 0,
+      "base_bound": 10000.0,
+      "bound": 16.0,
+      "transform": "direct"
+    }
+  },
+  "status": "DECODED_AND_AUDITED",
+  "native_encoder_info": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 547,
+    "body_bytes": 155235,
+    "raw_native_pointwise_max_error": 16.0,
+    "raw_native_negative_values": 75770,
+    "raw_native_above_range_values": 22
+  },
+  "native_encode_commands": [
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "compress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-i7nr4uvr/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-i7nr4uvr/output",
+        "512",
+        "512",
+        "0",
+        "10000.0",
+        "16.0",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-i7nr4uvr/qoi.config"
+      ],
+      "input_sha256": "c052c763a31828844a3ae3bed9218d8bda7d62449e31f85e60db06c04c01f0c5",
+      "returncode": 0,
+      "stdout": "====================================== BEGIN TUNING ================================\nABS QoI eb: 16\nLorenzo ratio = 11.1180\ninterp best interpAlgo = LINEAR\ninterp best direction = 0\nInterp ratio = 12.7274\nchoose interp\nsz3 tuning time = 0.00322s\nTuning time = 0.003394s\n====================================== END TUNING ======================================\nAPI_COMPRESS_PASS bytes=155235\n",
+      "stderr": "",
+      "seconds": 0.04309687500062864,
+      "emitted_output_bytes": 155235,
+      "emitted_output_sha256": "905d5352dccc1da8bf9f1133e9c24753221c103c56b06227e8c793499e38462a"
+    },
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "decompress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-d3qq3e6e/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-d3qq3e6e/output"
+      ],
+      "input_sha256": "905d5352dccc1da8bf9f1133e9c24753221c103c56b06227e8c793499e38462a",
+      "returncode": 0,
+      "stdout": "API_DECOMPRESS_PASS samples=262144\n",
+      "stderr": "",
+      "seconds": 0.0313605830015149,
+      "emitted_output_bytes": 2097152,
+      "emitted_output_sha256": "906ce2d6c6a24145f1f0f2f69c1cad7a807dd32619102e874fce17f2440c4aef"
+    }
+  ],
+  "packet": ".aris/evidence/expanded_20261002/frontier/brisbane-512/brisbane-512-50-baseline.packet",
+  "packet_bytes": 155870,
+  "packet_sha256": "42f8e721cebc7fff8f0c8168b6998999323dab0392802da95224d3dfec3b851f",
+  "fees": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 547,
+    "body_bytes": 155235
+  },
+  "encode_seconds": 0.10920908299885923,
+  "decoder": {
+    "status": "DECODED",
+    "source_provided": false,
+    "meta": {
+      "codec": {
+        "backend": "qpet",
+        "base_bound": 10000.0,
+        "bound": 16.0,
+        "dtype": "float64",
+        "level": 0,
+        "transform": "direct"
+      },
+      "common_full_field_query_service": 1,
+      "epsilons": [
+        100,
+        1000
+      ],
+      "geo": {
+        "affine": [
+          100.0,
+          0.0,
+          14216900.0,
+          0.0,
+          -100.0,
+          -3320400.0
+        ],
+        "crs": "PROJCS[\"World_Mollweide\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Mollweide\"],PARAMETER[\"central_meridian\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "product": "GHS-BUILT-S R2023A E2020",
+        "resampling": false,
+        "shape": [
+          512,
+          512
+        ],
+        "units": "m2"
+      },
+      "missing_zero": true,
+      "output": "float64_integer",
+      "postprocessor": "clip(nearest_even_rint(a),0,10000);masked_zero",
+      "units": "m2"
+    },
+    "packet_sha256": "42f8e721cebc7fff8f0c8168b6998999323dab0392802da95224d3dfec3b851f",
+    "numerator_sha256": "1663b723f68e1ae39674caf2784ae385988d25ada44c2367c039fa8ffe39d3b5",
+    "decode_seconds": 0.056045375000394415,
+    "native_commands": [
+      {
+        "argv": [
+          "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+          "decompress",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-uy7wzcnr/input",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-uy7wzcnr/output"
+        ],
+        "input_sha256": "905d5352dccc1da8bf9f1133e9c24753221c103c56b06227e8c793499e38462a",
+        "returncode": 0,
+        "stdout": "API_DECOMPRESS_PASS samples=262144\n",
+        "stderr": "",
+        "seconds": 0.0346849999987171,
+        "emitted_output_bytes": 2097152,
+        "emitted_output_sha256": "906ce2d6c6a24145f1f0f2f69c1cad7a807dd32619102e874fce17f2440c4aef"
+      }
+    ],
+    "process_peak_rss_bytes": 148799488,
+    "rss_scope": "macOS peak bytes; persistent source-free decoder"
+  },
+  "audit": {
+    "max_rectangle_numerator": 259100,
+    "denominator": 1,
+    "max_rectangle_error": 259100.0,
+    "max_abs_prefix_numerator": 259100,
+    "range_violations": 0,
+    "range_violation_fraction": 0.0,
+    "integer_violations": 0,
+    "changed": 177770,
+    "mask_ok": true,
+    "protected_ok": true,
+    "valid_samples": 262144
+  },
+  "mechanism": {},
+  "legal_at": {
+    "25": false,
+    "50": false,
+    "100": false,
+    "250": false,
+    "500": false,
+    "1000": false,
+    "2500": false,
+    "5000": false
+  },
+  "elapsed_seconds": 0.4278835419972893
+}

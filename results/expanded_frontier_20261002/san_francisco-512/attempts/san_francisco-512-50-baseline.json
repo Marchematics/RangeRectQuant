@@ -1,0 +1,162 @@
+{
+  "id": "san_francisco-512-50-baseline",
+  "configuration": {
+    "family": "baseline",
+    "config": {
+      "backend": "qpet",
+      "dtype": "float64",
+      "level": 0,
+      "base_bound": 10000.0,
+      "bound": 16.0,
+      "transform": "direct"
+    }
+  },
+  "status": "DECODED_AND_AUDITED",
+  "native_encoder_info": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 546,
+    "body_bytes": 109589,
+    "raw_native_pointwise_max_error": 16.0,
+    "raw_native_negative_values": 89315,
+    "raw_native_above_range_values": 0
+  },
+  "native_encode_commands": [
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "compress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-p76k_x7e/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-p76k_x7e/output",
+        "512",
+        "512",
+        "0",
+        "10000.0",
+        "16.0",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-p76k_x7e/qoi.config"
+      ],
+      "input_sha256": "ae8618ccdb5f60df674afccc5eb635dd824480f01a852de06039a19e16807a2c",
+      "returncode": 0,
+      "stdout": "====================================== BEGIN TUNING ================================\nABS QoI eb: 16\nLorenzo ratio = 8.7855\ninterp best interpAlgo = LINEAR\ninterp best direction = 0\nInterp ratio = 9.8492\nchoose interp\nsz3 tuning time = 0.001952s\nTuning time = 0.002137s\n====================================== END TUNING ======================================\nAPI_COMPRESS_PASS bytes=109589\n",
+      "stderr": "",
+      "seconds": 0.0327862920021289,
+      "emitted_output_bytes": 109589,
+      "emitted_output_sha256": "ffdda969220233ec9a12eeb2a7959c23647207122081bc4c02240efd4749c9f4"
+    },
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "decompress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-vpzf_6dn/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-vpzf_6dn/output"
+      ],
+      "input_sha256": "ffdda969220233ec9a12eeb2a7959c23647207122081bc4c02240efd4749c9f4",
+      "returncode": 0,
+      "stdout": "API_DECOMPRESS_PASS samples=262144\n",
+      "stderr": "",
+      "seconds": 0.03407416699337773,
+      "emitted_output_bytes": 2097152,
+      "emitted_output_sha256": "7ccb1c0c11c304c0a11d0b30e170735a4b25c9a0d62e14dcfc582e24fc358542"
+    }
+  ],
+  "packet": ".aris/evidence/expanded_20261002/frontier/san_francisco-512/san_francisco-512-50-baseline.packet",
+  "packet_bytes": 110223,
+  "packet_sha256": "a6d1614f07c6c1c6d063cf5e33373519161b80003204277bddd5518b2c3d8712",
+  "fees": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 546,
+    "body_bytes": 109589
+  },
+  "encode_seconds": 0.11872504200437106,
+  "decoder": {
+    "status": "DECODED",
+    "source_provided": false,
+    "meta": {
+      "codec": {
+        "backend": "qpet",
+        "base_bound": 10000.0,
+        "bound": 16.0,
+        "dtype": "float64",
+        "level": 0,
+        "transform": "direct"
+      },
+      "common_full_field_query_service": 1,
+      "epsilons": [
+        100,
+        1000
+      ],
+      "geo": {
+        "affine": [
+          100.0,
+          0.0,
+          -10628100.0,
+          0.0,
+          -100.0,
+          4564900.0
+        ],
+        "crs": "PROJCS[\"World_Mollweide\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Mollweide\"],PARAMETER[\"central_meridian\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "product": "GHS-BUILT-S R2023A E2020",
+        "resampling": false,
+        "shape": [
+          512,
+          512
+        ],
+        "units": "m2"
+      },
+      "missing_zero": true,
+      "output": "float64_integer",
+      "postprocessor": "clip(nearest_even_rint(a),0,10000);masked_zero",
+      "units": "m2"
+    },
+    "packet_sha256": "a6d1614f07c6c1c6d063cf5e33373519161b80003204277bddd5518b2c3d8712",
+    "numerator_sha256": "5810738f8df382a9e0572f50cdb2cc259129df1cee405c2c7bd4827430da91ba",
+    "decode_seconds": 0.04992954200133681,
+    "native_commands": [
+      {
+        "argv": [
+          "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+          "decompress",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-uc38qeth/input",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-uc38qeth/output"
+        ],
+        "input_sha256": "ffdda969220233ec9a12eeb2a7959c23647207122081bc4c02240efd4749c9f4",
+        "returncode": 0,
+        "stdout": "API_DECOMPRESS_PASS samples=262144\n",
+        "stderr": "",
+        "seconds": 0.03596974999527447,
+        "emitted_output_bytes": 2097152,
+        "emitted_output_sha256": "7ccb1c0c11c304c0a11d0b30e170735a4b25c9a0d62e14dcfc582e24fc358542"
+      }
+    ],
+    "process_peak_rss_bytes": 145080320,
+    "rss_scope": "macOS peak bytes; persistent source-free decoder"
+  },
+  "audit": {
+    "max_rectangle_numerator": 203620,
+    "denominator": 1,
+    "max_rectangle_error": 203620.0,
+    "max_abs_prefix_numerator": 203620,
+    "range_violations": 0,
+    "range_violation_fraction": 0.0,
+    "integer_violations": 0,
+    "changed": 152049,
+    "mask_ok": true,
+    "protected_ok": true,
+    "valid_samples": 262144
+  },
+  "mechanism": {},
+  "legal_at": {
+    "25": false,
+    "50": false,
+    "100": false,
+    "250": false,
+    "500": false,
+    "1000": false,
+    "2500": false,
+    "5000": false
+  },
+  "elapsed_seconds": 0.5731492090053507
+}

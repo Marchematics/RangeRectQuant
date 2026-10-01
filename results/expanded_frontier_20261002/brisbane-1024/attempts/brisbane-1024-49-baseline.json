@@ -1,0 +1,162 @@
+{
+  "id": "brisbane-1024-49-baseline",
+  "configuration": {
+    "family": "baseline",
+    "config": {
+      "backend": "qpet",
+      "dtype": "float64",
+      "level": 0,
+      "base_bound": 10000.0,
+      "bound": 4.0,
+      "transform": "direct"
+    }
+  },
+  "status": "DECODED_AND_AUDITED",
+  "native_encoder_info": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 546,
+    "body_bytes": 445206,
+    "raw_native_pointwise_max_error": 4.0,
+    "raw_native_negative_values": 539104,
+    "raw_native_above_range_values": 29
+  },
+  "native_encode_commands": [
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "compress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-9grzw796/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-9grzw796/output",
+        "1024",
+        "1024",
+        "0",
+        "10000.0",
+        "4.0",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-9grzw796/qoi.config"
+      ],
+      "input_sha256": "6b4f0f1cdd160e09614b4b02cba6640082e7d4a6002c090acbd7101cbb900655",
+      "returncode": 0,
+      "stdout": "====================================== BEGIN TUNING ================================\nABS QoI eb: 4\nLorenzo ratio = 34.2221\ninterp best interpAlgo = LINEAR\ninterp best direction = 0\nInterp ratio = 40.5390\nchoose interp\nsz3 tuning time = 0.010106s\nTuning time = 0.010341s\n====================================== END TUNING ======================================\nAPI_COMPRESS_PASS bytes=445206\n",
+      "stderr": "",
+      "seconds": 0.13339362499391427,
+      "emitted_output_bytes": 445206,
+      "emitted_output_sha256": "86a23aec002febf0402b51b55a04edcd77d5a5e4dea3a60bb142e92e49072fc6"
+    },
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "decompress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-r60l903z/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-r60l903z/output"
+      ],
+      "input_sha256": "86a23aec002febf0402b51b55a04edcd77d5a5e4dea3a60bb142e92e49072fc6",
+      "returncode": 0,
+      "stdout": "API_DECOMPRESS_PASS samples=1048576\n",
+      "stderr": "",
+      "seconds": 0.11940749999484979,
+      "emitted_output_bytes": 8388608,
+      "emitted_output_sha256": "667e635f266f3900d9d3b8c08e6700c35a03819481fac06cc2c13a4c64a45d12"
+    }
+  ],
+  "packet": ".aris/evidence/expanded_20261002/frontier/brisbane-1024/brisbane-1024-49-baseline.packet",
+  "packet_bytes": 445840,
+  "packet_sha256": "980a194216837140756accaa7cd61cdd5c981e2a5a6bf5493b9f78d669e28162",
+  "fees": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 546,
+    "body_bytes": 445206
+  },
+  "encode_seconds": 0.3477352920017438,
+  "decoder": {
+    "status": "DECODED",
+    "source_provided": false,
+    "meta": {
+      "codec": {
+        "backend": "qpet",
+        "base_bound": 10000.0,
+        "bound": 4.0,
+        "dtype": "float64",
+        "level": 0,
+        "transform": "direct"
+      },
+      "common_full_field_query_service": 1,
+      "epsilons": [
+        100,
+        1000
+      ],
+      "geo": {
+        "affine": [
+          100.0,
+          0.0,
+          14191300.0,
+          0.0,
+          -100.0,
+          -3294800.0
+        ],
+        "crs": "PROJCS[\"World_Mollweide\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Mollweide\"],PARAMETER[\"central_meridian\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "product": "GHS-BUILT-S R2023A E2020",
+        "resampling": false,
+        "shape": [
+          1024,
+          1024
+        ],
+        "units": "m2"
+      },
+      "missing_zero": true,
+      "output": "float64_integer",
+      "postprocessor": "clip(nearest_even_rint(a),0,10000);masked_zero",
+      "units": "m2"
+    },
+    "packet_sha256": "980a194216837140756accaa7cd61cdd5c981e2a5a6bf5493b9f78d669e28162",
+    "numerator_sha256": "efe4db71894df3bf6db7604205d704ce777e2101eec60dc2d6650a46e78ac92e",
+    "decode_seconds": 0.1556096249987604,
+    "native_commands": [
+      {
+        "argv": [
+          "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+          "decompress",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-ypieetts/input",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-ypieetts/output"
+        ],
+        "input_sha256": "86a23aec002febf0402b51b55a04edcd77d5a5e4dea3a60bb142e92e49072fc6",
+        "returncode": 0,
+        "stdout": "API_DECOMPRESS_PASS samples=1048576\n",
+        "stderr": "",
+        "seconds": 0.0994700829978683,
+        "emitted_output_bytes": 8388608,
+        "emitted_output_sha256": "667e635f266f3900d9d3b8c08e6700c35a03819481fac06cc2c13a4c64a45d12"
+      }
+    ],
+    "process_peak_rss_bytes": 307412992,
+    "rss_scope": "macOS peak bytes; persistent source-free decoder"
+  },
+  "audit": {
+    "max_rectangle_numerator": 220333,
+    "denominator": 1,
+    "max_rectangle_error": 220333.0,
+    "max_abs_prefix_numerator": 220333,
+    "range_violations": 0,
+    "range_violation_fraction": 0.0,
+    "integer_violations": 0,
+    "changed": 375222,
+    "mask_ok": true,
+    "protected_ok": true,
+    "valid_samples": 1048576
+  },
+  "mechanism": {},
+  "legal_at": {
+    "25": false,
+    "50": false,
+    "100": false,
+    "250": false,
+    "500": false,
+    "1000": false,
+    "2500": false,
+    "5000": false
+  },
+  "elapsed_seconds": 2.4624846250007977
+}

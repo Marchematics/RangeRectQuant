@@ -1,0 +1,162 @@
+{
+  "id": "manila-512-49-baseline",
+  "configuration": {
+    "family": "baseline",
+    "config": {
+      "backend": "qpet",
+      "dtype": "float64",
+      "level": 0,
+      "base_bound": 10000.0,
+      "bound": 4.0,
+      "transform": "direct"
+    }
+  },
+  "status": "DECODED_AND_AUDITED",
+  "native_encoder_info": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 544,
+    "body_bytes": 162008,
+    "raw_native_pointwise_max_error": 4.0,
+    "raw_native_negative_values": 95000,
+    "raw_native_above_range_values": 11
+  },
+  "native_encode_commands": [
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "compress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-qbf4fyat/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-qbf4fyat/output",
+        "512",
+        "512",
+        "0",
+        "10000.0",
+        "4.0",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-qbf4fyat/qoi.config"
+      ],
+      "input_sha256": "10307bd210f6f958a827e08623f92fefb49f2a50b33fa77ff69497d666a2bf8d",
+      "returncode": 0,
+      "stdout": "====================================== BEGIN TUNING ================================\nABS QoI eb: 4\nLorenzo ratio = 66.9394\ninterp best interpAlgo = LINEAR\ninterp best direction = 0\nInterp ratio = 79.4247\nchoose interp\nsz3 tuning time = 0.00141s\nTuning time = 0.001585s\n====================================== END TUNING ======================================\nAPI_COMPRESS_PASS bytes=162008\n",
+      "stderr": "",
+      "seconds": 0.030547166999895126,
+      "emitted_output_bytes": 162008,
+      "emitted_output_sha256": "77988ea9b1981ec55fd03117659b9182b654cab1bd92235a773801bc199138bf"
+    },
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "decompress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-r6pl82j6/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-r6pl82j6/output"
+      ],
+      "input_sha256": "77988ea9b1981ec55fd03117659b9182b654cab1bd92235a773801bc199138bf",
+      "returncode": 0,
+      "stdout": "API_DECOMPRESS_PASS samples=262144\n",
+      "stderr": "",
+      "seconds": 0.026918916002614424,
+      "emitted_output_bytes": 2097152,
+      "emitted_output_sha256": "bf63d31610692b49ef56525ff116ec567976c16e3650ed4309a3c0dcfc5a33ee"
+    }
+  ],
+  "packet": ".aris/evidence/expanded_20261002/frontier/manila-512/manila-512-49-baseline.packet",
+  "packet_bytes": 162640,
+  "packet_sha256": "4ac51b89fd63afeedaa1646adedc7fca99f55aadc3b754e090041530aa34c9a4",
+  "fees": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 544,
+    "body_bytes": 162008
+  },
+  "encode_seconds": 0.08382004200393567,
+  "decoder": {
+    "status": "DECODED",
+    "source_provided": false,
+    "meta": {
+      "codec": {
+        "backend": "qpet",
+        "base_bound": 10000.0,
+        "bound": 4.0,
+        "dtype": "float64",
+        "level": 0,
+        "transform": "direct"
+      },
+      "common_full_field_query_service": 1,
+      "epsilons": [
+        100,
+        1000
+      ],
+      "geo": {
+        "affine": [
+          100.0,
+          0.0,
+          11856100.0,
+          0.0,
+          -100.0,
+          1823900.0
+        ],
+        "crs": "PROJCS[\"World_Mollweide\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Mollweide\"],PARAMETER[\"central_meridian\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "product": "GHS-BUILT-S R2023A E2020",
+        "resampling": false,
+        "shape": [
+          512,
+          512
+        ],
+        "units": "m2"
+      },
+      "missing_zero": true,
+      "output": "float64_integer",
+      "postprocessor": "clip(nearest_even_rint(a),0,10000);masked_zero",
+      "units": "m2"
+    },
+    "packet_sha256": "4ac51b89fd63afeedaa1646adedc7fca99f55aadc3b754e090041530aa34c9a4",
+    "numerator_sha256": "8af5489351dc69c9dc037268c4040b1a3d72e2036931f3bbaa3e8805f00bb789",
+    "decode_seconds": 0.03732879099698039,
+    "native_commands": [
+      {
+        "argv": [
+          "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+          "decompress",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-ucmqmdh5/input",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-ucmqmdh5/output"
+        ],
+        "input_sha256": "77988ea9b1981ec55fd03117659b9182b654cab1bd92235a773801bc199138bf",
+        "returncode": 0,
+        "stdout": "API_DECOMPRESS_PASS samples=262144\n",
+        "stderr": "",
+        "seconds": 0.026573834002192598,
+        "emitted_output_bytes": 2097152,
+        "emitted_output_sha256": "bf63d31610692b49ef56525ff116ec567976c16e3650ed4309a3c0dcfc5a33ee"
+      }
+    ],
+    "process_peak_rss_bytes": 138805248,
+    "rss_scope": "macOS peak bytes; persistent source-free decoder"
+  },
+  "audit": {
+    "max_rectangle_numerator": 42949,
+    "denominator": 1,
+    "max_rectangle_error": 42949.0,
+    "max_abs_prefix_numerator": 42949,
+    "range_violations": 0,
+    "range_violation_fraction": 0.0,
+    "integer_violations": 0,
+    "changed": 118490,
+    "mask_ok": true,
+    "protected_ok": true,
+    "valid_samples": 262144
+  },
+  "mechanism": {},
+  "legal_at": {
+    "25": false,
+    "50": false,
+    "100": false,
+    "250": false,
+    "500": false,
+    "1000": false,
+    "2500": false,
+    "5000": false
+  },
+  "elapsed_seconds": 0.38884862499980954
+}

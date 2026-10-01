@@ -1,0 +1,162 @@
+{
+  "id": "toronto-1024-49-baseline",
+  "configuration": {
+    "family": "baseline",
+    "config": {
+      "backend": "qpet",
+      "dtype": "float64",
+      "level": 0,
+      "base_bound": 10000.0,
+      "bound": 4.0,
+      "transform": "direct"
+    }
+  },
+  "status": "DECODED_AND_AUDITED",
+  "native_encoder_info": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 545,
+    "body_bytes": 500686,
+    "raw_native_pointwise_max_error": 4.0,
+    "raw_native_negative_values": 485119,
+    "raw_native_above_range_values": 31
+  },
+  "native_encode_commands": [
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "compress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-utdbejam/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-utdbejam/output",
+        "1024",
+        "1024",
+        "0",
+        "10000.0",
+        "4.0",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-utdbejam/qoi.config"
+      ],
+      "input_sha256": "464d50b4ec4a2ebe1a87d03cf13e11041ff82d591ca7f41f013c94534a253f31",
+      "returncode": 0,
+      "stdout": "====================================== BEGIN TUNING ================================\nABS QoI eb: 4\nLorenzo ratio = 16.0990\ninterp best interpAlgo = LINEAR\ninterp best direction = 0\nInterp ratio = 18.6744\nchoose interp\nsz3 tuning time = 0.00632s\nTuning time = 0.006544s\n====================================== END TUNING ======================================\nAPI_COMPRESS_PASS bytes=500686\n",
+      "stderr": "",
+      "seconds": 0.07562416699511232,
+      "emitted_output_bytes": 500686,
+      "emitted_output_sha256": "6ec91865a24c4a4449e0fffa6499301513a984229bde12d377e2cad455af99ae"
+    },
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "decompress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-5aip6r_5/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-5aip6r_5/output"
+      ],
+      "input_sha256": "6ec91865a24c4a4449e0fffa6499301513a984229bde12d377e2cad455af99ae",
+      "returncode": 0,
+      "stdout": "API_DECOMPRESS_PASS samples=1048576\n",
+      "stderr": "",
+      "seconds": 0.07040058300481178,
+      "emitted_output_bytes": 8388608,
+      "emitted_output_sha256": "e6aa9b3d14cad41fdbc752e8c28018b286db4855cf8f5694a7d9424b9e05f299"
+    }
+  ],
+  "packet": ".aris/evidence/expanded_20261002/frontier/toronto-1024/toronto-1024-49-baseline.packet",
+  "packet_bytes": 501319,
+  "packet_sha256": "d3d4d474bad69cd7851fe4e01b1eec298a9ae57579463d52cfdc305e4daf974a",
+  "fees": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 545,
+    "body_bytes": 500686
+  },
+  "encode_seconds": 0.227880834005191,
+  "decoder": {
+    "status": "DECODED",
+    "source_provided": false,
+    "meta": {
+      "codec": {
+        "backend": "qpet",
+        "base_bound": 10000.0,
+        "bound": 4.0,
+        "dtype": "float64",
+        "level": 0,
+        "transform": "direct"
+      },
+      "common_full_field_query_service": 1,
+      "epsilons": [
+        100,
+        1000
+      ],
+      "geo": {
+        "affine": [
+          100.0,
+          0.0,
+          -6553800.0,
+          0.0,
+          -100.0,
+          5250600.0
+        ],
+        "crs": "PROJCS[\"World_Mollweide\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Mollweide\"],PARAMETER[\"central_meridian\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "product": "GHS-BUILT-S R2023A E2020",
+        "resampling": false,
+        "shape": [
+          1024,
+          1024
+        ],
+        "units": "m2"
+      },
+      "missing_zero": true,
+      "output": "float64_integer",
+      "postprocessor": "clip(nearest_even_rint(a),0,10000);masked_zero",
+      "units": "m2"
+    },
+    "packet_sha256": "d3d4d474bad69cd7851fe4e01b1eec298a9ae57579463d52cfdc305e4daf974a",
+    "numerator_sha256": "bfb247303f1b090f4305ff57d6e6cbf5a88ffc8636bf4b43316b8ab93523f998",
+    "decode_seconds": 0.11457099999825004,
+    "native_commands": [
+      {
+        "argv": [
+          "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+          "decompress",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-ee82matm/input",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-ee82matm/output"
+        ],
+        "input_sha256": "6ec91865a24c4a4449e0fffa6499301513a984229bde12d377e2cad455af99ae",
+        "returncode": 0,
+        "stdout": "API_DECOMPRESS_PASS samples=1048576\n",
+        "stderr": "",
+        "seconds": 0.07230995899590198,
+        "emitted_output_bytes": 8388608,
+        "emitted_output_sha256": "e6aa9b3d14cad41fdbc752e8c28018b286db4855cf8f5694a7d9424b9e05f299"
+      }
+    ],
+    "process_peak_rss_bytes": 265207808,
+    "rss_scope": "macOS peak bytes; persistent source-free decoder"
+  },
+  "audit": {
+    "max_rectangle_numerator": 245402,
+    "denominator": 1,
+    "max_rectangle_error": 245402.0,
+    "max_abs_prefix_numerator": 245402,
+    "range_violations": 0,
+    "range_violation_fraction": 0.0,
+    "integer_violations": 0,
+    "changed": 413402,
+    "mask_ok": true,
+    "protected_ok": true,
+    "valid_samples": 1048576
+  },
+  "mechanism": {},
+  "legal_at": {
+    "25": false,
+    "50": false,
+    "100": false,
+    "250": false,
+    "500": false,
+    "1000": false,
+    "2500": false,
+    "5000": false
+  },
+  "elapsed_seconds": 3.091406958999869
+}

@@ -1,0 +1,162 @@
+{
+  "id": "tehran-1024-50-baseline",
+  "configuration": {
+    "family": "baseline",
+    "config": {
+      "backend": "qpet",
+      "dtype": "float64",
+      "level": 0,
+      "base_bound": 10000.0,
+      "bound": 16.0,
+      "transform": "direct"
+    }
+  },
+  "status": "DECODED_AND_AUDITED",
+  "native_encoder_info": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 544,
+    "body_bytes": 274875,
+    "raw_native_pointwise_max_error": 16.0,
+    "raw_native_negative_values": 457425,
+    "raw_native_above_range_values": 7
+  },
+  "native_encode_commands": [
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "compress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-dwi0oavd/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-dwi0oavd/output",
+        "1024",
+        "1024",
+        "0",
+        "10000.0",
+        "16.0",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-dwi0oavd/qoi.config"
+      ],
+      "input_sha256": "8e3d560c66fd9c1637568e220653bbe765b23d8db969b7827633b6d670866e97",
+      "returncode": 0,
+      "stdout": "====================================== BEGIN TUNING ================================\nABS QoI eb: 16\nLorenzo ratio = 47.5861\ninterp best interpAlgo = LINEAR\ninterp best direction = 0\nInterp ratio = 51.2420\nchoose interp\nsz3 tuning time = 0.004842s\nTuning time = 0.00594s\n====================================== END TUNING ======================================\nAPI_COMPRESS_PASS bytes=274875\n",
+      "stderr": "",
+      "seconds": 0.06990108299942221,
+      "emitted_output_bytes": 274875,
+      "emitted_output_sha256": "86f3692fe6b434ba30f371853a4ecf307782d15b7bef7ba3b321323131398a6e"
+    },
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "decompress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-4v02a4ic/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-4v02a4ic/output"
+      ],
+      "input_sha256": "86f3692fe6b434ba30f371853a4ecf307782d15b7bef7ba3b321323131398a6e",
+      "returncode": 0,
+      "stdout": "API_DECOMPRESS_PASS samples=1048576\n",
+      "stderr": "",
+      "seconds": 0.062378791997616645,
+      "emitted_output_bytes": 8388608,
+      "emitted_output_sha256": "a046ae4a0538d372633dea9fd283fd4b8dd6cb30aa011bb313fc531599e75bef"
+    }
+  ],
+  "packet": ".aris/evidence/expanded_20261002/frontier/tehran-1024/tehran-1024-50-baseline.packet",
+  "packet_bytes": 275507,
+  "packet_sha256": "c591b1f1bd4aa4ad71b7f2d813cdf9bdc2b86b158cfa192a68187281e795e05c",
+  "fees": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 544,
+    "body_bytes": 274875
+  },
+  "encode_seconds": 0.2022872089946759,
+  "decoder": {
+    "status": "DECODED",
+    "source_provided": false,
+    "meta": {
+      "codec": {
+        "backend": "qpet",
+        "base_bound": 10000.0,
+        "bound": 16.0,
+        "dtype": "float64",
+        "level": 0,
+        "transform": "direct"
+      },
+      "common_full_field_query_service": 1,
+      "epsilons": [
+        100,
+        1000
+      ],
+      "geo": {
+        "affine": [
+          100.0,
+          0.0,
+          4478200.0,
+          0.0,
+          -100.0,
+          4353900.0
+        ],
+        "crs": "PROJCS[\"World_Mollweide\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Mollweide\"],PARAMETER[\"central_meridian\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "product": "GHS-BUILT-S R2023A E2020",
+        "resampling": false,
+        "shape": [
+          1024,
+          1024
+        ],
+        "units": "m2"
+      },
+      "missing_zero": true,
+      "output": "float64_integer",
+      "postprocessor": "clip(nearest_even_rint(a),0,10000);masked_zero",
+      "units": "m2"
+    },
+    "packet_sha256": "c591b1f1bd4aa4ad71b7f2d813cdf9bdc2b86b158cfa192a68187281e795e05c",
+    "numerator_sha256": "2c4195c2fb4d2320d4550ef9e4b7c4d65542248b994ed33bf2817df8252bf22c",
+    "decode_seconds": 0.10278529200149933,
+    "native_commands": [
+      {
+        "argv": [
+          "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+          "decompress",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-5wba8ivw/input",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-5wba8ivw/output"
+        ],
+        "input_sha256": "86f3692fe6b434ba30f371853a4ecf307782d15b7bef7ba3b321323131398a6e",
+        "returncode": 0,
+        "stdout": "API_DECOMPRESS_PASS samples=1048576\n",
+        "stderr": "",
+        "seconds": 0.06295208400115371,
+        "emitted_output_bytes": 8388608,
+        "emitted_output_sha256": "a046ae4a0538d372633dea9fd283fd4b8dd6cb30aa011bb313fc531599e75bef"
+      }
+    ],
+    "process_peak_rss_bytes": 282345472,
+    "rss_scope": "macOS peak bytes; persistent source-free decoder"
+  },
+  "audit": {
+    "max_rectangle_numerator": 1031651,
+    "denominator": 1,
+    "max_rectangle_error": 1031651.0,
+    "max_abs_prefix_numerator": 1031651,
+    "range_violations": 0,
+    "range_violation_fraction": 0.0,
+    "integer_violations": 0,
+    "changed": 515557,
+    "mask_ok": true,
+    "protected_ok": true,
+    "valid_samples": 1048576
+  },
+  "mechanism": {},
+  "legal_at": {
+    "25": false,
+    "50": false,
+    "100": false,
+    "250": false,
+    "500": false,
+    "1000": false,
+    "2500": false,
+    "5000": false
+  },
+  "elapsed_seconds": 2.3944763749968843
+}

@@ -1,0 +1,135 @@
+{
+  "id": "rio_de_janeiro-35-baseline",
+  "site": "rio_de_janeiro",
+  "configuration": {
+    "family": "baseline",
+    "config": {
+      "backend": "mgard",
+      "dtype": "float64",
+      "reorder": 1,
+      "bound": 1.0,
+      "transform": "direct"
+    }
+  },
+  "status": "DECODED_AND_AUDITED",
+  "source_sha256": "0b7584249e3083d13c9d47cd4f451c60859778660ade980090d777ecb24053c5",
+  "packet": ".aris/evidence/expanded_20261002/water/rio_de_janeiro-35-baseline.packet",
+  "packet_bytes": 122384,
+  "fees": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "metadata_bytes": 446,
+    "body_bytes": 121850
+  },
+  "packet_sha256": "caa5c20f8588745aa08aa6153eb9c955f23a6036ea02c0c320486336748c45f0",
+  "decoder": {
+    "status": "DECODED",
+    "source_provided": false,
+    "meta": {
+      "cap": 100,
+      "codec": {
+        "backend": "mgard",
+        "bound": 1.0,
+        "dtype": "float64",
+        "reorder": 1,
+        "transform": "direct"
+      },
+      "geo": {
+        "affine": [
+          0.00025,
+          0.0,
+          -43.24624999999992,
+          0.0,
+          -0.00025,
+          -22.84225000000007
+        ],
+        "crs": "GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0,AUTHORITY[\"EPSG\",\"8901\"]],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AXIS[\"Latitude\",NORTH],AXIS[\"Longitude\",EAST],AUTHORITY[\"EPSG\",\"4326\"]]",
+        "product": "JRC GSW occurrence v1.5 1984\u20132024",
+        "resampling": false,
+        "units": "percentage points"
+      },
+      "postprocess": "nearest-even integer;clip [0,100];missing zero",
+      "units": "percentage-point sums"
+    },
+    "decode_seconds": 0.09095608299685409,
+    "numerator_sha256": "80ec101c758f3b3b94af8c60f556974eaae60bff0a5cb770139b0167d0772b02",
+    "native_commands": [
+      {
+        "argv": [
+          "/Users/nathmath/dcc/LinewiseROI/.validation/native-controls-20261001/native-mgard-driver-attempt2",
+          "decode",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-tb0d22gt/input",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-tb0d22gt/output"
+        ],
+        "input_sha256": "e8dc2bc556f54ef08c4c3c098d70aecad29df66ba55959c95c157344577474f2",
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "seconds": 0.0812818749982398,
+        "emitted_output_bytes": 2097152,
+        "emitted_output_sha256": "e2040eb21c125b1f23ed09d8fb827a8167b5a7e999c3ec3b7515d60ac028dd0a"
+      }
+    ]
+  },
+  "audit": {
+    "max_rectangle_numerator": 0,
+    "denominator": 1,
+    "max_rectangle_error": 0.0,
+    "max_abs_prefix_numerator": 0,
+    "range_violations": 0,
+    "range_violation_fraction": 0.0,
+    "integer_violations": 0,
+    "changed": 0,
+    "mask_ok": true,
+    "protected_ok": true,
+    "valid_samples": 262144
+  },
+  "encode_seconds": 0.19585341699712444,
+  "legal_at": {
+    "5": true,
+    "10": true,
+    "25": true,
+    "50": true,
+    "100": true,
+    "250": true,
+    "500": true,
+    "1000": true
+  },
+  "native_encode_commands": [
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/native-controls-20261001/native-mgard-driver-attempt2",
+        "encode",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-rkhgri77/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-rkhgri77/output",
+        "512",
+        "512",
+        "1.0",
+        "1"
+      ],
+      "input_sha256": "097fafc61a5d2213a3256874a3c69c0fd9b621173a6faa08d7e1642c9daf1130",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.10554470799979754,
+      "emitted_output_bytes": 121850,
+      "emitted_output_sha256": "e8dc2bc556f54ef08c4c3c098d70aecad29df66ba55959c95c157344577474f2"
+    },
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/native-controls-20261001/native-mgard-driver-attempt2",
+        "decode",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-o7fh0wx6/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-o7fh0wx6/output"
+      ],
+      "input_sha256": "e8dc2bc556f54ef08c4c3c098d70aecad29df66ba55959c95c157344577474f2",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.076420124998549,
+      "emitted_output_bytes": 2097152,
+      "emitted_output_sha256": "e2040eb21c125b1f23ed09d8fb827a8167b5a7e999c3ec3b7515d60ac028dd0a"
+    }
+  ]
+}

@@ -1,0 +1,162 @@
+{
+  "id": "addis_ababa-1024-50-baseline",
+  "configuration": {
+    "family": "baseline",
+    "config": {
+      "backend": "qpet",
+      "dtype": "float64",
+      "level": 0,
+      "base_bound": 10000.0,
+      "bound": 16.0,
+      "transform": "direct"
+    }
+  },
+  "status": "DECODED_AND_AUDITED",
+  "native_encoder_info": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 545,
+    "body_bytes": 406144,
+    "raw_native_pointwise_max_error": 16.0,
+    "raw_native_negative_values": 398169,
+    "raw_native_above_range_values": 2
+  },
+  "native_encode_commands": [
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "compress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-4b5eshka/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-4b5eshka/output",
+        "1024",
+        "1024",
+        "0",
+        "10000.0",
+        "16.0",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-4b5eshka/qoi.config"
+      ],
+      "input_sha256": "d8e4ecc17892b2655f475dce7bc1d13b0feced0beda86ef952637b65e8d87d7e",
+      "returncode": 0,
+      "stdout": "====================================== BEGIN TUNING ================================\nABS QoI eb: 16\nLorenzo ratio = 19.1347\ninterp best interpAlgo = LINEAR\ninterp best direction = 1\nInterp ratio = 21.6622\nchoose interp\nsz3 tuning time = 0.005594s\nTuning time = 0.005885s\n====================================== END TUNING ======================================\nAPI_COMPRESS_PASS bytes=406144\n",
+      "stderr": "",
+      "seconds": 0.07579975000408012,
+      "emitted_output_bytes": 406144,
+      "emitted_output_sha256": "b06f7f25d4386224de08289d0c6f40adc3bddfa62bdfe3ccc5ddfd111b630058"
+    },
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "decompress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-dbkl8hiq/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-dbkl8hiq/output"
+      ],
+      "input_sha256": "b06f7f25d4386224de08289d0c6f40adc3bddfa62bdfe3ccc5ddfd111b630058",
+      "returncode": 0,
+      "stdout": "API_DECOMPRESS_PASS samples=1048576\n",
+      "stderr": "",
+      "seconds": 0.11968124999839347,
+      "emitted_output_bytes": 8388608,
+      "emitted_output_sha256": "855f5e7025cfd3bbff8ed708e0b9fe548e755200f91725defb1ed6b65e036d29"
+    }
+  ],
+  "packet": ".aris/evidence/expanded_20261002/frontier/addis_ababa-1024/addis_ababa-1024-50-baseline.packet",
+  "packet_bytes": 406777,
+  "packet_sha256": "0ee0d73addb4a68256feeb8b2fc9c552864a0ecbc1e13a866bd5bdaeb37fcafd",
+  "fees": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 545,
+    "body_bytes": 406144
+  },
+  "encode_seconds": 0.3133312499994645,
+  "decoder": {
+    "status": "DECODED",
+    "source_provided": false,
+    "meta": {
+      "codec": {
+        "backend": "qpet",
+        "base_bound": 10000.0,
+        "bound": 16.0,
+        "dtype": "float64",
+        "level": 0,
+        "transform": "direct"
+      },
+      "common_full_field_query_service": 1,
+      "epsilons": [
+        100,
+        1000
+      ],
+      "geo": {
+        "affine": [
+          100.0,
+          0.0,
+          3802300.0,
+          0.0,
+          -100.0,
+          1165400.0
+        ],
+        "crs": "PROJCS[\"World_Mollweide\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Mollweide\"],PARAMETER[\"central_meridian\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "product": "GHS-BUILT-S R2023A E2020",
+        "resampling": false,
+        "shape": [
+          1024,
+          1024
+        ],
+        "units": "m2"
+      },
+      "missing_zero": true,
+      "output": "float64_integer",
+      "postprocessor": "clip(nearest_even_rint(a),0,10000);masked_zero",
+      "units": "m2"
+    },
+    "packet_sha256": "0ee0d73addb4a68256feeb8b2fc9c552864a0ecbc1e13a866bd5bdaeb37fcafd",
+    "numerator_sha256": "f1b214a848f6157531cf59ab80078f3bf83ce1fa446172d50b9726eedeeafc52",
+    "decode_seconds": 0.16848941599891987,
+    "native_commands": [
+      {
+        "argv": [
+          "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+          "decompress",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-kvpalntb/input",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-kvpalntb/output"
+        ],
+        "input_sha256": "b06f7f25d4386224de08289d0c6f40adc3bddfa62bdfe3ccc5ddfd111b630058",
+        "returncode": 0,
+        "stdout": "API_DECOMPRESS_PASS samples=1048576\n",
+        "stderr": "",
+        "seconds": 0.0986516249977285,
+        "emitted_output_bytes": 8388608,
+        "emitted_output_sha256": "855f5e7025cfd3bbff8ed708e0b9fe548e755200f91725defb1ed6b65e036d29"
+      }
+    ],
+    "process_peak_rss_bytes": 254820352,
+    "rss_scope": "macOS peak bytes; persistent source-free decoder"
+  },
+  "audit": {
+    "max_rectangle_numerator": 1467689,
+    "denominator": 1,
+    "max_rectangle_error": 1467689.0,
+    "max_abs_prefix_numerator": 1467689,
+    "range_violations": 0,
+    "range_violation_fraction": 0.0,
+    "integer_violations": 0,
+    "changed": 592428,
+    "mask_ok": true,
+    "protected_ok": true,
+    "valid_samples": 1048576
+  },
+  "mechanism": {},
+  "legal_at": {
+    "25": false,
+    "50": false,
+    "100": false,
+    "250": false,
+    "500": false,
+    "1000": false,
+    "2500": false,
+    "5000": false
+  },
+  "elapsed_seconds": 2.5127361250051763
+}

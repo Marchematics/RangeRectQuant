@@ -1,0 +1,162 @@
+{
+  "id": "toronto-1024-47-baseline",
+  "configuration": {
+    "family": "baseline",
+    "config": {
+      "backend": "qpet",
+      "dtype": "float64",
+      "level": 0,
+      "base_bound": 10000.0,
+      "bound": 0.49,
+      "transform": "direct"
+    }
+  },
+  "status": "DECODED_AND_AUDITED",
+  "native_encoder_info": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 548,
+    "body_bytes": 723170,
+    "raw_native_pointwise_max_error": 0.49,
+    "raw_native_negative_values": 256741,
+    "raw_native_above_range_values": 25
+  },
+  "native_encode_commands": [
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "compress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-1n0nvpro/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-1n0nvpro/output",
+        "1024",
+        "1024",
+        "0",
+        "10000.0",
+        "0.49",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-1n0nvpro/qoi.config"
+      ],
+      "input_sha256": "464d50b4ec4a2ebe1a87d03cf13e11041ff82d591ca7f41f013c94534a253f31",
+      "returncode": 0,
+      "stdout": "====================================== BEGIN TUNING ================================\nABS QoI eb: 0.49\nLorenzo ratio = 7.5624\ninterp best interpAlgo = LINEAR\ninterp best direction = 0\nInterp ratio = 8.9927\nchoose interp\nsz3 tuning time = 0.015808s\nTuning time = 0.016972s\n====================================== END TUNING ======================================\nAPI_COMPRESS_PASS bytes=723170\n",
+      "stderr": "",
+      "seconds": 0.1029915830004029,
+      "emitted_output_bytes": 723170,
+      "emitted_output_sha256": "bafe4f31a333ccf1777b11d6e7b7d94eddff8dc59003e4f68b2348968177415c"
+    },
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "decompress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-f834fqzh/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-f834fqzh/output"
+      ],
+      "input_sha256": "bafe4f31a333ccf1777b11d6e7b7d94eddff8dc59003e4f68b2348968177415c",
+      "returncode": 0,
+      "stdout": "API_DECOMPRESS_PASS samples=1048576\n",
+      "stderr": "",
+      "seconds": 0.10447104199556634,
+      "emitted_output_bytes": 8388608,
+      "emitted_output_sha256": "a5618ea8050687303aa5647efa4875f72064a04456341146562a4d5f11b027cf"
+    }
+  ],
+  "packet": ".aris/evidence/expanded_20261002/frontier/toronto-1024/toronto-1024-47-baseline.packet",
+  "packet_bytes": 723806,
+  "packet_sha256": "0bf0f298459bc52120d035264d165f63163edf98711c0dd0ea403db357ba4e70",
+  "fees": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 548,
+    "body_bytes": 723170
+  },
+  "encode_seconds": 0.28427516700321576,
+  "decoder": {
+    "status": "DECODED",
+    "source_provided": false,
+    "meta": {
+      "codec": {
+        "backend": "qpet",
+        "base_bound": 10000.0,
+        "bound": 0.49,
+        "dtype": "float64",
+        "level": 0,
+        "transform": "direct"
+      },
+      "common_full_field_query_service": 1,
+      "epsilons": [
+        100,
+        1000
+      ],
+      "geo": {
+        "affine": [
+          100.0,
+          0.0,
+          -6553800.0,
+          0.0,
+          -100.0,
+          5250600.0
+        ],
+        "crs": "PROJCS[\"World_Mollweide\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Mollweide\"],PARAMETER[\"central_meridian\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "product": "GHS-BUILT-S R2023A E2020",
+        "resampling": false,
+        "shape": [
+          1024,
+          1024
+        ],
+        "units": "m2"
+      },
+      "missing_zero": true,
+      "output": "float64_integer",
+      "postprocessor": "clip(nearest_even_rint(a),0,10000);masked_zero",
+      "units": "m2"
+    },
+    "packet_sha256": "0bf0f298459bc52120d035264d165f63163edf98711c0dd0ea403db357ba4e70",
+    "numerator_sha256": "66c994ca0e57069985044d32304d97c1c4632b06f43471d2645aee4bcd9c1e97",
+    "decode_seconds": 0.11927550000109477,
+    "native_commands": [
+      {
+        "argv": [
+          "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+          "decompress",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-6jen14op/input",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-6jen14op/output"
+        ],
+        "input_sha256": "bafe4f31a333ccf1777b11d6e7b7d94eddff8dc59003e4f68b2348968177415c",
+        "returncode": 0,
+        "stdout": "API_DECOMPRESS_PASS samples=1048576\n",
+        "stderr": "",
+        "seconds": 0.08107591699808836,
+        "emitted_output_bytes": 8388608,
+        "emitted_output_sha256": "a5618ea8050687303aa5647efa4875f72064a04456341146562a4d5f11b027cf"
+      }
+    ],
+    "process_peak_rss_bytes": 265207808,
+    "rss_scope": "macOS peak bytes; persistent source-free decoder"
+  },
+  "audit": {
+    "max_rectangle_numerator": 0,
+    "denominator": 1,
+    "max_rectangle_error": 0.0,
+    "max_abs_prefix_numerator": 0,
+    "range_violations": 0,
+    "range_violation_fraction": 0.0,
+    "integer_violations": 0,
+    "changed": 0,
+    "mask_ok": true,
+    "protected_ok": true,
+    "valid_samples": 1048576
+  },
+  "mechanism": {},
+  "legal_at": {
+    "25": true,
+    "50": true,
+    "100": true,
+    "250": true,
+    "500": true,
+    "1000": true,
+    "2500": true,
+    "5000": true
+  },
+  "elapsed_seconds": 0.4409688330051722
+}

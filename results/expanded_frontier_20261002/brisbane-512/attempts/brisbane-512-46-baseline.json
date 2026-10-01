@@ -1,0 +1,158 @@
+{
+  "id": "brisbane-512-46-baseline",
+  "configuration": {
+    "family": "baseline",
+    "config": {
+      "backend": "mgard",
+      "dtype": "float64",
+      "reorder": 1,
+      "bound": 16.0,
+      "transform": "direct"
+    }
+  },
+  "status": "DECODED_AND_AUDITED",
+  "native_encoder_info": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 540,
+    "body_bytes": 398534,
+    "raw_native_pointwise_max_error": 0.6386627863054352,
+    "raw_native_negative_values": 54759,
+    "raw_native_above_range_values": 17
+  },
+  "native_encode_commands": [
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/native-controls-20261001/native-mgard-driver-attempt2",
+        "encode",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-p73xbwns/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-p73xbwns/output",
+        "512",
+        "512",
+        "16.0",
+        "1"
+      ],
+      "input_sha256": "c052c763a31828844a3ae3bed9218d8bda7d62449e31f85e60db06c04c01f0c5",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.33614066699374234,
+      "emitted_output_bytes": 398534,
+      "emitted_output_sha256": "0aecddcbab7ee3de25d467bf4acd810b9cc1f028fb473e4fec2d7202ac995796"
+    },
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/native-controls-20261001/native-mgard-driver-attempt2",
+        "decode",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-wmkuslb3/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-wmkuslb3/output"
+      ],
+      "input_sha256": "0aecddcbab7ee3de25d467bf4acd810b9cc1f028fb473e4fec2d7202ac995796",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.1443420830037212,
+      "emitted_output_bytes": 2097152,
+      "emitted_output_sha256": "292eadb40731dc2024db539cd1ed5defdb106f56981a75ef411cf2023aa22f84"
+    }
+  ],
+  "packet": ".aris/evidence/expanded_20261002/frontier/brisbane-512/brisbane-512-46-baseline.packet",
+  "packet_bytes": 399162,
+  "packet_sha256": "11df4b292598444feb5926cb81ab361d4c70887235cf0f97eebd6a26e3fc8dcf",
+  "fees": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 540,
+    "body_bytes": 398534
+  },
+  "encode_seconds": 0.5156194169976516,
+  "decoder": {
+    "status": "DECODED",
+    "source_provided": false,
+    "meta": {
+      "codec": {
+        "backend": "mgard",
+        "bound": 16.0,
+        "dtype": "float64",
+        "reorder": 1,
+        "transform": "direct"
+      },
+      "common_full_field_query_service": 1,
+      "epsilons": [
+        100,
+        1000
+      ],
+      "geo": {
+        "affine": [
+          100.0,
+          0.0,
+          14216900.0,
+          0.0,
+          -100.0,
+          -3320400.0
+        ],
+        "crs": "PROJCS[\"World_Mollweide\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Mollweide\"],PARAMETER[\"central_meridian\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "product": "GHS-BUILT-S R2023A E2020",
+        "resampling": false,
+        "shape": [
+          512,
+          512
+        ],
+        "units": "m2"
+      },
+      "missing_zero": true,
+      "output": "float64_integer",
+      "postprocessor": "clip(nearest_even_rint(a),0,10000);masked_zero",
+      "units": "m2"
+    },
+    "packet_sha256": "11df4b292598444feb5926cb81ab361d4c70887235cf0f97eebd6a26e3fc8dcf",
+    "numerator_sha256": "7135dd0fbb4a54f128778190f29bc13d27575d1aad9f734e7dd7c74afd4cee31",
+    "decode_seconds": 0.1363627919999999,
+    "native_commands": [
+      {
+        "argv": [
+          "/Users/nathmath/dcc/LinewiseROI/.validation/native-controls-20261001/native-mgard-driver-attempt2",
+          "decode",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-3q9jnv4q/input",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-3q9jnv4q/output"
+        ],
+        "input_sha256": "0aecddcbab7ee3de25d467bf4acd810b9cc1f028fb473e4fec2d7202ac995796",
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "seconds": 0.11446720799722243,
+        "emitted_output_bytes": 2097152,
+        "emitted_output_sha256": "292eadb40731dc2024db539cd1ed5defdb106f56981a75ef411cf2023aa22f84"
+      }
+    ],
+    "process_peak_rss_bytes": 146423808,
+    "rss_scope": "macOS peak bytes; persistent source-free decoder"
+  },
+  "audit": {
+    "max_rectangle_numerator": 7,
+    "denominator": 1,
+    "max_rectangle_error": 7.0,
+    "max_abs_prefix_numerator": 7,
+    "range_violations": 0,
+    "range_violation_fraction": 0.0,
+    "integer_violations": 0,
+    "changed": 9,
+    "mask_ok": true,
+    "protected_ok": true,
+    "valid_samples": 262144
+  },
+  "mechanism": {},
+  "legal_at": {
+    "25": true,
+    "50": true,
+    "100": true,
+    "250": true,
+    "500": true,
+    "1000": true,
+    "2500": true,
+    "5000": true
+  },
+  "elapsed_seconds": 0.6666066670004511
+}

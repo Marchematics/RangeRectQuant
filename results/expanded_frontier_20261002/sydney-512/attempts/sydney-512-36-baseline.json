@@ -1,0 +1,179 @@
+{
+  "id": "sydney-512-36-baseline",
+  "configuration": {
+    "family": "baseline",
+    "config": {
+      "backend": "sz3",
+      "dtype": "float64",
+      "algorithm": "LORENZO_REG",
+      "bound": 4.0,
+      "transform": "direct"
+    }
+  },
+  "status": "DECODED_AND_AUDITED",
+  "native_encoder_info": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 549,
+    "body_bytes": 202951,
+    "raw_native_pointwise_max_error": 4.0,
+    "raw_native_negative_values": 115738,
+    "raw_native_above_range_values": 11
+  },
+  "native_encode_commands": [
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/native-controls-20261001/py/bin/python",
+        "/Users/nathmath/dcc/LinewiseROI/experiments/native_sz3_worker.py",
+        "encode",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-7zi2libs/input.npy",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-7zi2libs/output",
+        "--dtype",
+        "float64",
+        "--height",
+        "512",
+        "--width",
+        "512",
+        "--algorithm",
+        "LORENZO_REG",
+        "--bound",
+        "4.0"
+      ],
+      "input_sha256": "011c37e4b92f3458b00caa88cf793a9873e65d6d8ba67d9d761f96adae6e89a1",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.15882704200339504,
+      "emitted_output_bytes": 202951,
+      "emitted_output_sha256": "566f0d14f7cf04e22cacb88b4797b591b5647c18f6d4e9b7a410bbb3f3d42dec"
+    },
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/native-controls-20261001/py/bin/python",
+        "/Users/nathmath/dcc/LinewiseROI/experiments/native_sz3_worker.py",
+        "decode",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-0tqtmia0/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-0tqtmia0/output.npy",
+        "--dtype",
+        "float64",
+        "--height",
+        "512",
+        "--width",
+        "512"
+      ],
+      "input_sha256": "566f0d14f7cf04e22cacb88b4797b591b5647c18f6d4e9b7a410bbb3f3d42dec",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.14465795900468947,
+      "emitted_output_bytes": 2097280,
+      "emitted_output_sha256": "982b7c0c32cf0334c4558391d6697e943b1d0cb2b5e9ef746abdaa1e3b950d81"
+    }
+  ],
+  "packet": ".aris/evidence/expanded_20261002/frontier/sydney-512/sydney-512-36-baseline.packet",
+  "packet_bytes": 203588,
+  "packet_sha256": "ceb7ef10681c140806fd65c1c3150b1fae69fb9ec8bfbb51c45e40dee4743689",
+  "fees": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 549,
+    "body_bytes": 202951
+  },
+  "encode_seconds": 0.33546962500258815,
+  "decoder": {
+    "status": "DECODED",
+    "source_provided": false,
+    "meta": {
+      "codec": {
+        "algorithm": "LORENZO_REG",
+        "backend": "sz3",
+        "bound": 4.0,
+        "dtype": "float64",
+        "transform": "direct"
+      },
+      "common_full_field_query_service": 1,
+      "epsilons": [
+        100,
+        1000
+      ],
+      "geo": {
+        "affine": [
+          100.0,
+          0.0,
+          13478700.0,
+          0.0,
+          -100.0,
+          -4067500.0
+        ],
+        "crs": "PROJCS[\"World_Mollweide\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Mollweide\"],PARAMETER[\"central_meridian\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "product": "GHS-BUILT-S R2023A E2020",
+        "resampling": false,
+        "shape": [
+          512,
+          512
+        ],
+        "units": "m2"
+      },
+      "missing_zero": true,
+      "output": "float64_integer",
+      "postprocessor": "clip(nearest_even_rint(a),0,10000);masked_zero",
+      "units": "m2"
+    },
+    "packet_sha256": "ceb7ef10681c140806fd65c1c3150b1fae69fb9ec8bfbb51c45e40dee4743689",
+    "numerator_sha256": "f296d4e22d944f37435e5f82784558c0b5cc4bba4a616f349947899d9a3437f3",
+    "decode_seconds": 0.15770866700040642,
+    "native_commands": [
+      {
+        "argv": [
+          "/Users/nathmath/dcc/LinewiseROI/.validation/native-controls-20261001/py/bin/python",
+          "/Users/nathmath/dcc/LinewiseROI/experiments/native_sz3_worker.py",
+          "decode",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-4zcy7212/input",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-4zcy7212/output.npy",
+          "--dtype",
+          "float64",
+          "--height",
+          "512",
+          "--width",
+          "512"
+        ],
+        "input_sha256": "566f0d14f7cf04e22cacb88b4797b591b5647c18f6d4e9b7a410bbb3f3d42dec",
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "seconds": 0.14464916699944297,
+        "emitted_output_bytes": 2097280,
+        "emitted_output_sha256": "982b7c0c32cf0334c4558391d6697e943b1d0cb2b5e9ef746abdaa1e3b950d81"
+      }
+    ],
+    "process_peak_rss_bytes": 136806400,
+    "rss_scope": "macOS peak bytes; persistent source-free decoder"
+  },
+  "audit": {
+    "max_rectangle_numerator": 42613,
+    "denominator": 1,
+    "max_rectangle_error": 42613.0,
+    "max_abs_prefix_numerator": 42613,
+    "range_violations": 0,
+    "range_violation_fraction": 0.0,
+    "integer_violations": 0,
+    "changed": 122642,
+    "mask_ok": true,
+    "protected_ok": true,
+    "valid_samples": 262144
+  },
+  "mechanism": {},
+  "legal_at": {
+    "25": false,
+    "50": false,
+    "100": false,
+    "250": false,
+    "500": false,
+    "1000": false,
+    "2500": false,
+    "5000": false
+  },
+  "elapsed_seconds": 0.7010803750017658
+}

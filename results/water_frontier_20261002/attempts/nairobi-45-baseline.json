@@ -1,0 +1,139 @@
+{
+  "id": "nairobi-45-baseline",
+  "site": "nairobi",
+  "configuration": {
+    "family": "baseline",
+    "config": {
+      "backend": "qpet",
+      "dtype": "float64",
+      "level": 3,
+      "base_bound": 100.0,
+      "bound": 16.0,
+      "transform": "direct"
+    }
+  },
+  "status": "DECODED_AND_AUDITED",
+  "source_sha256": "2a626b607cc7c554ee0a2773d07b0c82dfd6a1069699e9507cf42e12954e8ef9",
+  "packet": ".aris/evidence/expanded_20261002/water/nairobi-45-baseline.packet",
+  "packet_bytes": 1561,
+  "fees": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "metadata_bytes": 449,
+    "body_bytes": 1024
+  },
+  "packet_sha256": "f4f1bf0def6639c028dfbe2895f29918c9c2e0c1a21473ec37d5ef5a20bb67b2",
+  "decoder": {
+    "status": "DECODED",
+    "source_provided": false,
+    "meta": {
+      "cap": 100,
+      "codec": {
+        "backend": "qpet",
+        "base_bound": 100.0,
+        "bound": 16.0,
+        "dtype": "float64",
+        "level": 3,
+        "transform": "direct"
+      },
+      "geo": {
+        "affine": [
+          0.00025,
+          0.0,
+          36.75250000000014,
+          0.0,
+          -0.00025,
+          -1.2192500000000568
+        ],
+        "crs": "GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0,AUTHORITY[\"EPSG\",\"8901\"]],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AXIS[\"Latitude\",NORTH],AXIS[\"Longitude\",EAST],AUTHORITY[\"EPSG\",\"4326\"]]",
+        "product": "JRC GSW occurrence v1.5 1984\u20132024",
+        "resampling": false,
+        "units": "percentage points"
+      },
+      "postprocess": "nearest-even integer;clip [0,100];missing zero",
+      "units": "percentage-point sums"
+    },
+    "decode_seconds": 0.03384770899720024,
+    "numerator_sha256": "fb47e9869ba4334537ce9e1d984e01c8e60933bad17129274936a7f763b8c2b2",
+    "native_commands": [
+      {
+        "argv": [
+          "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+          "decompress",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-15kps113/input",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-15kps113/output"
+        ],
+        "input_sha256": "83ab327cfc3695f3e78938b54ee2e0160391213484aaa702fd4ec9e9efa7b7f3",
+        "returncode": 0,
+        "stdout": "API_DECOMPRESS_PASS samples=262144\n",
+        "stderr": "",
+        "seconds": 0.024299874996358994,
+        "emitted_output_bytes": 2097152,
+        "emitted_output_sha256": "6122394f114645773a87e71924368b6d39aa299c5cb366de00436b2600ec9c3d"
+      }
+    ]
+  },
+  "audit": {
+    "max_rectangle_numerator": 3103,
+    "denominator": 1,
+    "max_rectangle_error": 3103.0,
+    "max_abs_prefix_numerator": 3043,
+    "range_violations": 0,
+    "range_violation_fraction": 0.0,
+    "integer_violations": 0,
+    "changed": 2005,
+    "mask_ok": true,
+    "protected_ok": true,
+    "valid_samples": 262144
+  },
+  "encode_seconds": 0.06925350000528852,
+  "legal_at": {
+    "5": false,
+    "10": false,
+    "25": false,
+    "50": false,
+    "100": false,
+    "250": false,
+    "500": false,
+    "1000": false
+  },
+  "native_encode_commands": [
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "compress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-u5bi1qrl/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-u5bi1qrl/output",
+        "512",
+        "512",
+        "3",
+        "100.0",
+        "16.0",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-u5bi1qrl/qoi.config"
+      ],
+      "input_sha256": "c85cd5a90b615ce8c94cd28b2ee84c468e1c6ea74c49b0556e85b9c78f9d04be",
+      "returncode": 0,
+      "stdout": "====================================== BEGIN TUNING ================================\nABS QoI eb: 16\nPredictor tuning started.\nPredictor tuning finished.\nLevel: 5\n\tinterp best interpAlgo = LINEAR\n\tinterp best interpParadigm = 1D\n\tinterp best direction = 0\nLevel: 4\n\tinterp best interpAlgo = LINEAR\n\tinterp best interpParadigm = 1D\n\tinterp best direction = 0\nLevel: 3\n\tinterp best interpAlgo = LINEAR\n\tinterp best interpParadigm = 1D\n\tinterp best direction = 0\nLevel: 2\n\tinterp best interpAlgo = LINEAR\n\tinterp best interpParadigm = 1D\n\tinterp best direction = 0\nLevel: 1\n\tinterp best interpAlgo = LINEAR\n\tinterp best interpParadigm = 1D\n\tinterp best direction = 0\nB-M tuning started.\nB-M step time = 0.001337s\nAutotuning finished.\nInterp selected. Selected alpha: 2.000000. Selected beta: 4.000000. Best bitrate: 0.105295. Best PSNR: inf.\nTuning time = 0.002764s\n====================================== END TUNING ======================================\nAPI_COMPRESS_PASS bytes=1024\n",
+      "stderr": "",
+      "seconds": 0.03189912499510683,
+      "emitted_output_bytes": 1024,
+      "emitted_output_sha256": "83ab327cfc3695f3e78938b54ee2e0160391213484aaa702fd4ec9e9efa7b7f3"
+    },
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "decompress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-cfr1husc/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-cfr1husc/output"
+      ],
+      "input_sha256": "83ab327cfc3695f3e78938b54ee2e0160391213484aaa702fd4ec9e9efa7b7f3",
+      "returncode": 0,
+      "stdout": "API_DECOMPRESS_PASS samples=262144\n",
+      "stderr": "",
+      "seconds": 0.023203541997645516,
+      "emitted_output_bytes": 2097152,
+      "emitted_output_sha256": "6122394f114645773a87e71924368b6d39aa299c5cb366de00436b2600ec9c3d"
+    }
+  ]
+}

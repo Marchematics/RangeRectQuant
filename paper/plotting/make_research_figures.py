@@ -80,8 +80,10 @@ def protected():
             ax.plot(np.array(fractions)*100,values,color=color,marker=marker,
                     linewidth=1.2,markersize=3,label=f'Budget {e} m²')
             ax.set_xlabel('Protected samples (%)',fontsize=8)
-            ax.set_xticks([0,1,5,10]); axes_style(ax); ax.set_ylim(bottom=0)
+            ax.set_xticks([0,1,5,10]); axes_style(ax)
     for ax,label in zip(axes,('Complete size\n(bits/pixel)','Fine pixels (%)','Construction + audit (s)')):
+        # Set bounds after both budgets so the second curve cannot be clipped.
+        ax.relim(); ax.autoscale_view(); ax.margins(y=.08); ax.set_ylim(bottom=0)
         ax.set_ylabel(label,fontsize=8)
     handles,labels=axes[0].get_legend_handles_labels()
     fig.legend(handles,labels,loc='upper center',ncol=2,fontsize=9)
@@ -133,19 +135,46 @@ def mechanism():
     with np.load(path,allow_pickle=False) as z:
         x,y,widths,p=(z[k] for k in ('x','y','widths','protected'))
     fine=(y%200!=0)&~p
-    fig,axes=plt.subplots(1,3,figsize=(6,2.55))
+    fig,axes=plt.subplots(1,3,figsize=(6,2.85))
     source=axes[0].imshow(x,cmap='viridis',vmin=0,vmax=10000,rasterized=True)
     axes[0].set_title('Source built area',fontsize=9)
     prefix=(y-x).cumsum(0).cumsum(1)
-    axes[1].imshow(prefix,cmap='RdBu_r',vmin=-250,vmax=250,rasterized=True)
+    error=axes[1].imshow(prefix,cmap='RdBu_r',vmin=-250,vmax=250,rasterized=True)
     axes[1].set_title('Prefix error',fontsize=9)
-    axes[2].imshow(widths,cmap='Greys_r',vmin=0,vmax=501,rasterized=True)
+    width=axes[2].imshow(widths,cmap='Greys_r',vmin=0,vmax=501,rasterized=True)
     rr,cc=np.where(fine); axes[2].scatter(cc,rr,s=.6,c='#B64342',alpha=.8,rasterized=True)
     axes[2].set_title('Feasible width + fine pixels',fontsize=8)
     for ax in axes: ax.set_xticks([]); ax.set_yticks([])
-    fig.text(.06,.06,'Cairo, 512 × 512; budget 1000 m²; coarse step 200 m². Red: unprotected fine pixels.',fontsize=8)
-    fig.subplots_adjust(left=.02,right=.98,bottom=.14,top=.83,wspace=.05)
+    for ax,artist,label,ticks in zip(axes,(source,error,width),('Built area (m²)','Prefix error (m²)','Allowed integer states'),
+                                   ([0,5000,10000],[-250,0,250],[0,250,501])):
+        bar=fig.colorbar(artist,ax=ax,orientation='horizontal',fraction=.07,pad=.035,ticks=ticks)
+        bar.ax.tick_params(labelsize=6.5,length=2); bar.set_label(label,fontsize=7)
+    fig.text(.045,.015,'Cairo; budget 1000 m²; coarse step 200 m². Red: unprotected fine pixels.',fontsize=8)
+    fig.subplots_adjust(left=.04,right=.96,bottom=.23,top=.88,wspace=.32)
     save_figure(fig,OUT/'mechanism')
+
+
+def water():
+    data=read('results/water_frontier_20261002/report.json')
+    if data['sourcefree_decodes']!=392 or data['exceptions']:
+        raise ValueError('Complete water matrix required')
+    fig,axes=plt.subplots(1,2,figsize=(6,2.55))
+    rows=data['comparisons']; budgets=[r['epsilon'] for r in rows]
+    for key,name,color,marker in (('main_bytes','RangeRectQuant','#0F4D92','o'),
+                                 ('baseline_bytes','Best eligible external file','#767676','s')):
+        totals=[sum(p[key] for p in r['pairs']) for r in rows]
+        axes[0].plot(budgets,np.array(totals)*8/(8*512**2),color=color,marker=marker,
+                     markersize=3,linewidth=1.2,label=name)
+    axes[1].plot(budgets,[100*r['reduction_fraction'] for r in rows],color='#0F4D92',marker='o',markersize=3,linewidth=1.2)
+    axes[1].axhline(0,color='#767676',linestyle='--',linewidth=.7)
+    for ax in axes:
+        ax.set_xscale('log'); ax.set_xticks([5,25,100,1000],['5','25','100','1000'])
+        ax.set_xlabel('Regional sum budget (percentage points)',fontsize=8); axes_style(ax)
+    axes[0].set_ylabel('Complete size (bits/pixel)',fontsize=9); axes[0].set_ylim(bottom=0)
+    axes[1].set_ylabel('Complete-size reduction (%)',fontsize=9)
+    handles,labels=axes[0].get_legend_handles_labels(); fig.legend(handles,labels,loc='upper center',ncol=2,fontsize=8)
+    fig.subplots_adjust(left=.10,right=.98,bottom=.22,top=.80,wspace=.43)
+    save_figure(fig,OUT/'water')
 
 
 def scaling():
@@ -165,13 +194,16 @@ def scaling():
             ax.set_xlabel('Field width (pixels)',fontsize=8); axes_style(ax)
     for ax,label in zip(axes,('Complete encoding (s)','Decoding (s)','Peak process memory (MiB)')):
         ax.set_ylabel(label,fontsize=8)
+    from matplotlib.ticker import FuncFormatter
+    for ax in axes[:2]: ax.yaxis.set_major_formatter(FuncFormatter(lambda value,_:f'{value:g}'))
+    axes[2].set_yscale('linear'); axes[2].set_ylim(bottom=0); axes[2].set_yticks([0,500,1000,1500])
     handles,labels=axes[0].get_legend_handles_labels(); fig.legend(handles,labels,loc='upper center',ncol=3,fontsize=8)
     fig.subplots_adjust(left=.10,right=.98,bottom=.19,top=.79,wspace=.63)
     save_figure(fig,OUT/'scaling')
 
 
 if __name__=='__main__':
-    parser=argparse.ArgumentParser(); parser.add_argument('figures',nargs='+',choices=['frontier','protected','closest','mechanism','scaling'])
+    parser=argparse.ArgumentParser(); parser.add_argument('figures',nargs='+',choices=['frontier','protected','closest','mechanism','scaling','water'])
     args=parser.parse_args(); apply_publication_style()
     for name in args.figures: globals()[name]()
     OUT.mkdir(parents=True,exist_ok=True)

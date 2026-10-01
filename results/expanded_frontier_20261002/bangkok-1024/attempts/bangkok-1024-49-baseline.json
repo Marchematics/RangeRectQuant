@@ -1,0 +1,162 @@
+{
+  "id": "bangkok-1024-49-baseline",
+  "configuration": {
+    "family": "baseline",
+    "config": {
+      "backend": "qpet",
+      "dtype": "float64",
+      "level": 0,
+      "base_bound": 10000.0,
+      "bound": 4.0,
+      "transform": "direct"
+    }
+  },
+  "status": "DECODED_AND_AUDITED",
+  "native_encoder_info": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 543,
+    "body_bytes": 881221,
+    "raw_native_pointwise_max_error": 4.0,
+    "raw_native_negative_values": 266951,
+    "raw_native_above_range_values": 10
+  },
+  "native_encode_commands": [
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "compress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-lvowovro/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-lvowovro/output",
+        "1024",
+        "1024",
+        "0",
+        "10000.0",
+        "4.0",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-lvowovro/qoi.config"
+      ],
+      "input_sha256": "8580400047102a64f9d4bc2d7cd7cc1163997602f8b5ddce8ceecd4aaad314d1",
+      "returncode": 0,
+      "stdout": "====================================== BEGIN TUNING ================================\nABS QoI eb: 4\nLorenzo ratio = 9.9727\ninterp best interpAlgo = LINEAR\ninterp best direction = 0\nInterp ratio = 11.0537\nchoose interp\nsz3 tuning time = 0.009685s\nTuning time = 0.015505s\n====================================== END TUNING ======================================\nAPI_COMPRESS_PASS bytes=881221\n",
+      "stderr": "",
+      "seconds": 0.14999458400416188,
+      "emitted_output_bytes": 881221,
+      "emitted_output_sha256": "f12ef91563c8f8459306e9e7d9f0ec54126e60e4446915bc01bb425458d5ed3f"
+    },
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "decompress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-zowmw25v/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-zowmw25v/output"
+      ],
+      "input_sha256": "f12ef91563c8f8459306e9e7d9f0ec54126e60e4446915bc01bb425458d5ed3f",
+      "returncode": 0,
+      "stdout": "API_DECOMPRESS_PASS samples=1048576\n",
+      "stderr": "",
+      "seconds": 0.13457191699853865,
+      "emitted_output_bytes": 8388608,
+      "emitted_output_sha256": "c8fe7c609975e43ebbb87e2af16a7929aaa264ce56c96c33ac9e74733f9a730d"
+    }
+  ],
+  "packet": ".aris/evidence/expanded_20261002/frontier/bangkok-1024/bangkok-1024-49-baseline.packet",
+  "packet_bytes": 881852,
+  "packet_sha256": "01019673a13bce2ee15687f087d6f411deead9b13209ca39f0e58bd79264b0b8",
+  "fees": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 543,
+    "body_bytes": 881221
+  },
+  "encode_seconds": 0.38588979199994355,
+  "decoder": {
+    "status": "DECODED",
+    "source_provided": false,
+    "meta": {
+      "codec": {
+        "backend": "qpet",
+        "base_bound": 10000.0,
+        "bound": 4.0,
+        "dtype": "float64",
+        "level": 0,
+        "transform": "direct"
+      },
+      "common_full_field_query_service": 1,
+      "epsilons": [
+        100,
+        1000
+      ],
+      "geo": {
+        "affine": [
+          100.0,
+          0.0,
+          9842000.0,
+          0.0,
+          -100.0,
+          1745600.0
+        ],
+        "crs": "PROJCS[\"World_Mollweide\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Mollweide\"],PARAMETER[\"central_meridian\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "product": "GHS-BUILT-S R2023A E2020",
+        "resampling": false,
+        "shape": [
+          1024,
+          1024
+        ],
+        "units": "m2"
+      },
+      "missing_zero": true,
+      "output": "float64_integer",
+      "postprocessor": "clip(nearest_even_rint(a),0,10000);masked_zero",
+      "units": "m2"
+    },
+    "packet_sha256": "01019673a13bce2ee15687f087d6f411deead9b13209ca39f0e58bd79264b0b8",
+    "numerator_sha256": "3f6765ff4add87c21cedf69e4884da649973b12fd3e641515ddb87b09a804e00",
+    "decode_seconds": 0.19147591699584154,
+    "native_commands": [
+      {
+        "argv": [
+          "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+          "decompress",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-7pvg5xi7/input",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-7pvg5xi7/output"
+        ],
+        "input_sha256": "f12ef91563c8f8459306e9e7d9f0ec54126e60e4446915bc01bb425458d5ed3f",
+        "returncode": 0,
+        "stdout": "API_DECOMPRESS_PASS samples=1048576\n",
+        "stderr": "",
+        "seconds": 0.13295641699369298,
+        "emitted_output_bytes": 8388608,
+        "emitted_output_sha256": "c8fe7c609975e43ebbb87e2af16a7929aaa264ce56c96c33ac9e74733f9a730d"
+      }
+    ],
+    "process_peak_rss_bytes": 333922304,
+    "rss_scope": "macOS peak bytes; persistent source-free decoder"
+  },
+  "audit": {
+    "max_rectangle_numerator": 265644,
+    "denominator": 1,
+    "max_rectangle_error": 265644.0,
+    "max_abs_prefix_numerator": 265644,
+    "range_violations": 0,
+    "range_violation_fraction": 0.0,
+    "integer_violations": 0,
+    "changed": 641599,
+    "mask_ok": true,
+    "protected_ok": true,
+    "valid_samples": 1048576
+  },
+  "mechanism": {},
+  "legal_at": {
+    "25": false,
+    "50": false,
+    "100": false,
+    "250": false,
+    "500": false,
+    "1000": false,
+    "2500": false,
+    "5000": false
+  },
+  "elapsed_seconds": 2.6782915000003413
+}

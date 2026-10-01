@@ -1,0 +1,179 @@
+{
+  "id": "athens-512-36-baseline",
+  "configuration": {
+    "family": "baseline",
+    "config": {
+      "backend": "sz3",
+      "dtype": "float64",
+      "algorithm": "LORENZO_REG",
+      "bound": 4.0,
+      "transform": "direct"
+    }
+  },
+  "status": "DECODED_AND_AUDITED",
+  "native_encoder_info": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 546,
+    "body_bytes": 191650,
+    "raw_native_pointwise_max_error": 4.0,
+    "raw_native_negative_values": 54388,
+    "raw_native_above_range_values": 2
+  },
+  "native_encode_commands": [
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/native-controls-20261001/py/bin/python",
+        "/Users/nathmath/dcc/LinewiseROI/experiments/native_sz3_worker.py",
+        "encode",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-or8hskzc/input.npy",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-or8hskzc/output",
+        "--dtype",
+        "float64",
+        "--height",
+        "512",
+        "--width",
+        "512",
+        "--algorithm",
+        "LORENZO_REG",
+        "--bound",
+        "4.0"
+      ],
+      "input_sha256": "00de992f85af29dd9bf4a0f3929f98dce9b79cf3880bf955e1ac4d1ee0469e6d",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.19812495899532223,
+      "emitted_output_bytes": 191650,
+      "emitted_output_sha256": "6190598a53917275d1be44294b81128e945abbfa96e9252cfdf267d3c68afcfc"
+    },
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/native-controls-20261001/py/bin/python",
+        "/Users/nathmath/dcc/LinewiseROI/experiments/native_sz3_worker.py",
+        "decode",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-_ls6vmwm/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-_ls6vmwm/output.npy",
+        "--dtype",
+        "float64",
+        "--height",
+        "512",
+        "--width",
+        "512"
+      ],
+      "input_sha256": "6190598a53917275d1be44294b81128e945abbfa96e9252cfdf267d3c68afcfc",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.20227179199719103,
+      "emitted_output_bytes": 2097280,
+      "emitted_output_sha256": "04322043544273a85f483fbf76d2536e18187aa25cb7e440fe16fe3c76f197f8"
+    }
+  ],
+  "packet": ".aris/evidence/expanded_20261002/frontier/athens-512/athens-512-36-baseline.packet",
+  "packet_bytes": 192284,
+  "packet_sha256": "01f4b712e368b3c865e182a745c7e12621e75ce3e97772a56734a2a1d870d50b",
+  "fees": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 546,
+    "body_bytes": 191650
+  },
+  "encode_seconds": 0.4434316660044715,
+  "decoder": {
+    "status": "DECODED",
+    "source_provided": false,
+    "meta": {
+      "codec": {
+        "algorithm": "LORENZO_REG",
+        "backend": "sz3",
+        "bound": 4.0,
+        "dtype": "float64",
+        "transform": "direct"
+      },
+      "common_full_field_query_service": 1,
+      "epsilons": [
+        100,
+        1000
+      ],
+      "geo": {
+        "affine": [
+          100.0,
+          0.0,
+          2025700.0,
+          0.0,
+          -100.0,
+          4588500.0
+        ],
+        "crs": "PROJCS[\"World_Mollweide\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Mollweide\"],PARAMETER[\"central_meridian\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "product": "GHS-BUILT-S R2023A E2020",
+        "resampling": false,
+        "shape": [
+          512,
+          512
+        ],
+        "units": "m2"
+      },
+      "missing_zero": true,
+      "output": "float64_integer",
+      "postprocessor": "clip(nearest_even_rint(a),0,10000);masked_zero",
+      "units": "m2"
+    },
+    "packet_sha256": "01f4b712e368b3c865e182a745c7e12621e75ce3e97772a56734a2a1d870d50b",
+    "numerator_sha256": "087ec8522936bf2db043263c280b4d22ec3277cb4e67b18430bc37920a7c28c9",
+    "decode_seconds": 0.18841641699691536,
+    "native_commands": [
+      {
+        "argv": [
+          "/Users/nathmath/dcc/LinewiseROI/.validation/native-controls-20261001/py/bin/python",
+          "/Users/nathmath/dcc/LinewiseROI/experiments/native_sz3_worker.py",
+          "decode",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-t_kmssxn/input",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-t_kmssxn/output.npy",
+          "--dtype",
+          "float64",
+          "--height",
+          "512",
+          "--width",
+          "512"
+        ],
+        "input_sha256": "6190598a53917275d1be44294b81128e945abbfa96e9252cfdf267d3c68afcfc",
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "seconds": 0.17439433399704285,
+        "emitted_output_bytes": 2097280,
+        "emitted_output_sha256": "04322043544273a85f483fbf76d2536e18187aa25cb7e440fe16fe3c76f197f8"
+      }
+    ],
+    "process_peak_rss_bytes": 149291008,
+    "rss_scope": "macOS peak bytes; persistent source-free decoder"
+  },
+  "audit": {
+    "max_rectangle_numerator": 94322,
+    "denominator": 1,
+    "max_rectangle_error": 94322.0,
+    "max_abs_prefix_numerator": 94322,
+    "range_violations": 0,
+    "range_violation_fraction": 0.0,
+    "integer_violations": 0,
+    "changed": 124880,
+    "mask_ok": true,
+    "protected_ok": true,
+    "valid_samples": 262144
+  },
+  "mechanism": {},
+  "legal_at": {
+    "25": false,
+    "50": false,
+    "100": false,
+    "250": false,
+    "500": false,
+    "1000": false,
+    "2500": false,
+    "5000": false
+  },
+  "elapsed_seconds": 0.8597437080024974
+}

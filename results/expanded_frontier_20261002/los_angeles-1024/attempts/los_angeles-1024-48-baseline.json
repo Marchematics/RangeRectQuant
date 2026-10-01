@@ -1,0 +1,162 @@
+{
+  "id": "los_angeles-1024-48-baseline",
+  "configuration": {
+    "family": "baseline",
+    "config": {
+      "backend": "qpet",
+      "dtype": "float64",
+      "level": 0,
+      "base_bound": 10000.0,
+      "bound": 1.0,
+      "transform": "direct"
+    }
+  },
+  "status": "DECODED_AND_AUDITED",
+  "native_encoder_info": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 546,
+    "body_bytes": 922129,
+    "raw_native_pointwise_max_error": 1.0,
+    "raw_native_negative_values": 308428,
+    "raw_native_above_range_values": 15
+  },
+  "native_encode_commands": [
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "compress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-mwi76rfk/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-mwi76rfk/output",
+        "1024",
+        "1024",
+        "0",
+        "10000.0",
+        "1.0",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-mwi76rfk/qoi.config"
+      ],
+      "input_sha256": "09ad945ee0b921dc038549b1a76c65afe8edddc613980d062032677827351a86",
+      "returncode": 0,
+      "stdout": "====================================== BEGIN TUNING ================================\nABS QoI eb: 1\nLorenzo ratio = 10.4881\ninterp best interpAlgo = LINEAR\ninterp best direction = 0\nInterp ratio = 12.2988\nchoose interp\nsz3 tuning time = 0.012213s\nTuning time = 0.012485s\n====================================== END TUNING ======================================\nAPI_COMPRESS_PASS bytes=922129\n",
+      "stderr": "",
+      "seconds": 0.1690917499945499,
+      "emitted_output_bytes": 922129,
+      "emitted_output_sha256": "e4f887656bec7fb1ec6cd778b2330cff427d8a54838f00a26be921a8beb279c5"
+    },
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "decompress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-4ldvj4a6/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-4ldvj4a6/output"
+      ],
+      "input_sha256": "e4f887656bec7fb1ec6cd778b2330cff427d8a54838f00a26be921a8beb279c5",
+      "returncode": 0,
+      "stdout": "API_DECOMPRESS_PASS samples=1048576\n",
+      "stderr": "",
+      "seconds": 0.08933129200158874,
+      "emitted_output_bytes": 8388608,
+      "emitted_output_sha256": "2fe8cad657f16825cf10e6035526d5aa47859f2c80ca8241b0c38280c8969221"
+    }
+  ],
+  "packet": ".aris/evidence/expanded_20261002/frontier/los_angeles-1024/los_angeles-1024-48-baseline.packet",
+  "packet_bytes": 922763,
+  "packet_sha256": "23e9099265403fda34b97219ea8a2020c427284347e53fd500c1a283fe4b88f1",
+  "fees": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 546,
+    "body_bytes": 922129
+  },
+  "encode_seconds": 0.3402056250051828,
+  "decoder": {
+    "status": "DECODED",
+    "source_provided": false,
+    "meta": {
+      "codec": {
+        "backend": "qpet",
+        "base_bound": 10000.0,
+        "bound": 1.0,
+        "dtype": "float64",
+        "level": 0,
+        "transform": "direct"
+      },
+      "common_full_field_query_service": 1,
+      "epsilons": [
+        100,
+        1000
+      ],
+      "geo": {
+        "affine": [
+          100.0,
+          0.0,
+          -10597300.0,
+          0.0,
+          -100.0,
+          4165600.0
+        ],
+        "crs": "PROJCS[\"World_Mollweide\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Mollweide\"],PARAMETER[\"central_meridian\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "product": "GHS-BUILT-S R2023A E2020",
+        "resampling": false,
+        "shape": [
+          1024,
+          1024
+        ],
+        "units": "m2"
+      },
+      "missing_zero": true,
+      "output": "float64_integer",
+      "postprocessor": "clip(nearest_even_rint(a),0,10000);masked_zero",
+      "units": "m2"
+    },
+    "packet_sha256": "23e9099265403fda34b97219ea8a2020c427284347e53fd500c1a283fe4b88f1",
+    "numerator_sha256": "7cc020ae7ea1f014d78f70830a4f5381e6fdceb6617354848ae3b678a9afea47",
+    "decode_seconds": 0.1264331670026877,
+    "native_commands": [
+      {
+        "argv": [
+          "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+          "decompress",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-3ceizg03/input",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-3ceizg03/output"
+        ],
+        "input_sha256": "e4f887656bec7fb1ec6cd778b2330cff427d8a54838f00a26be921a8beb279c5",
+        "returncode": 0,
+        "stdout": "API_DECOMPRESS_PASS samples=1048576\n",
+        "stderr": "",
+        "seconds": 0.08623683300538687,
+        "emitted_output_bytes": 8388608,
+        "emitted_output_sha256": "2fe8cad657f16825cf10e6035526d5aa47859f2c80ca8241b0c38280c8969221"
+      }
+    ],
+    "process_peak_rss_bytes": 276021248,
+    "rss_scope": "macOS peak bytes; persistent source-free decoder"
+  },
+  "audit": {
+    "max_rectangle_numerator": 16392,
+    "denominator": 1,
+    "max_rectangle_error": 16392.0,
+    "max_abs_prefix_numerator": 16392,
+    "range_violations": 0,
+    "range_violation_fraction": 0.0,
+    "integer_violations": 0,
+    "changed": 245346,
+    "mask_ok": true,
+    "protected_ok": true,
+    "valid_samples": 1048576
+  },
+  "mechanism": {},
+  "legal_at": {
+    "25": false,
+    "50": false,
+    "100": false,
+    "250": false,
+    "500": false,
+    "1000": false,
+    "2500": false,
+    "5000": false
+  },
+  "elapsed_seconds": 3.748521082998195
+}

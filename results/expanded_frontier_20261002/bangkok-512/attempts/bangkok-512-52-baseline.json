@@ -1,0 +1,162 @@
+{
+  "id": "bangkok-512-52-baseline",
+  "configuration": {
+    "family": "baseline",
+    "config": {
+      "backend": "qpet",
+      "dtype": "float64",
+      "level": 3,
+      "base_bound": 10000.0,
+      "bound": 1.0,
+      "transform": "direct"
+    }
+  },
+  "status": "DECODED_AND_AUDITED",
+  "native_encoder_info": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 544,
+    "body_bytes": 415469,
+    "raw_native_pointwise_max_error": 0.9999967654889588,
+    "raw_native_negative_values": 17390,
+    "raw_native_above_range_values": 4
+  },
+  "native_encode_commands": [
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "compress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-tbql5jmm/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-tbql5jmm/output",
+        "512",
+        "512",
+        "3",
+        "10000.0",
+        "1.0",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-tbql5jmm/qoi.config"
+      ],
+      "input_sha256": "c1252454777d862fab47b00d6e9cca9a47fa380204cce92a17f3cb7f018e531f",
+      "returncode": 0,
+      "stdout": "====================================== BEGIN TUNING ================================\nABS QoI eb: 1\nPredictor tuning started.\nPredictor tuning finished.\nLevel: 5\n\tinterp best interpAlgo = LINEAR\n\tinterp best interpParadigm = 1D\n\tinterp best direction = 1\nLevel: 4\n\tinterp best interpAlgo = LINEAR\n\tinterp best interpParadigm = MD\nLevel: 3\n\tinterp best interpAlgo = LINEAR\n\tinterp best interpParadigm = MD\nLevel: 2\n\tinterp best interpAlgo = LINEAR\n\tinterp best interpParadigm = MD\nLevel: 1\n\tinterp best interpAlgo = LINEAR\n\tinterp best interpParadigm = MD\nB-M tuning started.\nB-M step time = 0.042266s\nAutotuning finished.\nInterp selected. Selected alpha: 1.250000. Selected beta: 4.000000. Best bitrate: 40.071013. Best PSNR: 85.582265.\nTuning time = 0.043997s\n====================================== END TUNING ======================================\nAPI_COMPRESS_PASS bytes=415469\n",
+      "stderr": "",
+      "seconds": 0.08145591700304067,
+      "emitted_output_bytes": 415469,
+      "emitted_output_sha256": "b1df0580090f52552982cdc49fd24a12816e6ffc2a004b22db699cf4a7249dab"
+    },
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "decompress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-lxibus07/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-lxibus07/output"
+      ],
+      "input_sha256": "b1df0580090f52552982cdc49fd24a12816e6ffc2a004b22db699cf4a7249dab",
+      "returncode": 0,
+      "stdout": "API_DECOMPRESS_PASS samples=262144\n",
+      "stderr": "",
+      "seconds": 0.040914999997767154,
+      "emitted_output_bytes": 2097152,
+      "emitted_output_sha256": "a1376cefd4c00eda64c673e039d38542accd7e64294a0ef93576afb5cb7a8758"
+    }
+  ],
+  "packet": ".aris/evidence/expanded_20261002/frontier/bangkok-512/bangkok-512-52-baseline.packet",
+  "packet_bytes": 416101,
+  "packet_sha256": "a00cc38b6e535b52cab3723731e41c6c6fe3fb0b91bcc806ec83bbda61d1e293",
+  "fees": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 544,
+    "body_bytes": 415469
+  },
+  "encode_seconds": 0.14641258299525362,
+  "decoder": {
+    "status": "DECODED",
+    "source_provided": false,
+    "meta": {
+      "codec": {
+        "backend": "qpet",
+        "base_bound": 10000.0,
+        "bound": 1.0,
+        "dtype": "float64",
+        "level": 3,
+        "transform": "direct"
+      },
+      "common_full_field_query_service": 1,
+      "epsilons": [
+        100,
+        1000
+      ],
+      "geo": {
+        "affine": [
+          100.0,
+          0.0,
+          9867600.0,
+          0.0,
+          -100.0,
+          1720000.0
+        ],
+        "crs": "PROJCS[\"World_Mollweide\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Mollweide\"],PARAMETER[\"central_meridian\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "product": "GHS-BUILT-S R2023A E2020",
+        "resampling": false,
+        "shape": [
+          512,
+          512
+        ],
+        "units": "m2"
+      },
+      "missing_zero": true,
+      "output": "float64_integer",
+      "postprocessor": "clip(nearest_even_rint(a),0,10000);masked_zero",
+      "units": "m2"
+    },
+    "packet_sha256": "a00cc38b6e535b52cab3723731e41c6c6fe3fb0b91bcc806ec83bbda61d1e293",
+    "numerator_sha256": "308bf7295507b9b2e274c7625a462c08cc7e5af355226885c856ebb7974458c8",
+    "decode_seconds": 0.04787287500221282,
+    "native_commands": [
+      {
+        "argv": [
+          "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+          "decompress",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-n_hjys28/input",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-n_hjys28/output"
+        ],
+        "input_sha256": "b1df0580090f52552982cdc49fd24a12816e6ffc2a004b22db699cf4a7249dab",
+        "returncode": 0,
+        "stdout": "API_DECOMPRESS_PASS samples=262144\n",
+        "stderr": "",
+        "seconds": 0.03392270900076255,
+        "emitted_output_bytes": 2097152,
+        "emitted_output_sha256": "a1376cefd4c00eda64c673e039d38542accd7e64294a0ef93576afb5cb7a8758"
+      }
+    ],
+    "process_peak_rss_bytes": 151453696,
+    "rss_scope": "macOS peak bytes; persistent source-free decoder"
+  },
+  "audit": {
+    "max_rectangle_numerator": 5397,
+    "denominator": 1,
+    "max_rectangle_error": 5397.0,
+    "max_abs_prefix_numerator": 5397,
+    "range_violations": 0,
+    "range_violation_fraction": 0.0,
+    "integer_violations": 0,
+    "changed": 108433,
+    "mask_ok": true,
+    "protected_ok": true,
+    "valid_samples": 262144
+  },
+  "mechanism": {},
+  "legal_at": {
+    "25": false,
+    "50": false,
+    "100": false,
+    "250": false,
+    "500": false,
+    "1000": false,
+    "2500": false,
+    "5000": false
+  },
+  "elapsed_seconds": 0.42260549999627983
+}

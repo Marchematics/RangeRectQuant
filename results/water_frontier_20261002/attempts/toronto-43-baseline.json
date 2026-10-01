@@ -1,0 +1,139 @@
+{
+  "id": "toronto-43-baseline",
+  "site": "toronto",
+  "configuration": {
+    "family": "baseline",
+    "config": {
+      "backend": "qpet",
+      "dtype": "float64",
+      "level": 3,
+      "base_bound": 100.0,
+      "bound": 1.0,
+      "transform": "direct"
+    }
+  },
+  "status": "DECODED_AND_AUDITED",
+  "source_sha256": "f16b800faa8dc12e96d86119cc0d5981a257a5ad46297d1da3089df4bfb16884",
+  "packet": ".aris/evidence/expanded_20261002/water/toronto-43-baseline.packet",
+  "packet_bytes": 6505,
+  "fees": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "metadata_bytes": 449,
+    "body_bytes": 5968
+  },
+  "packet_sha256": "721b3c139585537bf5102e3b4219e0c8650c17283ee4cdfa6845e158fc14c5ca",
+  "decoder": {
+    "status": "DECODED",
+    "source_provided": false,
+    "meta": {
+      "cap": 100,
+      "codec": {
+        "backend": "qpet",
+        "base_bound": 100.0,
+        "bound": 1.0,
+        "dtype": "float64",
+        "level": 3,
+        "transform": "direct"
+      },
+      "geo": {
+        "affine": [
+          0.00025,
+          0.0,
+          -79.46274999999993,
+          0.0,
+          -0.00025,
+          43.77049999999998
+        ],
+        "crs": "GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0,AUTHORITY[\"EPSG\",\"8901\"]],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AXIS[\"Latitude\",NORTH],AXIS[\"Longitude\",EAST],AUTHORITY[\"EPSG\",\"4326\"]]",
+        "product": "JRC GSW occurrence v1.5 1984\u20132024",
+        "resampling": false,
+        "units": "percentage points"
+      },
+      "postprocess": "nearest-even integer;clip [0,100];missing zero",
+      "units": "percentage-point sums"
+    },
+    "decode_seconds": 0.03209120900282869,
+    "numerator_sha256": "dd32f5819e6ca31bd607067b8263a118be7a87cc37f8040cb435b24881b13b28",
+    "native_commands": [
+      {
+        "argv": [
+          "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+          "decompress",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-yi5axbsx/input",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-yi5axbsx/output"
+        ],
+        "input_sha256": "ff8a1954b493964a856fc4b144ca2106e51c72da08b57bd45d3a04f07d7e8489",
+        "returncode": 0,
+        "stdout": "API_DECOMPRESS_PASS samples=262144\n",
+        "stderr": "",
+        "seconds": 0.023284750001039356,
+        "emitted_output_bytes": 2097152,
+        "emitted_output_sha256": "6bf20f45955427538d25df141e3de3463b70db4bab15002996568ab93c647fcc"
+      }
+    ]
+  },
+  "audit": {
+    "max_rectangle_numerator": 295,
+    "denominator": 1,
+    "max_rectangle_error": 295.0,
+    "max_abs_prefix_numerator": 293,
+    "range_violations": 0,
+    "range_violation_fraction": 0.0,
+    "integer_violations": 0,
+    "changed": 957,
+    "mask_ok": true,
+    "protected_ok": true,
+    "valid_samples": 262144
+  },
+  "encode_seconds": 0.0703177500035963,
+  "legal_at": {
+    "5": false,
+    "10": false,
+    "25": false,
+    "50": false,
+    "100": false,
+    "250": false,
+    "500": true,
+    "1000": true
+  },
+  "native_encode_commands": [
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "compress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-w882v7zr/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-w882v7zr/output",
+        "512",
+        "512",
+        "3",
+        "100.0",
+        "1.0",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-w882v7zr/qoi.config"
+      ],
+      "input_sha256": "b48d19588a13280d834c59497f366bf2be6a7b6dab4f31134fb7f56704174056",
+      "returncode": 0,
+      "stdout": "====================================== BEGIN TUNING ================================\nABS QoI eb: 1\nPredictor tuning started.\nPredictor tuning finished.\nLevel: 5\n\tinterp best interpAlgo = LINEAR\n\tinterp best interpParadigm = 1D\n\tinterp best direction = 1\nLevel: 4\n\tinterp best interpAlgo = LINEAR\n\tinterp best interpParadigm = 1D\n\tinterp best direction = 0\nLevel: 3\n\tinterp best interpAlgo = LINEAR\n\tinterp best interpParadigm = 1D\n\tinterp best direction = 1\nLevel: 2\n\tinterp best interpAlgo = LINEAR\n\tinterp best interpParadigm = MD\nLevel: 1\n\tinterp best interpAlgo = LINEAR\n\tinterp best interpParadigm = 1D\n\tinterp best direction = 1\nB-M tuning started.\nB-M step time = 0.00251s\nAutotuning finished.\nInterp selected. Selected alpha: 2.000000. Selected beta: 4.000000. Best bitrate: 0.347720. Best PSNR: 66.857809.\nTuning time = 0.003919s\n====================================== END TUNING ======================================\nAPI_COMPRESS_PASS bytes=5968\n",
+      "stderr": "",
+      "seconds": 0.030685290999826975,
+      "emitted_output_bytes": 5968,
+      "emitted_output_sha256": "ff8a1954b493964a856fc4b144ca2106e51c72da08b57bd45d3a04f07d7e8489"
+    },
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "decompress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-hfs7jmsx/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-hfs7jmsx/output"
+      ],
+      "input_sha256": "ff8a1954b493964a856fc4b144ca2106e51c72da08b57bd45d3a04f07d7e8489",
+      "returncode": 0,
+      "stdout": "API_DECOMPRESS_PASS samples=262144\n",
+      "stderr": "",
+      "seconds": 0.026157500004046597,
+      "emitted_output_bytes": 2097152,
+      "emitted_output_sha256": "6bf20f45955427538d25df141e3de3463b70db4bab15002996568ab93c647fcc"
+    }
+  ]
+}

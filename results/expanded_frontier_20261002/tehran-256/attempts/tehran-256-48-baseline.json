@@ -1,0 +1,162 @@
+{
+  "id": "tehran-256-48-baseline",
+  "configuration": {
+    "family": "baseline",
+    "config": {
+      "backend": "qpet",
+      "dtype": "float64",
+      "level": 0,
+      "base_bound": 10000.0,
+      "bound": 1.0,
+      "transform": "direct"
+    }
+  },
+  "status": "DECODED_AND_AUDITED",
+  "native_encoder_info": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 545,
+    "body_bytes": 123798,
+    "raw_native_pointwise_max_error": 1.0,
+    "raw_native_negative_values": 7868,
+    "raw_native_above_range_values": 0
+  },
+  "native_encode_commands": [
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "compress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-qeyvntig/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-qeyvntig/output",
+        "256",
+        "256",
+        "0",
+        "10000.0",
+        "1.0",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-qeyvntig/qoi.config"
+      ],
+      "input_sha256": "4bc21cbe9e74cfed7c8d4905483a3c0f150cbc57809fc88151ea0ca36d7e895c",
+      "returncode": 0,
+      "stdout": "====================================== BEGIN TUNING ================================\nABS QoI eb: 1\nLorenzo ratio = 1.5028\ninterp best interpAlgo = LINEAR\ninterp best direction = 0\nInterp ratio = 1.6147\nchoose interp\nsz3 tuning time = 0.003824s\nTuning time = 0.003952s\n====================================== END TUNING ======================================\nAPI_COMPRESS_PASS bytes=123798\n",
+      "stderr": "",
+      "seconds": 0.030468583005131222,
+      "emitted_output_bytes": 123798,
+      "emitted_output_sha256": "c1f9008ead042c914defeb58941c9cfbd850d218b2c21943483fb8342fe3f1e7"
+    },
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "decompress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-140pvkbm/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-140pvkbm/output"
+      ],
+      "input_sha256": "c1f9008ead042c914defeb58941c9cfbd850d218b2c21943483fb8342fe3f1e7",
+      "returncode": 0,
+      "stdout": "API_DECOMPRESS_PASS samples=65536\n",
+      "stderr": "",
+      "seconds": 0.024528375004592817,
+      "emitted_output_bytes": 524288,
+      "emitted_output_sha256": "07659756b8a9674ecf6c77751c01bd5bca8aa9fe89bda73a17a62867e88dbcbb"
+    }
+  ],
+  "packet": ".aris/evidence/expanded_20261002/frontier/tehran-256/tehran-256-48-baseline.packet",
+  "packet_bytes": 124431,
+  "packet_sha256": "d1998e3461a375ce5883171a54ac41742cc8c8fed0c6a2d777db35831d00c30e",
+  "fees": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 545,
+    "body_bytes": 123798
+  },
+  "encode_seconds": 0.0677874589964631,
+  "decoder": {
+    "status": "DECODED",
+    "source_provided": false,
+    "meta": {
+      "codec": {
+        "backend": "qpet",
+        "base_bound": 10000.0,
+        "bound": 1.0,
+        "dtype": "float64",
+        "level": 0,
+        "transform": "direct"
+      },
+      "common_full_field_query_service": 1,
+      "epsilons": [
+        100,
+        1000
+      ],
+      "geo": {
+        "affine": [
+          100.0,
+          0.0,
+          4516600.0,
+          0.0,
+          -100.0,
+          4315500.0
+        ],
+        "crs": "PROJCS[\"World_Mollweide\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Mollweide\"],PARAMETER[\"central_meridian\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "product": "GHS-BUILT-S R2023A E2020",
+        "resampling": false,
+        "shape": [
+          256,
+          256
+        ],
+        "units": "m2"
+      },
+      "missing_zero": true,
+      "output": "float64_integer",
+      "postprocessor": "clip(nearest_even_rint(a),0,10000);masked_zero",
+      "units": "m2"
+    },
+    "packet_sha256": "d1998e3461a375ce5883171a54ac41742cc8c8fed0c6a2d777db35831d00c30e",
+    "numerator_sha256": "11cb31ac8c3afbb581413c2d5bb5fface228af954eb538f931980fd1d13f5b98",
+    "decode_seconds": 0.022093958003097214,
+    "native_commands": [
+      {
+        "argv": [
+          "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+          "decompress",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-gnfnjngx/input",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-gnfnjngx/output"
+        ],
+        "input_sha256": "c1f9008ead042c914defeb58941c9cfbd850d218b2c21943483fb8342fe3f1e7",
+        "returncode": 0,
+        "stdout": "API_DECOMPRESS_PASS samples=65536\n",
+        "stderr": "",
+        "seconds": 0.018041291004919913,
+        "emitted_output_bytes": 524288,
+        "emitted_output_sha256": "07659756b8a9674ecf6c77751c01bd5bca8aa9fe89bda73a17a62867e88dbcbb"
+      }
+    ],
+    "process_peak_rss_bytes": 67780608,
+    "rss_scope": "macOS peak bytes; persistent source-free decoder"
+  },
+  "audit": {
+    "max_rectangle_numerator": 1348,
+    "denominator": 1,
+    "max_rectangle_error": 1348.0,
+    "max_abs_prefix_numerator": 1348,
+    "range_violations": 0,
+    "range_violation_fraction": 0.0,
+    "integer_violations": 0,
+    "changed": 24902,
+    "mask_ok": true,
+    "protected_ok": true,
+    "valid_samples": 65536
+  },
+  "mechanism": {},
+  "legal_at": {
+    "25": false,
+    "50": false,
+    "100": false,
+    "250": false,
+    "500": false,
+    "1000": false,
+    "2500": true,
+    "5000": true
+  },
+  "elapsed_seconds": 0.11717679199500708
+}

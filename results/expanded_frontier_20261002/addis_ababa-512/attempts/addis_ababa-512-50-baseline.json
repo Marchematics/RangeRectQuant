@@ -1,0 +1,162 @@
+{
+  "id": "addis_ababa-512-50-baseline",
+  "configuration": {
+    "family": "baseline",
+    "config": {
+      "backend": "qpet",
+      "dtype": "float64",
+      "level": 0,
+      "base_bound": 10000.0,
+      "bound": 16.0,
+      "transform": "direct"
+    }
+  },
+  "status": "DECODED_AND_AUDITED",
+  "native_encoder_info": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 545,
+    "body_bytes": 141153,
+    "raw_native_pointwise_max_error": 16.0,
+    "raw_native_negative_values": 83872,
+    "raw_native_above_range_values": 1
+  },
+  "native_encode_commands": [
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "compress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-u_o6zbl1/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-u_o6zbl1/output",
+        "512",
+        "512",
+        "0",
+        "10000.0",
+        "16.0",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-u_o6zbl1/qoi.config"
+      ],
+      "input_sha256": "75d19fc3a2b3c9636e70eb63b3ab331f3f3850724be34e79668e9d6956b9a5e8",
+      "returncode": 0,
+      "stdout": "====================================== BEGIN TUNING ================================\nABS QoI eb: 16\nLorenzo ratio = 13.5521\ninterp best interpAlgo = LINEAR\ninterp best direction = 1\nInterp ratio = 16.4467\nchoose interp\nsz3 tuning time = 0.001923s\nTuning time = 0.002346s\n====================================== END TUNING ======================================\nAPI_COMPRESS_PASS bytes=141153\n",
+      "stderr": "",
+      "seconds": 0.031200541998259723,
+      "emitted_output_bytes": 141153,
+      "emitted_output_sha256": "7151f6c9708c9c2f46705279b472f6fc8999b3b4211d336d68f214e33d036a2d"
+    },
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "decompress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-jw8t0qr0/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-jw8t0qr0/output"
+      ],
+      "input_sha256": "7151f6c9708c9c2f46705279b472f6fc8999b3b4211d336d68f214e33d036a2d",
+      "returncode": 0,
+      "stdout": "API_DECOMPRESS_PASS samples=262144\n",
+      "stderr": "",
+      "seconds": 0.03242187500291038,
+      "emitted_output_bytes": 2097152,
+      "emitted_output_sha256": "f3f4f4d6edfbc13b7af8816fdf935f2c71915012073448fc46348d35bba20a24"
+    }
+  ],
+  "packet": ".aris/evidence/expanded_20261002/frontier/addis_ababa-512/addis_ababa-512-50-baseline.packet",
+  "packet_bytes": 141786,
+  "packet_sha256": "7c59493206dad829f7c597c70644d45c5de6bcd84cdf63e4a128a5e5160578d7",
+  "fees": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 545,
+    "body_bytes": 141153
+  },
+  "encode_seconds": 0.0891862080025021,
+  "decoder": {
+    "status": "DECODED",
+    "source_provided": false,
+    "meta": {
+      "codec": {
+        "backend": "qpet",
+        "base_bound": 10000.0,
+        "bound": 16.0,
+        "dtype": "float64",
+        "level": 0,
+        "transform": "direct"
+      },
+      "common_full_field_query_service": 1,
+      "epsilons": [
+        100,
+        1000
+      ],
+      "geo": {
+        "affine": [
+          100.0,
+          0.0,
+          3827900.0,
+          0.0,
+          -100.0,
+          1139800.0
+        ],
+        "crs": "PROJCS[\"World_Mollweide\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Mollweide\"],PARAMETER[\"central_meridian\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "product": "GHS-BUILT-S R2023A E2020",
+        "resampling": false,
+        "shape": [
+          512,
+          512
+        ],
+        "units": "m2"
+      },
+      "missing_zero": true,
+      "output": "float64_integer",
+      "postprocessor": "clip(nearest_even_rint(a),0,10000);masked_zero",
+      "units": "m2"
+    },
+    "packet_sha256": "7c59493206dad829f7c597c70644d45c5de6bcd84cdf63e4a128a5e5160578d7",
+    "numerator_sha256": "4645d8bb65b3d821c53f1181c0fa2a2b633a6fde78758ac7d1feaed8526165cb",
+    "decode_seconds": 0.04104291700059548,
+    "native_commands": [
+      {
+        "argv": [
+          "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+          "decompress",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-aao9si2l/input",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-aao9si2l/output"
+        ],
+        "input_sha256": "7151f6c9708c9c2f46705279b472f6fc8999b3b4211d336d68f214e33d036a2d",
+        "returncode": 0,
+        "stdout": "API_DECOMPRESS_PASS samples=262144\n",
+        "stderr": "",
+        "seconds": 0.029144457999791484,
+        "emitted_output_bytes": 2097152,
+        "emitted_output_sha256": "f3f4f4d6edfbc13b7af8816fdf935f2c71915012073448fc46348d35bba20a24"
+      }
+    ],
+    "process_peak_rss_bytes": 145309696,
+    "rss_scope": "macOS peak bytes; persistent source-free decoder"
+  },
+  "audit": {
+    "max_rectangle_numerator": 325809,
+    "denominator": 1,
+    "max_rectangle_error": 325809.0,
+    "max_abs_prefix_numerator": 325809,
+    "range_violations": 0,
+    "range_violation_fraction": 0.0,
+    "integer_violations": 0,
+    "changed": 170792,
+    "mask_ok": true,
+    "protected_ok": true,
+    "valid_samples": 262144
+  },
+  "mechanism": {},
+  "legal_at": {
+    "25": false,
+    "50": false,
+    "100": false,
+    "250": false,
+    "500": false,
+    "1000": false,
+    "2500": false,
+    "5000": false
+  },
+  "elapsed_seconds": 0.3943635420000646
+}

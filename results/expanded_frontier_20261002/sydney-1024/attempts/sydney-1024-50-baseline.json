@@ -1,0 +1,162 @@
+{
+  "id": "sydney-1024-50-baseline",
+  "configuration": {
+    "family": "baseline",
+    "config": {
+      "backend": "qpet",
+      "dtype": "float64",
+      "level": 0,
+      "base_bound": 10000.0,
+      "bound": 16.0,
+      "transform": "direct"
+    }
+  },
+  "status": "DECODED_AND_AUDITED",
+  "native_encoder_info": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 546,
+    "body_bytes": 285396,
+    "raw_native_pointwise_max_error": 16.0,
+    "raw_native_negative_values": 576329,
+    "raw_native_above_range_values": 26
+  },
+  "native_encode_commands": [
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "compress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-o558i_oc/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-o558i_oc/output",
+        "1024",
+        "1024",
+        "0",
+        "10000.0",
+        "16.0",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-o558i_oc/qoi.config"
+      ],
+      "input_sha256": "967d4581c28df1cc3d80e3962b269ae29fe6eb9f262cea5f0e474b448972bb50",
+      "returncode": 0,
+      "stdout": "====================================== BEGIN TUNING ================================\nABS QoI eb: 16\nLorenzo ratio = 84.0512\ninterp best interpAlgo = LINEAR\ninterp best direction = 0\nInterp ratio = 89.8289\nchoose interp\nsz3 tuning time = 0.004438s\nTuning time = 0.005235s\n====================================== END TUNING ======================================\nAPI_COMPRESS_PASS bytes=285396\n",
+      "stderr": "",
+      "seconds": 0.06607470900053158,
+      "emitted_output_bytes": 285396,
+      "emitted_output_sha256": "1eae74f08112e3fefa51cc3ec353830b0acf93ca9c396dd8aeb94bde00830684"
+    },
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "decompress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-cy2mtuo7/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-cy2mtuo7/output"
+      ],
+      "input_sha256": "1eae74f08112e3fefa51cc3ec353830b0acf93ca9c396dd8aeb94bde00830684",
+      "returncode": 0,
+      "stdout": "API_DECOMPRESS_PASS samples=1048576\n",
+      "stderr": "",
+      "seconds": 0.06438650000200141,
+      "emitted_output_bytes": 8388608,
+      "emitted_output_sha256": "b11ed86668f5bca38842c4d384080c23be86f92b08c5586688c174b7d693b48d"
+    }
+  ],
+  "packet": ".aris/evidence/expanded_20261002/frontier/sydney-1024/sydney-1024-50-baseline.packet",
+  "packet_bytes": 286030,
+  "packet_sha256": "00ffb80f4889a375d76142664c011f2d4defbeb75ca629d2cd28d977166bd570",
+  "fees": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 546,
+    "body_bytes": 285396
+  },
+  "encode_seconds": 0.20157937499607215,
+  "decoder": {
+    "status": "DECODED",
+    "source_provided": false,
+    "meta": {
+      "codec": {
+        "backend": "qpet",
+        "base_bound": 10000.0,
+        "bound": 16.0,
+        "dtype": "float64",
+        "level": 0,
+        "transform": "direct"
+      },
+      "common_full_field_query_service": 1,
+      "epsilons": [
+        100,
+        1000
+      ],
+      "geo": {
+        "affine": [
+          100.0,
+          0.0,
+          13453100.0,
+          0.0,
+          -100.0,
+          -4041900.0
+        ],
+        "crs": "PROJCS[\"World_Mollweide\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Mollweide\"],PARAMETER[\"central_meridian\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "product": "GHS-BUILT-S R2023A E2020",
+        "resampling": false,
+        "shape": [
+          1024,
+          1024
+        ],
+        "units": "m2"
+      },
+      "missing_zero": true,
+      "output": "float64_integer",
+      "postprocessor": "clip(nearest_even_rint(a),0,10000);masked_zero",
+      "units": "m2"
+    },
+    "packet_sha256": "00ffb80f4889a375d76142664c011f2d4defbeb75ca629d2cd28d977166bd570",
+    "numerator_sha256": "3f97196bde8a7ffa161533dad62ca4266169263ae7a0624a528a667c557b73dd",
+    "decode_seconds": 0.10247900000103982,
+    "native_commands": [
+      {
+        "argv": [
+          "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+          "decompress",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-2_ynrii2/input",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-2_ynrii2/output"
+        ],
+        "input_sha256": "1eae74f08112e3fefa51cc3ec353830b0acf93ca9c396dd8aeb94bde00830684",
+        "returncode": 0,
+        "stdout": "API_DECOMPRESS_PASS samples=1048576\n",
+        "stderr": "",
+        "seconds": 0.06271516699780477,
+        "emitted_output_bytes": 8388608,
+        "emitted_output_sha256": "b11ed86668f5bca38842c4d384080c23be86f92b08c5586688c174b7d693b48d"
+      }
+    ],
+    "process_peak_rss_bytes": 313311232,
+    "rss_scope": "macOS peak bytes; persistent source-free decoder"
+  },
+  "audit": {
+    "max_rectangle_numerator": 710806,
+    "denominator": 1,
+    "max_rectangle_error": 710806.0,
+    "max_abs_prefix_numerator": 710806,
+    "range_violations": 0,
+    "range_violation_fraction": 0.0,
+    "integer_violations": 0,
+    "changed": 431808,
+    "mask_ok": true,
+    "protected_ok": true,
+    "valid_samples": 1048576
+  },
+  "mechanism": {},
+  "legal_at": {
+    "25": false,
+    "50": false,
+    "100": false,
+    "250": false,
+    "500": false,
+    "1000": false,
+    "2500": false,
+    "5000": false
+  },
+  "elapsed_seconds": 2.3031889170015347
+}

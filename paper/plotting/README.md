@@ -1,5 +1,20 @@
 # Saved-data manuscript figures
 
+## Current expanded figures
+
+```sh
+python make_research_figures.py frontier mechanism closest water scaling protected
+python make_research_tables.py
+```
+
+Run these scripts from this directory or use their absolute paths. They read
+saved reports only. The current provenance receipt is under
+`../figures/research/`; the protected table is under `../tables/`.
+Four figures appear in the ten-page article. The original plotting workflow
+below remains available for its historical three-figure manuscript.
+
+## Original four-location figures
+
 Run from any directory:
 
 ```sh

@@ -1,0 +1,162 @@
+{
+  "id": "athens-1024-50-baseline",
+  "configuration": {
+    "family": "baseline",
+    "config": {
+      "backend": "qpet",
+      "dtype": "float64",
+      "level": 0,
+      "base_bound": 10000.0,
+      "bound": 16.0,
+      "transform": "direct"
+    }
+  },
+  "status": "DECODED_AND_AUDITED",
+  "native_encoder_info": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 542,
+    "body_bytes": 227674,
+    "raw_native_pointwise_max_error": 16.0,
+    "raw_native_negative_values": 638021,
+    "raw_native_above_range_values": 2
+  },
+  "native_encode_commands": [
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "compress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-53p4f4_x/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-53p4f4_x/output",
+        "1024",
+        "1024",
+        "0",
+        "10000.0",
+        "16.0",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-53p4f4_x/qoi.config"
+      ],
+      "input_sha256": "1808a0fedd55fa8d489c13a903bd14d6571d976d994245b1398124a44ad5043f",
+      "returncode": 0,
+      "stdout": "====================================== BEGIN TUNING ================================\nABS QoI eb: 16\nLorenzo ratio = 40.1167\ninterp best interpAlgo = LINEAR\ninterp best direction = 0\nInterp ratio = 42.2161\nchoose interp\nsz3 tuning time = 0.012082s\nTuning time = 0.012817s\n====================================== END TUNING ======================================\nAPI_COMPRESS_PASS bytes=227674\n",
+      "stderr": "",
+      "seconds": 0.16122012499545235,
+      "emitted_output_bytes": 227674,
+      "emitted_output_sha256": "2c9f9f8540476de762142b196ff67c7e31cb85f922560d076137aed0e5c55f4f"
+    },
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "decompress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-mtgitvjh/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-mtgitvjh/output"
+      ],
+      "input_sha256": "2c9f9f8540476de762142b196ff67c7e31cb85f922560d076137aed0e5c55f4f",
+      "returncode": 0,
+      "stdout": "API_DECOMPRESS_PASS samples=1048576\n",
+      "stderr": "",
+      "seconds": 0.07483195799431996,
+      "emitted_output_bytes": 8388608,
+      "emitted_output_sha256": "f4c927c6ed8e2766de5fe6fc231a598070381389f4316d93abff9bb0bdd7c54d"
+    }
+  ],
+  "packet": ".aris/evidence/expanded_20261002/frontier/athens-1024/athens-1024-50-baseline.packet",
+  "packet_bytes": 228304,
+  "packet_sha256": "5872dc36eeac882fc37b97271fdca004857a68c68d6cc976bd5816b8b38d9c02",
+  "fees": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 542,
+    "body_bytes": 227674
+  },
+  "encode_seconds": 0.46779287500248756,
+  "decoder": {
+    "status": "DECODED",
+    "source_provided": false,
+    "meta": {
+      "codec": {
+        "backend": "qpet",
+        "base_bound": 10000.0,
+        "bound": 16.0,
+        "dtype": "float64",
+        "level": 0,
+        "transform": "direct"
+      },
+      "common_full_field_query_service": 1,
+      "epsilons": [
+        100,
+        1000
+      ],
+      "geo": {
+        "affine": [
+          100.0,
+          0.0,
+          2000100.0,
+          0.0,
+          -100.0,
+          4614100.0
+        ],
+        "crs": "PROJCS[\"World_Mollweide\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Mollweide\"],PARAMETER[\"central_meridian\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "product": "GHS-BUILT-S R2023A E2020",
+        "resampling": false,
+        "shape": [
+          1024,
+          1024
+        ],
+        "units": "m2"
+      },
+      "missing_zero": true,
+      "output": "float64_integer",
+      "postprocessor": "clip(nearest_even_rint(a),0,10000);masked_zero",
+      "units": "m2"
+    },
+    "packet_sha256": "5872dc36eeac882fc37b97271fdca004857a68c68d6cc976bd5816b8b38d9c02",
+    "numerator_sha256": "95460cd653a1ad5a27e149d91621b4116bf12678d6ecffa492fdd3f1954f4b12",
+    "decode_seconds": 0.20854912499635248,
+    "native_commands": [
+      {
+        "argv": [
+          "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+          "decompress",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-w7co13um/input",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-w7co13um/output"
+        ],
+        "input_sha256": "2c9f9f8540476de762142b196ff67c7e31cb85f922560d076137aed0e5c55f4f",
+        "returncode": 0,
+        "stdout": "API_DECOMPRESS_PASS samples=1048576\n",
+        "stderr": "",
+        "seconds": 0.07833662499615457,
+        "emitted_output_bytes": 8388608,
+        "emitted_output_sha256": "f4c927c6ed8e2766de5fe6fc231a598070381389f4316d93abff9bb0bdd7c54d"
+      }
+    ],
+    "process_peak_rss_bytes": 330104832,
+    "rss_scope": "macOS peak bytes; persistent source-free decoder"
+  },
+  "audit": {
+    "max_rectangle_numerator": 783569,
+    "denominator": 1,
+    "max_rectangle_error": 783569.0,
+    "max_abs_prefix_numerator": 783569,
+    "range_violations": 0,
+    "range_violation_fraction": 0.0,
+    "integer_violations": 0,
+    "changed": 374518,
+    "mask_ok": true,
+    "protected_ok": true,
+    "valid_samples": 1048576
+  },
+  "mechanism": {},
+  "legal_at": {
+    "25": false,
+    "50": false,
+    "100": false,
+    "250": false,
+    "500": false,
+    "1000": false,
+    "2500": false,
+    "5000": false
+  },
+  "elapsed_seconds": 3.192086625000229
+}

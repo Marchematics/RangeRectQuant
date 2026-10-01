@@ -1,0 +1,38 @@
+{
+  "id": "auckland-256-47-baseline",
+  "configuration": {
+    "backend": "qpet",
+    "dtype": "float64",
+    "level": 0,
+    "base_bound": 10000.0,
+    "bound": 0.49,
+    "transform": "direct"
+  },
+  "source_sha256": "3907bd1d5e977954832a46760be014230ea49ad6565b615ef1796a4219916032",
+  "original_failure_preserved": true,
+  "previous_error": "RuntimeError: qpet encode return -6; output=False",
+  "status": "REPRODUCED_EXCEPTION",
+  "error": "qpet encode return -6; output=False",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/nathmath/dcc/RangeRectQuant/experiments/reproduce_native_failures.py\", line 29, in run\n    body=body_codec(cfg,'encode',x,x.shape,commands,folder)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/nathmath/dcc/LinewiseROI/experiments/built_area_discrete_packet.py\", line 157, in body_codec\n    return native(cfg, operation, data, shape, commands, evidence_dir)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/nathmath/dcc/LinewiseROI/experiments/built_area_packet.py\", line 112, in native\n    raise RuntimeError(f'{backend} {operation} return {run.returncode}; output={output.exists()}')\nRuntimeError: qpet encode return -6; output=False\n",
+  "commands": [
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "compress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-d7gdn41h/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-d7gdn41h/output",
+        "256",
+        "256",
+        "0",
+        "10000.0",
+        "0.49",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-d7gdn41h/qoi.config"
+      ],
+      "input_sha256": "211339d135e244989cec0a0c3804c20a5c109934bfc2d7e32e2de18f9b6e531f",
+      "returncode": -6,
+      "stdout": "====================================== BEGIN TUNING ================================\nABS QoI eb: 0.49\nLorenzo ratio = 1.3676\n",
+      "stderr": "",
+      "seconds": 0.04067529199528508
+    }
+  ]
+}

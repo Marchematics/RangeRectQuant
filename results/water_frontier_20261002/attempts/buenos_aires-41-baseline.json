@@ -1,0 +1,139 @@
+{
+  "id": "buenos_aires-41-baseline",
+  "site": "buenos_aires",
+  "configuration": {
+    "family": "baseline",
+    "config": {
+      "backend": "qpet",
+      "dtype": "float64",
+      "level": 0,
+      "base_bound": 100.0,
+      "bound": 16.0,
+      "transform": "direct"
+    }
+  },
+  "status": "DECODED_AND_AUDITED",
+  "source_sha256": "a569b0050f3dd1d0813877f0c58cc3e3097609fb36eb53832ae48463e6006845",
+  "packet": ".aris/evidence/expanded_20261002/water/buenos_aires-41-baseline.packet",
+  "packet_bytes": 6433,
+  "fees": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "metadata_bytes": 451,
+    "body_bytes": 5894
+  },
+  "packet_sha256": "57599fcb5f92ebde0c2a566176fd62d0512fc4e20b919b529b461c120c46b3c6",
+  "decoder": {
+    "status": "DECODED",
+    "source_provided": false,
+    "meta": {
+      "cap": 100,
+      "codec": {
+        "backend": "qpet",
+        "base_bound": 100.0,
+        "bound": 16.0,
+        "dtype": "float64",
+        "level": 0,
+        "transform": "direct"
+      },
+      "geo": {
+        "affine": [
+          0.00025,
+          0.0,
+          -58.44124999999991,
+          0.0,
+          -0.00025,
+          -34.54900000000007
+        ],
+        "crs": "GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0,AUTHORITY[\"EPSG\",\"8901\"]],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AXIS[\"Latitude\",NORTH],AXIS[\"Longitude\",EAST],AUTHORITY[\"EPSG\",\"4326\"]]",
+        "product": "JRC GSW occurrence v1.5 1984\u20132024",
+        "resampling": false,
+        "units": "percentage points"
+      },
+      "postprocess": "nearest-even integer;clip [0,100];missing zero",
+      "units": "percentage-point sums"
+    },
+    "decode_seconds": 0.039098708002711646,
+    "numerator_sha256": "a8c1c2f73408d79cfcafbd7fd56fb171601470c05ba033adb8591c9a04fb0799",
+    "native_commands": [
+      {
+        "argv": [
+          "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+          "decompress",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-8gf4zpd2/input",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-8gf4zpd2/output"
+        ],
+        "input_sha256": "1849c4c79bd18e8680b301545afcfef3588238ba3cde625852d9f6e54fa08c41",
+        "returncode": 0,
+        "stdout": "API_DECOMPRESS_PASS samples=262144\n",
+        "stderr": "",
+        "seconds": 0.02861375000065891,
+        "emitted_output_bytes": 2097152,
+        "emitted_output_sha256": "125262ecf8f97b2fd348763bbed10f1c0ab64cf5814c5fcad33e0b8b60cfa68a"
+      }
+    ]
+  },
+  "audit": {
+    "max_rectangle_numerator": 214570,
+    "denominator": 1,
+    "max_rectangle_error": 214570.0,
+    "max_abs_prefix_numerator": 214097,
+    "range_violations": 0,
+    "range_violation_fraction": 0.0,
+    "integer_violations": 0,
+    "changed": 92145,
+    "mask_ok": true,
+    "protected_ok": true,
+    "valid_samples": 262144
+  },
+  "encode_seconds": 0.07781737500044983,
+  "legal_at": {
+    "5": false,
+    "10": false,
+    "25": false,
+    "50": false,
+    "100": false,
+    "250": false,
+    "500": false,
+    "1000": false
+  },
+  "native_encode_commands": [
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "compress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-vetbgpm_/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-vetbgpm_/output",
+        "512",
+        "512",
+        "0",
+        "100.0",
+        "16.0",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-vetbgpm_/qoi.config"
+      ],
+      "input_sha256": "57748d4f048145aab2ab311889174c9d298c18bcaaea3b10875aabbb02048e93",
+      "returncode": 0,
+      "stdout": "====================================== BEGIN TUNING ================================\nABS QoI eb: 16\nLorenzo ratio = 243.7517\ninterp best interpAlgo = LINEAR\ninterp best direction = 0\nInterp ratio = 212.9157\nchoose interp\nsz3 tuning time = 0.001323s\nTuning time = 0.00188s\n====================================== END TUNING ======================================\nAPI_COMPRESS_PASS bytes=5894\n",
+      "stderr": "",
+      "seconds": 0.028372499997203704,
+      "emitted_output_bytes": 5894,
+      "emitted_output_sha256": "1849c4c79bd18e8680b301545afcfef3588238ba3cde625852d9f6e54fa08c41"
+    },
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "decompress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-hc5um474/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-hc5um474/output"
+      ],
+      "input_sha256": "1849c4c79bd18e8680b301545afcfef3588238ba3cde625852d9f6e54fa08c41",
+      "returncode": 0,
+      "stdout": "API_DECOMPRESS_PASS samples=262144\n",
+      "stderr": "",
+      "seconds": 0.034454042004654184,
+      "emitted_output_bytes": 2097152,
+      "emitted_output_sha256": "125262ecf8f97b2fd348763bbed10f1c0ab64cf5814c5fcad33e0b8b60cfa68a"
+    }
+  ]
+}

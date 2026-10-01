@@ -1,0 +1,162 @@
+{
+  "id": "auckland-512-50-baseline",
+  "configuration": {
+    "family": "baseline",
+    "config": {
+      "backend": "qpet",
+      "dtype": "float64",
+      "level": 0,
+      "base_bound": 10000.0,
+      "bound": 16.0,
+      "transform": "direct"
+    }
+  },
+  "status": "DECODED_AND_AUDITED",
+  "native_encoder_info": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 546,
+    "body_bytes": 114225,
+    "raw_native_pointwise_max_error": 16.0,
+    "raw_native_negative_values": 102278,
+    "raw_native_above_range_values": 89
+  },
+  "native_encode_commands": [
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "compress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-b41st0lx/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-b41st0lx/output",
+        "512",
+        "512",
+        "0",
+        "10000.0",
+        "16.0",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-b41st0lx/qoi.config"
+      ],
+      "input_sha256": "cf47f9e4d259044b851586915d0eae2ec207138ee3fd81aed467f1dbfc7bdb19",
+      "returncode": 0,
+      "stdout": "====================================== BEGIN TUNING ================================\nABS QoI eb: 16\nLorenzo ratio = 16.0254\ninterp best interpAlgo = LINEAR\ninterp best direction = 0\nInterp ratio = 19.1255\nchoose interp\nsz3 tuning time = 0.002113s\nTuning time = 0.002301s\n====================================== END TUNING ======================================\nAPI_COMPRESS_PASS bytes=114225\n",
+      "stderr": "",
+      "seconds": 0.0380321249976987,
+      "emitted_output_bytes": 114225,
+      "emitted_output_sha256": "18dfdd9fae752260ce5bed6501cb5f5ba55fac14ae015672c86be2cedcfa0725"
+    },
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "decompress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-14ho3iun/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-14ho3iun/output"
+      ],
+      "input_sha256": "18dfdd9fae752260ce5bed6501cb5f5ba55fac14ae015672c86be2cedcfa0725",
+      "returncode": 0,
+      "stdout": "API_DECOMPRESS_PASS samples=262144\n",
+      "stderr": "",
+      "seconds": 0.03031087500130525,
+      "emitted_output_bytes": 2097152,
+      "emitted_output_sha256": "ddfc08401f40bfe73a73b8fcc9cedb3d84a487446b84843560f2ccee6be0c3e9"
+    }
+  ],
+  "packet": ".aris/evidence/expanded_20261002/frontier/auckland-512/auckland-512-50-baseline.packet",
+  "packet_bytes": 114859,
+  "packet_sha256": "20427307917d7cc53f99b17984b4ee61ae0453001bde6d0eb67b3abeaa4c8c2e",
+  "fees": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 546,
+    "body_bytes": 114225
+  },
+  "encode_seconds": 0.089329042006284,
+  "decoder": {
+    "status": "DECODED",
+    "source_provided": false,
+    "meta": {
+      "codec": {
+        "backend": "qpet",
+        "base_bound": 10000.0,
+        "bound": 16.0,
+        "dtype": "float64",
+        "level": 0,
+        "transform": "direct"
+      },
+      "common_full_field_query_service": 1,
+      "epsilons": [
+        100,
+        1000
+      ],
+      "geo": {
+        "affine": [
+          100.0,
+          0.0,
+          15227100.0,
+          0.0,
+          -100.0,
+          -4408500.0
+        ],
+        "crs": "PROJCS[\"World_Mollweide\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Mollweide\"],PARAMETER[\"central_meridian\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "product": "GHS-BUILT-S R2023A E2020",
+        "resampling": false,
+        "shape": [
+          512,
+          512
+        ],
+        "units": "m2"
+      },
+      "missing_zero": true,
+      "output": "float64_integer",
+      "postprocessor": "clip(nearest_even_rint(a),0,10000);masked_zero",
+      "units": "m2"
+    },
+    "packet_sha256": "20427307917d7cc53f99b17984b4ee61ae0453001bde6d0eb67b3abeaa4c8c2e",
+    "numerator_sha256": "b650ad7613a7134ea34494980b2846a91d9c1655d165efaf553c7d7a819a0808",
+    "decode_seconds": 0.03682966699852841,
+    "native_commands": [
+      {
+        "argv": [
+          "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+          "decompress",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-h6g8g9w4/input",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-h6g8g9w4/output"
+        ],
+        "input_sha256": "18dfdd9fae752260ce5bed6501cb5f5ba55fac14ae015672c86be2cedcfa0725",
+        "returncode": 0,
+        "stdout": "API_DECOMPRESS_PASS samples=262144\n",
+        "stderr": "",
+        "seconds": 0.02524329200241482,
+        "emitted_output_bytes": 2097152,
+        "emitted_output_sha256": "ddfc08401f40bfe73a73b8fcc9cedb3d84a487446b84843560f2ccee6be0c3e9"
+      }
+    ],
+    "process_peak_rss_bytes": 151191552,
+    "rss_scope": "macOS peak bytes; persistent source-free decoder"
+  },
+  "audit": {
+    "max_rectangle_numerator": 198857,
+    "denominator": 1,
+    "max_rectangle_error": 198857.0,
+    "max_abs_prefix_numerator": 198857,
+    "range_violations": 0,
+    "range_violation_fraction": 0.0,
+    "integer_violations": 0,
+    "changed": 111065,
+    "mask_ok": true,
+    "protected_ok": true,
+    "valid_samples": 262144
+  },
+  "mechanism": {},
+  "legal_at": {
+    "25": false,
+    "50": false,
+    "100": false,
+    "250": false,
+    "500": false,
+    "1000": false,
+    "2500": false,
+    "5000": false
+  },
+  "elapsed_seconds": 0.38332200000149896
+}

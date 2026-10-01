@@ -1,0 +1,162 @@
+{
+  "id": "shanghai-1024-49-baseline",
+  "configuration": {
+    "family": "baseline",
+    "config": {
+      "backend": "qpet",
+      "dtype": "float64",
+      "level": 0,
+      "base_bound": 10000.0,
+      "bound": 4.0,
+      "transform": "direct"
+    }
+  },
+  "status": "DECODED_AND_AUDITED",
+  "native_encoder_info": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 544,
+    "body_bytes": 881634,
+    "raw_native_pointwise_max_error": 4.0,
+    "raw_native_negative_values": 213020,
+    "raw_native_above_range_values": 85
+  },
+  "native_encode_commands": [
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "compress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-j8sxdbls/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-j8sxdbls/output",
+        "1024",
+        "1024",
+        "0",
+        "10000.0",
+        "4.0",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-j8sxdbls/qoi.config"
+      ],
+      "input_sha256": "7904c0db62b416d35ec531e874b666037c0068e51ba7a0eebfe8ade27b241165",
+      "returncode": 0,
+      "stdout": "====================================== BEGIN TUNING ================================\nABS QoI eb: 4\nLorenzo ratio = 8.0493\ninterp best interpAlgo = LINEAR\ninterp best direction = 0\nInterp ratio = 8.9111\nchoose interp\nsz3 tuning time = 0.010956s\nTuning time = 0.011148s\n====================================== END TUNING ======================================\nAPI_COMPRESS_PASS bytes=881634\n",
+      "stderr": "",
+      "seconds": 0.14553325000451878,
+      "emitted_output_bytes": 881634,
+      "emitted_output_sha256": "3337ed3d5a9d04c90ff07f32fa00b4aacc2fe647520cd73700c9cd21ac2f94c9"
+    },
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "decompress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-0nxl819u/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-0nxl819u/output"
+      ],
+      "input_sha256": "3337ed3d5a9d04c90ff07f32fa00b4aacc2fe647520cd73700c9cd21ac2f94c9",
+      "returncode": 0,
+      "stdout": "API_DECOMPRESS_PASS samples=1048576\n",
+      "stderr": "",
+      "seconds": 0.12074874999962049,
+      "emitted_output_bytes": 8388608,
+      "emitted_output_sha256": "0894e8ebdcbd82f2f90327a098e3090feaa28d7602c457fe75997b10384f59d2"
+    }
+  ],
+  "packet": ".aris/evidence/expanded_20261002/frontier/shanghai-1024/shanghai-1024-49-baseline.packet",
+  "packet_bytes": 882266,
+  "packet_sha256": "e887f9cc0b5eacf2a1f34c39479a800d940415c2327002a385f811a2a931700b",
+  "fees": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 544,
+    "body_bytes": 881634
+  },
+  "encode_seconds": 0.3856990839994978,
+  "decoder": {
+    "status": "DECODED",
+    "source_provided": false,
+    "meta": {
+      "codec": {
+        "backend": "qpet",
+        "base_bound": 10000.0,
+        "bound": 4.0,
+        "dtype": "float64",
+        "level": 0,
+        "transform": "direct"
+      },
+      "common_full_field_query_service": 1,
+      "epsilons": [
+        100,
+        1000
+      ],
+      "geo": {
+        "affine": [
+          100.0,
+          0.0,
+          10997100.0,
+          0.0,
+          -100.0,
+          3837800.0
+        ],
+        "crs": "PROJCS[\"World_Mollweide\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Mollweide\"],PARAMETER[\"central_meridian\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "product": "GHS-BUILT-S R2023A E2020",
+        "resampling": false,
+        "shape": [
+          1024,
+          1024
+        ],
+        "units": "m2"
+      },
+      "missing_zero": true,
+      "output": "float64_integer",
+      "postprocessor": "clip(nearest_even_rint(a),0,10000);masked_zero",
+      "units": "m2"
+    },
+    "packet_sha256": "e887f9cc0b5eacf2a1f34c39479a800d940415c2327002a385f811a2a931700b",
+    "numerator_sha256": "edb911e395574f1e19133775a2c2970904edf6e97fadd5fd6eec83f6b6cc3310",
+    "decode_seconds": 0.19107500000245636,
+    "native_commands": [
+      {
+        "argv": [
+          "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+          "decompress",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-oo3p_afj/input",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-oo3p_afj/output"
+        ],
+        "input_sha256": "3337ed3d5a9d04c90ff07f32fa00b4aacc2fe647520cd73700c9cd21ac2f94c9",
+        "returncode": 0,
+        "stdout": "API_DECOMPRESS_PASS samples=1048576\n",
+        "stderr": "",
+        "seconds": 0.12998916699871188,
+        "emitted_output_bytes": 8388608,
+        "emitted_output_sha256": "0894e8ebdcbd82f2f90327a098e3090feaa28d7602c457fe75997b10384f59d2"
+      }
+    ],
+    "process_peak_rss_bytes": 332840960,
+    "rss_scope": "macOS peak bytes; persistent source-free decoder"
+  },
+  "audit": {
+    "max_rectangle_numerator": 230768,
+    "denominator": 1,
+    "max_rectangle_error": 230768.0,
+    "max_abs_prefix_numerator": 230768,
+    "range_violations": 0,
+    "range_violation_fraction": 0.0,
+    "integer_violations": 0,
+    "changed": 664727,
+    "mask_ok": true,
+    "protected_ok": true,
+    "valid_samples": 1048576
+  },
+  "mechanism": {},
+  "legal_at": {
+    "25": false,
+    "50": false,
+    "100": false,
+    "250": false,
+    "500": false,
+    "1000": false,
+    "2500": false,
+    "5000": false
+  },
+  "elapsed_seconds": 2.6568386250000913
+}

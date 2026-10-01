@@ -1,0 +1,162 @@
+{
+  "id": "montreal-1024-48-baseline",
+  "configuration": {
+    "family": "baseline",
+    "config": {
+      "backend": "qpet",
+      "dtype": "float64",
+      "level": 0,
+      "base_bound": 10000.0,
+      "bound": 1.0,
+      "transform": "direct"
+    }
+  },
+  "status": "DECODED_AND_AUDITED",
+  "native_encoder_info": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 544,
+    "body_bytes": 684445,
+    "raw_native_pointwise_max_error": 1.0,
+    "raw_native_negative_values": 411329,
+    "raw_native_above_range_values": 10
+  },
+  "native_encode_commands": [
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "compress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-ttsyv2kl/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-ttsyv2kl/output",
+        "1024",
+        "1024",
+        "0",
+        "10000.0",
+        "1.0",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-ttsyv2kl/qoi.config"
+      ],
+      "input_sha256": "71e96c85dc78d3704efb45d79580bc898db12d212ba3ad2810e63da37718e2de",
+      "returncode": 0,
+      "stdout": "====================================== BEGIN TUNING ================================\nABS QoI eb: 1\nLorenzo ratio = 9.8218\ninterp best interpAlgo = LINEAR\ninterp best direction = 0\nInterp ratio = 11.3710\nchoose interp\nsz3 tuning time = 0.009121s\nTuning time = 0.009333s\n====================================== END TUNING ======================================\nAPI_COMPRESS_PASS bytes=684445\n",
+      "stderr": "",
+      "seconds": 0.08229145799850812,
+      "emitted_output_bytes": 684445,
+      "emitted_output_sha256": "47c2ca8a2f702394401d8ec79539c5e8c7210fffc19aeb9a67e2532ae855c2df"
+    },
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "decompress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-nn_b6_px/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-nn_b6_px/output"
+      ],
+      "input_sha256": "47c2ca8a2f702394401d8ec79539c5e8c7210fffc19aeb9a67e2532ae855c2df",
+      "returncode": 0,
+      "stdout": "API_DECOMPRESS_PASS samples=1048576\n",
+      "stderr": "",
+      "seconds": 0.08247491699876264,
+      "emitted_output_bytes": 8388608,
+      "emitted_output_sha256": "3b466aef0ee9f76bcc92f819c0db8502e11961b4d3d6c638c2f071f3220b29ce"
+    }
+  ],
+  "packet": ".aris/evidence/expanded_20261002/frontier/montreal-1024/montreal-1024-48-baseline.packet",
+  "packet_bytes": 685077,
+  "packet_sha256": "6c7626e277fd23269ac17bb23a2291eff1dee5103061e3b359719ad11d97a74e",
+  "fees": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 544,
+    "body_bytes": 684445
+  },
+  "encode_seconds": 0.2265678750045481,
+  "decoder": {
+    "status": "DECODED",
+    "source_provided": false,
+    "meta": {
+      "codec": {
+        "backend": "qpet",
+        "base_bound": 10000.0,
+        "bound": 1.0,
+        "dtype": "float64",
+        "level": 0,
+        "transform": "direct"
+      },
+      "common_full_field_query_service": 1,
+      "epsilons": [
+        100,
+        1000
+      ],
+      "geo": {
+        "affine": [
+          100.0,
+          0.0,
+          -5961600.0,
+          0.0,
+          -100.0,
+          5446600.0
+        ],
+        "crs": "PROJCS[\"World_Mollweide\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Mollweide\"],PARAMETER[\"central_meridian\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "product": "GHS-BUILT-S R2023A E2020",
+        "resampling": false,
+        "shape": [
+          1024,
+          1024
+        ],
+        "units": "m2"
+      },
+      "missing_zero": true,
+      "output": "float64_integer",
+      "postprocessor": "clip(nearest_even_rint(a),0,10000);masked_zero",
+      "units": "m2"
+    },
+    "packet_sha256": "6c7626e277fd23269ac17bb23a2291eff1dee5103061e3b359719ad11d97a74e",
+    "numerator_sha256": "47fa22244d56e0d1fc30ae1a52b80cd131666f06de87f5e4e9f794bc654e79e5",
+    "decode_seconds": 0.11091850000229897,
+    "native_commands": [
+      {
+        "argv": [
+          "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+          "decompress",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-rdomzcpp/input",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-rdomzcpp/output"
+        ],
+        "input_sha256": "47c2ca8a2f702394401d8ec79539c5e8c7210fffc19aeb9a67e2532ae855c2df",
+        "returncode": 0,
+        "stdout": "API_DECOMPRESS_PASS samples=1048576\n",
+        "stderr": "",
+        "seconds": 0.07057083299878286,
+        "emitted_output_bytes": 8388608,
+        "emitted_output_sha256": "3b466aef0ee9f76bcc92f819c0db8502e11961b4d3d6c638c2f071f3220b29ce"
+      }
+    ],
+    "process_peak_rss_bytes": 259063808,
+    "rss_scope": "macOS peak bytes; persistent source-free decoder"
+  },
+  "audit": {
+    "max_rectangle_numerator": 35157,
+    "denominator": 1,
+    "max_rectangle_error": 35157.0,
+    "max_abs_prefix_numerator": 35157,
+    "range_violations": 0,
+    "range_violation_fraction": 0.0,
+    "integer_violations": 0,
+    "changed": 164031,
+    "mask_ok": true,
+    "protected_ok": true,
+    "valid_samples": 1048576
+  },
+  "mechanism": {},
+  "legal_at": {
+    "25": false,
+    "50": false,
+    "100": false,
+    "250": false,
+    "500": false,
+    "1000": false,
+    "2500": false,
+    "5000": false
+  },
+  "elapsed_seconds": 2.664461708001909
+}

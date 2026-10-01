@@ -1,0 +1,162 @@
+{
+  "id": "shanghai-1024-48-baseline",
+  "configuration": {
+    "family": "baseline",
+    "config": {
+      "backend": "qpet",
+      "dtype": "float64",
+      "level": 0,
+      "base_bound": 10000.0,
+      "bound": 1.0,
+      "transform": "direct"
+    }
+  },
+  "status": "DECODED_AND_AUDITED",
+  "native_encoder_info": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 544,
+    "body_bytes": 1067156,
+    "raw_native_pointwise_max_error": 1.0,
+    "raw_native_negative_values": 231139,
+    "raw_native_above_range_values": 76
+  },
+  "native_encode_commands": [
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "compress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-bhv2vtns/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-bhv2vtns/output",
+        "1024",
+        "1024",
+        "0",
+        "10000.0",
+        "1.0",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-bhv2vtns/qoi.config"
+      ],
+      "input_sha256": "7904c0db62b416d35ec531e874b666037c0068e51ba7a0eebfe8ade27b241165",
+      "returncode": 0,
+      "stdout": "====================================== BEGIN TUNING ================================\nABS QoI eb: 1\nLorenzo ratio = 4.7060\ninterp best interpAlgo = LINEAR\ninterp best direction = 0\nInterp ratio = 5.3779\nchoose interp\nsz3 tuning time = 0.015837s\nTuning time = 0.017755s\n====================================== END TUNING ======================================\nAPI_COMPRESS_PASS bytes=1067156\n",
+      "stderr": "",
+      "seconds": 0.13687008299893932,
+      "emitted_output_bytes": 1067156,
+      "emitted_output_sha256": "4938c861020fee86b6e04e4cf9dd6d4f286f93c6c082244f94926579651d5272"
+    },
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "decompress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-9ecgat7h/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-9ecgat7h/output"
+      ],
+      "input_sha256": "4938c861020fee86b6e04e4cf9dd6d4f286f93c6c082244f94926579651d5272",
+      "returncode": 0,
+      "stdout": "API_DECOMPRESS_PASS samples=1048576\n",
+      "stderr": "",
+      "seconds": 0.10049379100382794,
+      "emitted_output_bytes": 8388608,
+      "emitted_output_sha256": "007a5eae90de2acbc9f028a2e220b6a8a8f0a80f2133e70b0ea1917c49da593e"
+    }
+  ],
+  "packet": ".aris/evidence/expanded_20261002/frontier/shanghai-1024/shanghai-1024-48-baseline.packet",
+  "packet_bytes": 1067788,
+  "packet_sha256": "38e20ef12e5fe90314eb6b858f70ccfe4e147fce62def9f0cffb7e32cfdad540",
+  "fees": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 544,
+    "body_bytes": 1067156
+  },
+  "encode_seconds": 0.3698352089995751,
+  "decoder": {
+    "status": "DECODED",
+    "source_provided": false,
+    "meta": {
+      "codec": {
+        "backend": "qpet",
+        "base_bound": 10000.0,
+        "bound": 1.0,
+        "dtype": "float64",
+        "level": 0,
+        "transform": "direct"
+      },
+      "common_full_field_query_service": 1,
+      "epsilons": [
+        100,
+        1000
+      ],
+      "geo": {
+        "affine": [
+          100.0,
+          0.0,
+          10997100.0,
+          0.0,
+          -100.0,
+          3837800.0
+        ],
+        "crs": "PROJCS[\"World_Mollweide\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Mollweide\"],PARAMETER[\"central_meridian\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "product": "GHS-BUILT-S R2023A E2020",
+        "resampling": false,
+        "shape": [
+          1024,
+          1024
+        ],
+        "units": "m2"
+      },
+      "missing_zero": true,
+      "output": "float64_integer",
+      "postprocessor": "clip(nearest_even_rint(a),0,10000);masked_zero",
+      "units": "m2"
+    },
+    "packet_sha256": "38e20ef12e5fe90314eb6b858f70ccfe4e147fce62def9f0cffb7e32cfdad540",
+    "numerator_sha256": "2fb5ebe93000e5f9eee943bcc3cb2d4400c7aeaa5b2f9a01bfcb2ff63c6ec18b",
+    "decode_seconds": 0.2435122919996502,
+    "native_commands": [
+      {
+        "argv": [
+          "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+          "decompress",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-q8oouiw4/input",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-q8oouiw4/output"
+        ],
+        "input_sha256": "4938c861020fee86b6e04e4cf9dd6d4f286f93c6c082244f94926579651d5272",
+        "returncode": 0,
+        "stdout": "API_DECOMPRESS_PASS samples=1048576\n",
+        "stderr": "",
+        "seconds": 0.15069249999942258,
+        "emitted_output_bytes": 8388608,
+        "emitted_output_sha256": "007a5eae90de2acbc9f028a2e220b6a8a8f0a80f2133e70b0ea1917c49da593e"
+      }
+    ],
+    "process_peak_rss_bytes": 332840960,
+    "rss_scope": "macOS peak bytes; persistent source-free decoder"
+  },
+  "audit": {
+    "max_rectangle_numerator": 27106,
+    "denominator": 1,
+    "max_rectangle_error": 27106.0,
+    "max_abs_prefix_numerator": 27106,
+    "range_violations": 0,
+    "range_violation_fraction": 0.0,
+    "integer_violations": 0,
+    "changed": 297022,
+    "mask_ok": true,
+    "protected_ok": true,
+    "valid_samples": 1048576
+  },
+  "mechanism": {},
+  "legal_at": {
+    "25": false,
+    "50": false,
+    "100": false,
+    "250": false,
+    "500": false,
+    "1000": false,
+    "2500": false,
+    "5000": false
+  },
+  "elapsed_seconds": 2.5751484590000473
+}
