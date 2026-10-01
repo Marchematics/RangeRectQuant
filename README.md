@@ -25,3 +25,20 @@ See `docs/RESULTS_20261001.md`, `docs/REVIEW_AND_NEXT_GATE_20261001.md`, and
 `docs/REPRODUCIBILITY_20261001.md`; raw packets, full decoded fields, fees,
 failures and fresh replay are under `results/`. The initial sweep is unchanged;
 no refinement was added after it passed. No GPU was used.
+
+## Stronger simple-control gate (2026-10-01)
+
+The subsequently frozen suffix-viable **O(HW)** greedy control achieves almost
+all the paid benefit. In a matched QF01 carrier, exact row DP adds only
+**0.54% / 0.85%**, failing both preregistered ≥10% necessity gates. This does
+not invalidate the original RQ01 gains, but rules out their use as evidence
+that expensive DP is necessary. Its exact conditional objective remains valid.
+
+Current decision and complete32-packet evidence:
+`docs/VIABLE_GREEDY_CONTROL_RESULTS_20261001.md`,
+`docs/EXACT_OBJECT_NOVELTY_20261001.md`, and `findings.md`.
+The earlier post-A/B next-gate document is historical; identify an important
+nonclassical bottleneck surviving this control before expanding the method.
+No new sources, refinement or held-out/SOTA claim. QF01 decoder smoke tests:
+`PYTHONPATH=.:src:experiments .venv/bin/python -m unittest
+tests.test_viable_greedy tests.test_correctness tests.test_packet -v`.
