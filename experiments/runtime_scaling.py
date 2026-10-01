@@ -37,7 +37,13 @@ def worker(size,epsilon,method,out):
         p=z['mask'][off:off+size,off:off+size].copy()
     x=raw.astype(np.int64); x[p]=0; del raw
     times=[]; cores=[]; decodes=[]; files=[]; initial_peak=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
-    config=dict(method=method,epsilon=epsilon); geo=dict(anchor='London nominal tile; metadata-only clamped 4096 crop',shape=list(x.shape),units='m2')
+    config=dict(method=method,epsilon=epsilon)
+    manifest=json.loads((ROOT/'data/expanded_20261002/manifest_v2.json').read_text())
+    location=next(r for r in manifest['rows'] if r['site']=='london')
+    source_record=next(s for s in location['sources'] if s['shape']==[4096,4096])
+    geo=dict(source_record['geo']); affine=list(geo['affine']); shift=(4096-size)//2
+    affine[2]+=shift*affine[0]+shift*affine[1]; affine[5]+=shift*affine[3]+shift*affine[4]
+    geo.update(affine=affine,shape=list(x.shape))
     for repetition in range(3):
         started=time.perf_counter()
         if method=='Fixed margin':
