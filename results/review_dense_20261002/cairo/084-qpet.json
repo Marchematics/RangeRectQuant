@@ -1,0 +1,134 @@
+{
+  "id": "084-qpet",
+  "status": "DECODED_AND_AUDITED",
+  "configuration": {
+    "backend": "qpet",
+    "dtype": "float64",
+    "level": 3,
+    "base_bound": 10000.0,
+    "bound": 2.0,
+    "transform": "direct"
+  },
+  "packet": "results/review_dense_20261002/cairo/084-qpet.packet",
+  "packet_bytes": 282529,
+  "packet_sha256": "21deb47e62051ed804d6e98e99d9df34de90f14e8ab605f59f5b32871cafc3c8",
+  "fees": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 546,
+    "body_bytes": 281895
+  },
+  "decoder": {
+    "status": "DECODED",
+    "source_provided": false,
+    "meta": {
+      "codec": {
+        "backend": "qpet",
+        "base_bound": 10000.0,
+        "bound": 2.0,
+        "dtype": "float64",
+        "level": 3,
+        "transform": "direct"
+      },
+      "common_full_field_query_service": 1,
+      "epsilons": [
+        100,
+        1000
+      ],
+      "geo": {
+        "affine": [
+          100.0,
+          0.0,
+          2837300.0,
+          0.0,
+          -100.0,
+          3674700.0
+        ],
+        "crs_wkt": "PROJCS[\"World_Mollweide\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Mollweide\"],PARAMETER[\"central_meridian\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "epoch": 2020,
+        "native_resolution_m": 100,
+        "product": "GHS-BUILT-S R2023A"
+      },
+      "missing_zero": true,
+      "output": "float64_integer",
+      "postprocessor": "clip(nearest_even_rint(a),0,10000);masked_zero",
+      "units": "m2"
+    },
+    "packet_sha256": "21deb47e62051ed804d6e98e99d9df34de90f14e8ab605f59f5b32871cafc3c8",
+    "numerator_sha256": "deac042aed4c9ebd28ac35d134ec04c0b3dfa58fa9f42988e6be6cf115708fcc",
+    "native_commands": [
+      {
+        "argv": [
+          "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+          "decompress",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-qpst_v6b/input",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-qpst_v6b/output"
+        ],
+        "input_sha256": "1c72fb15d719486185aad8aded8902eaaea480ad8c0a9dffe7590f51fd7ded70",
+        "returncode": 0,
+        "stdout": "API_DECOMPRESS_PASS samples=262144\n",
+        "stderr": "",
+        "seconds": 0.011018082999726175,
+        "emitted_output_bytes": 2097152,
+        "emitted_output_sha256": "a605bc3dc52332d95e8aa812e202aa729cc12361b60f9ae59564067064159f2d"
+      }
+    ],
+    "decode_seconds": 0.01761700000042765
+  },
+  "audit": {
+    "max_abs_prefix_error": 29471,
+    "rectangle_error_exact": null,
+    "rectangle_error_lower": 29471,
+    "rectangle_error_upper": 117884,
+    "legal_at": {
+      "100": false,
+      "1000": false
+    },
+    "certificate": "four-corner-bound-and-prefix-witness",
+    "changed": 147302,
+    "global_sum_error": 29471,
+    "numerator_sha256": "deac042aed4c9ebd28ac35d134ec04c0b3dfa58fa9f42988e6be6cf115708fcc",
+    "mask_ok": true,
+    "protected_ok": true,
+    "range_ok": true
+  },
+  "native_encode_commands": [
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "compress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-tr_tn2ad/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-tr_tn2ad/output",
+        "512",
+        "512",
+        "3",
+        "10000.0",
+        "2.0",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-tr_tn2ad/qoi.config"
+      ],
+      "input_sha256": "b661295f6fa003c435512bedaee9919e7d5c0a2a16600c27a1354b2a707120e8",
+      "returncode": 0,
+      "stdout": "====================================== BEGIN TUNING ================================\nABS QoI eb: 2\nPredictor tuning started.\nPredictor tuning finished.\nLevel: 5\n\tinterp best interpAlgo = LINEAR\n\tinterp best interpParadigm = 1D\n\tinterp best direction = 0\nLevel: 4\n\tinterp best interpAlgo = LINEAR\n\tinterp best interpParadigm = 1D\n\tinterp best direction = 1\nLevel: 3\n\tinterp best interpAlgo = LINEAR\n\tinterp best interpParadigm = MD\nLevel: 2\n\tinterp best interpAlgo = LINEAR\n\tinterp best interpParadigm = MD\nLevel: 1\n\tinterp best interpAlgo = LINEAR\n\tinterp best interpParadigm = MD\nB-M tuning started.\nB-M step time = 0.009493s\nAutotuning finished.\nInterp selected. Selected alpha: 1.000000. Selected beta: 1.500000. Best bitrate: 23.209060. Best PSNR: 80.210351.\nTuning time = 0.010047s\n====================================== END TUNING ======================================\nAPI_COMPRESS_PASS bytes=281895\n",
+      "stderr": "",
+      "seconds": 0.02122504100043443,
+      "emitted_output_bytes": 281895,
+      "emitted_output_sha256": "1c72fb15d719486185aad8aded8902eaaea480ad8c0a9dffe7590f51fd7ded70"
+    },
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/qpet-native-20261001/native-qpet-api-v2-attempt1",
+        "decompress",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-8ilp650l/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-8ilp650l/output"
+      ],
+      "input_sha256": "1c72fb15d719486185aad8aded8902eaaea480ad8c0a9dffe7590f51fd7ded70",
+      "returncode": 0,
+      "stdout": "API_DECOMPRESS_PASS samples=262144\n",
+      "stderr": "",
+      "seconds": 0.012283083000511397,
+      "emitted_output_bytes": 2097152,
+      "emitted_output_sha256": "a605bc3dc52332d95e8aa812e202aa729cc12361b60f9ae59564067064159f2d"
+    }
+  ]
+}

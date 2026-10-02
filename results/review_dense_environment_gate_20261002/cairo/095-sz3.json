@@ -1,0 +1,39 @@
+{
+  "id": "095-sz3",
+  "status": "EXCEPTION",
+  "configuration": {
+    "backend": "sz3",
+    "dtype": "int64",
+    "algorithm": "INTERP_LORENZO",
+    "bound": 16.0,
+    "transform": "direct"
+  },
+  "error": "RuntimeError: SZ3 int64 encode return 1",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/nathmath/dcc/RangeRectQuant/experiments/run_review_dense.py\", line 47, in case\n    blob,info=encode(x,mask,cfg,record['geo'],body,commands)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/nathmath/dcc/LinewiseROI/experiments/built_area_discrete_packet.py\", line 174, in encode\n    body = body_codec(cfg, 'encode', x, x.shape, commands, evidence_dir)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/nathmath/dcc/LinewiseROI/experiments/built_area_discrete_packet.py\", line 156, in body_codec\n    return native_integer(cfg, operation, data, shape, commands, evidence_dir)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/nathmath/dcc/LinewiseROI/experiments/built_area_discrete_packet.py\", line 129, in native_integer\n    raise RuntimeError('SZ3 int64 ' + operation + ' return ' + str(run.returncode))\nRuntimeError: SZ3 int64 encode return 1\n",
+  "native_encode_commands": [
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.venv/bin/python",
+        "/Users/nathmath/dcc/LinewiseROI/experiments/native_sz3_worker.py",
+        "encode",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-integer-sz3-sp70nxbb/input.npy",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-integer-sz3-sp70nxbb/output",
+        "--dtype",
+        "int64",
+        "--height",
+        "512",
+        "--width",
+        "512",
+        "--algorithm",
+        "INTERP_LORENZO",
+        "--bound",
+        "16.0"
+      ],
+      "input_sha256": "d783c3c19ddd90f18a42d4b5d461b00917aec7ac1e62976ee88ade70ff3e5bf1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/Users/nathmath/dcc/LinewiseROI/experiments/native_sz3_worker.py\", line 5, in <module>\n    from pysz import sz, szConfig, szErrorBoundMode, szAlgorithm\nModuleNotFoundError: No module named 'pysz'\n",
+      "seconds": 0.045368457999757084
+    }
+  ]
+}

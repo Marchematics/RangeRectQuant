@@ -1,0 +1,15 @@
+{
+  "id": "080-qpet",
+  "status": "EXCEPTION",
+  "configuration": {
+    "backend": "qpet",
+    "dtype": "float64",
+    "level": 3,
+    "base_bound": 10000.0,
+    "bound": 0.625,
+    "transform": "direct"
+  },
+  "error": "KeyError: 'DCC_QPET_API_V2_DRIVER'",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/nathmath/dcc/RangeRectQuant/experiments/run_review_dense.py\", line 47, in case\n    blob,info=encode(x,mask,cfg,record['geo'],body,commands)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/nathmath/dcc/LinewiseROI/experiments/built_area_discrete_packet.py\", line 174, in encode\n    body = body_codec(cfg, 'encode', x, x.shape, commands, evidence_dir)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/nathmath/dcc/LinewiseROI/experiments/built_area_discrete_packet.py\", line 157, in body_codec\n    return native(cfg, operation, data, shape, commands, evidence_dir)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/nathmath/dcc/LinewiseROI/experiments/built_area_packet.py\", line 73, in native\n    argv = [os.environ['DCC_QPET_API_V2_DRIVER'], 'compress' if operation == 'encode' else 'decompress',\n            ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen os>\", line 714, in __getitem__\nKeyError: 'DCC_QPET_API_V2_DRIVER'\n",
+  "native_encode_commands": []
+}

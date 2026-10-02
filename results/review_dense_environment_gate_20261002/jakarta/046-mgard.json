@@ -1,0 +1,14 @@
+{
+  "id": "046-mgard",
+  "status": "EXCEPTION",
+  "configuration": {
+    "backend": "mgard",
+    "dtype": "float64",
+    "reorder": 0,
+    "bound": 3.0,
+    "transform": "direct"
+  },
+  "error": "KeyError: 'DCC_NATIVE_MGARD_DRIVER'",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/nathmath/dcc/RangeRectQuant/experiments/run_review_dense.py\", line 47, in case\n    blob,info=encode(x,mask,cfg,record['geo'],body,commands)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/nathmath/dcc/LinewiseROI/experiments/built_area_discrete_packet.py\", line 174, in encode\n    body = body_codec(cfg, 'encode', x, x.shape, commands, evidence_dir)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/nathmath/dcc/LinewiseROI/experiments/built_area_discrete_packet.py\", line 157, in body_codec\n    return native(cfg, operation, data, shape, commands, evidence_dir)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/nathmath/dcc/LinewiseROI/experiments/built_area_packet.py\", line 69, in native\n    argv = [os.environ['DCC_NATIVE_MGARD_DRIVER'], operation, str(source), str(output)]\n            ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen os>\", line 714, in __getitem__\nKeyError: 'DCC_NATIVE_MGARD_DRIVER'\n",
+  "native_encode_commands": []
+}

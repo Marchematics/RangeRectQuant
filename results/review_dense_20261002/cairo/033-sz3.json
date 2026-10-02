@@ -1,0 +1,151 @@
+{
+  "id": "033-sz3",
+  "status": "DECODED_AND_AUDITED",
+  "configuration": {
+    "backend": "sz3",
+    "dtype": "float64",
+    "algorithm": "LORENZO_REG",
+    "bound": 3.0,
+    "transform": "direct"
+  },
+  "packet": "results/review_dense_20261002/cairo/033-sz3.packet",
+  "packet_bytes": 292584,
+  "packet_sha256": "0419869bb7d44eefafed8374cc1d2583f15ae9a29aa45db3584e3f90f945d4e7",
+  "fees": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 547,
+    "body_bytes": 291949
+  },
+  "decoder": {
+    "status": "DECODED",
+    "source_provided": false,
+    "meta": {
+      "codec": {
+        "algorithm": "LORENZO_REG",
+        "backend": "sz3",
+        "bound": 3.0,
+        "dtype": "float64",
+        "transform": "direct"
+      },
+      "common_full_field_query_service": 1,
+      "epsilons": [
+        100,
+        1000
+      ],
+      "geo": {
+        "affine": [
+          100.0,
+          0.0,
+          2837300.0,
+          0.0,
+          -100.0,
+          3674700.0
+        ],
+        "crs_wkt": "PROJCS[\"World_Mollweide\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Mollweide\"],PARAMETER[\"central_meridian\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "epoch": 2020,
+        "native_resolution_m": 100,
+        "product": "GHS-BUILT-S R2023A"
+      },
+      "missing_zero": true,
+      "output": "float64_integer",
+      "postprocessor": "clip(nearest_even_rint(a),0,10000);masked_zero",
+      "units": "m2"
+    },
+    "packet_sha256": "0419869bb7d44eefafed8374cc1d2583f15ae9a29aa45db3584e3f90f945d4e7",
+    "numerator_sha256": "49792a706876015d6c91af51440c096e044f5a45dfbe2bbb9e0e659f17f4761d",
+    "native_commands": [
+      {
+        "argv": [
+          "/Users/nathmath/dcc/LinewiseROI/.validation/native-controls-20261001/py/bin/python",
+          "/Users/nathmath/dcc/LinewiseROI/experiments/native_sz3_worker.py",
+          "decode",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-i50ibo22/input",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-i50ibo22/output.npy",
+          "--dtype",
+          "float64",
+          "--height",
+          "512",
+          "--width",
+          "512"
+        ],
+        "input_sha256": "1cd6e840e398d9e3c3d341c5ad36482419d2c164505bd0191ae1088695b7e63a",
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "seconds": 0.04746929199973238,
+        "emitted_output_bytes": 2097280,
+        "emitted_output_sha256": "f9eacc031069c3ef6b0f527055acf0e8b89922d9788515f734632a9af116c5b0"
+      }
+    ],
+    "decode_seconds": 0.05508375000044907
+  },
+  "audit": {
+    "max_abs_prefix_error": 60285,
+    "rectangle_error_exact": null,
+    "rectangle_error_lower": 60285,
+    "rectangle_error_upper": 241140,
+    "legal_at": {
+      "100": false,
+      "1000": false
+    },
+    "certificate": "four-corner-bound-and-prefix-witness",
+    "changed": 170265,
+    "global_sum_error": 60285,
+    "numerator_sha256": "49792a706876015d6c91af51440c096e044f5a45dfbe2bbb9e0e659f17f4761d",
+    "mask_ok": true,
+    "protected_ok": true,
+    "range_ok": true
+  },
+  "native_encode_commands": [
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/native-controls-20261001/py/bin/python",
+        "/Users/nathmath/dcc/LinewiseROI/experiments/native_sz3_worker.py",
+        "encode",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-r5s4_wpe/input.npy",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-r5s4_wpe/output",
+        "--dtype",
+        "float64",
+        "--height",
+        "512",
+        "--width",
+        "512",
+        "--algorithm",
+        "LORENZO_REG",
+        "--bound",
+        "3.0"
+      ],
+      "input_sha256": "19a591d9fc24cb33357a6cad53c7e0334c0c3e47c76dd1d3b46943a0ffb3228b",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.04967316700003721,
+      "emitted_output_bytes": 291949,
+      "emitted_output_sha256": "1cd6e840e398d9e3c3d341c5ad36482419d2c164505bd0191ae1088695b7e63a"
+    },
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/native-controls-20261001/py/bin/python",
+        "/Users/nathmath/dcc/LinewiseROI/experiments/native_sz3_worker.py",
+        "decode",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-pgpkcrlk/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-pgpkcrlk/output.npy",
+        "--dtype",
+        "float64",
+        "--height",
+        "512",
+        "--width",
+        "512"
+      ],
+      "input_sha256": "1cd6e840e398d9e3c3d341c5ad36482419d2c164505bd0191ae1088695b7e63a",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.0478985419995297,
+      "emitted_output_bytes": 2097280,
+      "emitted_output_sha256": "f9eacc031069c3ef6b0f527055acf0e8b89922d9788515f734632a9af116c5b0"
+    }
+  ]
+}

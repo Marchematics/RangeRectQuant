@@ -5,6 +5,7 @@
 ```sh
 python make_research_figures.py frontier mechanism closest water scaling protected
 python make_research_tables.py
+python make_review_figure.py
 ```
 
 Run these scripts from this directory or use their absolute paths. They read

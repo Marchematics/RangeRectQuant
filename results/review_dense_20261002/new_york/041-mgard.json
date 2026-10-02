@@ -1,0 +1,130 @@
+{
+  "id": "041-mgard",
+  "status": "DECODED_AND_AUDITED",
+  "configuration": {
+    "backend": "mgard",
+    "dtype": "float64",
+    "reorder": 0,
+    "bound": 0.625,
+    "transform": "direct"
+  },
+  "packet": "results/review_dense_20261002/new_york/041-mgard.packet",
+  "packet_bytes": 824309,
+  "packet_sha256": "0bf1666bcd63fe99922f23445ac5fe54c5dbbed188fb1629fb4fc120b5c115f1",
+  "fees": {
+    "header_bytes": 56,
+    "checksum_bytes": 32,
+    "mask_bytes": 0,
+    "config_bytes": 543,
+    "body_bytes": 823678
+  },
+  "decoder": {
+    "status": "DECODED",
+    "source_provided": false,
+    "meta": {
+      "codec": {
+        "backend": "mgard",
+        "bound": 0.625,
+        "dtype": "float64",
+        "reorder": 0,
+        "transform": "direct"
+      },
+      "common_full_field_query_service": 1,
+      "epsilons": [
+        100,
+        1000
+      ],
+      "geo": {
+        "affine": [
+          100.0,
+          0.0,
+          -6269400.0,
+          0.0,
+          -100.0,
+          4894600.0
+        ],
+        "crs_wkt": "PROJCS[\"World_Mollweide\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Mollweide\"],PARAMETER[\"central_meridian\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+        "epoch": 2020,
+        "native_resolution_m": 100,
+        "product": "GHS-BUILT-S R2023A"
+      },
+      "missing_zero": true,
+      "output": "float64_integer",
+      "postprocessor": "clip(nearest_even_rint(a),0,10000);masked_zero",
+      "units": "m2"
+    },
+    "packet_sha256": "0bf1666bcd63fe99922f23445ac5fe54c5dbbed188fb1629fb4fc120b5c115f1",
+    "numerator_sha256": "0a850ca9c4bd6277ffcee607eb6fff77ec73de0c4a473ab6cc267f873d3e36eb",
+    "native_commands": [
+      {
+        "argv": [
+          "/Users/nathmath/dcc/LinewiseROI/.validation/native-controls-20261001/native-mgard-driver-attempt2",
+          "decode",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-1ov3dwve/input",
+          "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-1ov3dwve/output"
+        ],
+        "input_sha256": "ff53bd7f202761f08186f535a6867824fb4753859be55ccd6452953fa05e705e",
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "seconds": 0.022617583000283048,
+        "emitted_output_bytes": 2097152,
+        "emitted_output_sha256": "5d382482016497f8cf35f58df8f8cd39fe1b9401c546e4ae60be0d541ed434e9"
+      }
+    ],
+    "decode_seconds": 0.03021974999956001
+  },
+  "audit": {
+    "max_abs_prefix_error": 433990913,
+    "rectangle_error_exact": null,
+    "rectangle_error_lower": 433990913,
+    "rectangle_error_upper": 1735963652,
+    "legal_at": {
+      "100": false,
+      "1000": false
+    },
+    "certificate": "four-corner-bound-and-prefix-witness",
+    "changed": 178279,
+    "global_sum_error": -433819534,
+    "numerator_sha256": "0a850ca9c4bd6277ffcee607eb6fff77ec73de0c4a473ab6cc267f873d3e36eb",
+    "mask_ok": true,
+    "protected_ok": true,
+    "range_ok": true
+  },
+  "native_encode_commands": [
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/native-controls-20261001/native-mgard-driver-attempt2",
+        "encode",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-u64h_8o0/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-u64h_8o0/output",
+        "512",
+        "512",
+        "0.625",
+        "0"
+      ],
+      "input_sha256": "b6a7da368cc3fa134c8f04d16e7326c17b38aa4d06b7abc3f19855b878e2e1d4",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.041387958000086655,
+      "emitted_output_bytes": 823678,
+      "emitted_output_sha256": "ff53bd7f202761f08186f535a6867824fb4753859be55ccd6452953fa05e705e"
+    },
+    {
+      "argv": [
+        "/Users/nathmath/dcc/LinewiseROI/.validation/native-controls-20261001/native-mgard-driver-attempt2",
+        "decode",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-ywxq6e3o/input",
+        "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/built-area-native-ywxq6e3o/output"
+      ],
+      "input_sha256": "ff53bd7f202761f08186f535a6867824fb4753859be55ccd6452953fa05e705e",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "seconds": 0.023964459000126226,
+      "emitted_output_bytes": 2097152,
+      "emitted_output_sha256": "5d382482016497f8cf35f58df8f8cd39fe1b9401c546e4ae60be0d541ed434e9"
+    }
+  ]
+}

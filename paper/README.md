@@ -24,10 +24,11 @@ its evidence checker and plot regeneration need the full repository.
 
 ## Draft status
 
-DCC author instructions require visible author names and affiliations. These
-have been requested and are not fabricated. Fill the `\author{}` block in
-`main.tex` before submission. This is a complete-body research draft, not a
-submitted or author-complete manuscript. The repository remains private.
+The supplied author order is Jiahao Zhang, Xinling Wen, and corresponding author
+Yu Chen. All are listed at Zhengzhou University of Aeronautics; the supplied
+contact is chenyu@zua.edu.cn. The compiled article has ten total pages including
+references, under the unchanged official class. It has not been submitted.
+The repository remains private.
 
 The article reports the specified complete-size comparison and geographic
 holdout result. It does not claim a best-paper award or field-wide codec SOTA.
