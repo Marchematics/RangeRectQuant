@@ -10,6 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT/"paper/plotting"))
 import reference_grids as grids
 from paper_plot_style import apply_publication_style, plt
+from make_compact_review_figure import review_mechanism_compact
 
 
 class FigureGrids(unittest.TestCase):
@@ -57,6 +58,49 @@ class FigureGrids(unittest.TestCase):
             self.assertEqual(len(lines), 4)
             self.assertTrue(all(len(line.get_ydata()) == 8 for line in lines))
 
+    def test_spatial_maps_match_the_saved_cairo_field(self):
+        with np.load(ROOT/"results/closest_mechanism_20261002/mechanism_example.npz", allow_pickle=False) as data:
+            x, y, widths, protected = [data[key] for key in ("x", "y", "widths", "protected")]
+        prefix = (y-x).cumsum(0).cumsum(1)
+        fine = (y % 200 != 0) & ~protected
+        self.assertEqual(int(fine.sum()), 572)
+        self.assertLessEqual(int(np.abs(prefix).max()), 250)
+        self.assertTrue(np.all(widths[fine] < 200))
+        figure = grids.mechanism()
+        self.assertEqual(len(figure.axes), 8)  # Four maps and four colorbars.
+        for ax, expected in zip(figure.axes[:4], [x, prefix, widths, fine.astype(int)]):
+            self.assertEqual(len(ax.images), 1)
+            np.testing.assert_array_equal(ax.images[0].get_array(), expected)
+            self.assertEqual(ax.get_aspect(), 1.0)
+
+    def test_main_text_places_the_spatial_example_after_feasibility(self):
+        method = (ROOT/"paper/sections/method.tex").read_text()
+        figure = r"\includegraphics[width=\linewidth]{figures/research/mechanism.pdf}"
+        self.assertIn(figure, method)
+        self.assertIn(r"\label{fig:spatial}", method)
+        self.assertIn(r"\ref{fig:spatial}", method)
+        self.assertLess(method.index(r"\label{eq:fine-count}"), method.index(figure))
+        self.assertLess(method.index(r"\label{eq:finite-code}"), method.index(figure))
+
+    def test_compact_coding_grid_preserves_values_labels_and_font_sizes(self):
+        full, compact = grids.review_mechanism(), review_mechanism_compact()
+        self.assertEqual(len(compact.axes), 8)
+        for before, after in zip(full.axes, compact.axes):
+            self.assertEqual(len(before.patches), len(after.patches))
+            for old, new in zip(before.patches, after.patches):
+                self.assertEqual(old.get_height(), new.get_height())
+                self.assertEqual(old.get_x(), new.get_x())
+            for old, new in zip(before.lines, after.lines):
+                np.testing.assert_array_equal(old.get_xdata(), new.get_xdata())
+                np.testing.assert_array_equal(old.get_ydata(), new.get_ydata())
+            self.assertEqual([t.get_text() for t in before.get_xticklabels()],
+                             [t.get_text() for t in after.get_xticklabels()])
+            self.assertEqual(before.title.get_fontsize(), after.title.get_fontsize())
+            self.assertEqual([t.get_fontsize() for t in before.get_xticklabels()],
+                             [t.get_fontsize() for t in after.get_xticklabels()])
+        evaluation = (ROOT/"paper/sections/evaluation.tex").read_text()
+        self.assertIn("figures/research/review_mechanism_compact.pdf", evaluation)
+
     def test_closest_comparison_shows_every_city_method_and_budget(self):
         figure = grids.closest_fullpage()
         self.assertEqual(len(figure.axes), 8)
@@ -76,7 +120,8 @@ class FigureGrids(unittest.TestCase):
             self.assertEqual(list(exact.get_xdata()), [256, 512, 1024, 2048])
 
     def test_shared_legend_boxes_do_not_cover_plot_labels(self):
-        for build in [grids.frontier, grids.review_mechanism_main, grids.line_grid_fullpage]:
+        for build in [grids.frontier, grids.review_mechanism_main, grids.line_grid_fullpage,
+                      review_mechanism_compact]:
             with self.subTest(figure=build.__name__):
                 figure = build(); figure.canvas.draw(); renderer = figure.canvas.get_renderer()
                 for legend in figure.legends:

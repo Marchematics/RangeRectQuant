@@ -6,6 +6,7 @@ From the repository root:
 ../LinewiseROI/.venv/bin/python paper/plotting/make_research_figures.py \
   frontier mechanism closest protected scaling water closest_fullpage line_grid_fullpage
 ../LinewiseROI/.venv/bin/python paper/plotting/make_review_figure.py
+../LinewiseROI/.venv/bin/python paper/plotting/make_compact_review_figure.py
 ../LinewiseROI/.venv/bin/python paper/plotting/make_experiment_atlas.py
 ```
 
@@ -15,8 +16,12 @@ They never run an experiment, optimizer, acquisition, decoder or GPU.
 output hash and exact displayed values. Missing coverage, tight-budget water
 losses and the exact-search timeout are retained. No uncertainty is invented.
 
-The ten-page article keeps Figure 1, then uses a 1×4 frontier, a 2×4 coding/step
-grid and a 1×4 closest-construction comparison. Forty city names replace the
+The ten-page article keeps Figure 1, then shows a 1×4 spatial precision example
+at the method/evaluation boundary, a 1×4 frontier, a 2×4 coding/step grid and
+a 1×4 closest-construction comparison. The spatial example uses the original
+`mechanism.pdf` directly. The coding/step grid uses a 6×3.6-inch canvas with
+unchanged font sizes, values and labels; its previous taller version is retained.
+Forty city names replace the
 former three-object bar axis. Locations are alphabetical, ten per panel, with
 both budgets. The seven-page `../figures/research/experiment_atlas.pdf` collects
 68 panels in 4×4, 2×4 and 1×4 layouts. Page captions and scope are in
