@@ -18,7 +18,7 @@ def main():
     assert data['blocks']['representation']['decodes']==1280
     assert data['blocks']['step']['decodes']==128
     apply_publication_style()
-    fig,axes=plt.subplots(1,3,figsize=(6,2.65))
+    fig,axes=plt.subplots(1,3,figsize=(6,2.05))
     for e,color,marker in ((100,PALETTE['red_strong'],'s'),(1000,PALETTE['blue_main'],'o')):
         row=next(r for r in data['blocks']['representation']['budgets'] if r['epsilon']==e)
         x=np.arange(3);values=[row['bpp'][k] for k in ('direct','shuffled','split')]
@@ -39,7 +39,7 @@ def main():
         ax.set_ylim(bottom=0);ax.grid(axis='y',color='#dddddd',linewidth=.45,ls=':');ax.set_axisbelow(True)
         ax.tick_params(labelsize=8,length=2.5)
     handles,labels=axes[0].get_legend_handles_labels();fig.legend(handles,labels,loc='upper center',ncol=2,fontsize=9)
-    fig.subplots_adjust(left=.09,right=.985,bottom=.23,top=.76,wspace=.53)
+    fig.subplots_adjust(left=.09,right=.985,bottom=.28,top=.75,wspace=.53)
     destination=ROOT/'paper/figures/research/review_mechanism';save_figure(fig,destination)
     files=[SOURCE,Path(__file__),ROOT/'paper/plotting/paper_plot_style.py',destination.with_suffix('.pdf'),destination.with_suffix('.png')]
     receipt=dict(status='PASS_SAVED_DATA_ONLY',input_output_sha256={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in files},

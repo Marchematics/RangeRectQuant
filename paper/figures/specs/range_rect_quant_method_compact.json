@@ -1,0 +1,636 @@
+{
+  "schema": "range-rect-quant-method-layout-v1",
+  "canvas": {
+    "width": 1500,
+    "height": 480,
+    "width_cm": 18,
+    "height_cm": 5.76
+  },
+  "font": "Times New Roman",
+  "source": {
+    "pdf": "/Users/nathmath/dcc/RangeRectQuant/paper/main.pdf",
+    "pdf_sha256": "f389eba57b38470ad9d758f5ee078c7fbb4f4f590b59dbf402b7a63923100dae",
+    "relevant_pages": [
+      3,
+      4,
+      5
+    ],
+    "manuscript": "sections/method.tex",
+    "reference": "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/codex-clipboard-05b7e83e-096e-4a17-9b33-d1299843d3b2.png"
+  },
+  "semantics": [
+    "Only the construction phase changes the source X to a quantized field Y.",
+    "Backward remaining-row feasibility precedes forward coarse-first selection, repeated for each row.",
+    "Protected choices stay exact and can retain nonzero remainders.",
+    "The two quotient/remainder coding paths are lossless with respect to Y, not X.",
+    "Decoding recombines Y directly and does not invert the lossy construction.",
+    "Sum and valid-count prefix tables use decoded Y and the exact missing mask.",
+    "The figure does not depict the finite-rank coding bound as the implemented LZMA format."
+  ],
+  "backgrounds": [
+    {
+      "id": "construction-region",
+      "x": 222,
+      "y": 94,
+      "w": 446,
+      "h": 167,
+      "fill": "#DEDEDE",
+      "stroke": "none",
+      "radius": 14
+    },
+    {
+      "id": "query-region",
+      "x": 222,
+      "y": 325,
+      "w": 446,
+      "h": 124,
+      "fill": "#E8E8E8",
+      "stroke": "none",
+      "radius": 14
+    },
+    {
+      "id": "lossless-encoder-region",
+      "x": 820,
+      "y": 94,
+      "w": 434,
+      "h": 171,
+      "fill": "#FFFFFF",
+      "stroke": "none",
+      "radius": 0,
+      "pattern": "upwardDiagonal"
+    },
+    {
+      "id": "lossless-decoder-region",
+      "x": 820,
+      "y": 297,
+      "w": 434,
+      "h": 152,
+      "fill": "#FFFFFF",
+      "stroke": "none",
+      "radius": 0,
+      "pattern": "downwardDiagonal"
+    },
+    {
+      "id": "persistent-storage",
+      "x": 1421,
+      "y": 94,
+      "w": 57,
+      "h": 355,
+      "fill": "#DEDEDE",
+      "stroke": "none",
+      "radius": 14
+    }
+  ],
+  "boxes": [
+    {
+      "id": "source-field",
+      "x": 30,
+      "y": 118,
+      "w": 160,
+      "h": 126,
+      "fill": "#FFFFFF",
+      "stroke": "#202020",
+      "radius": 12
+    },
+    {
+      "id": "backward-pass",
+      "x": 240,
+      "y": 107,
+      "w": 180,
+      "h": 140,
+      "fill": "#FFFFFF",
+      "stroke": "#202020",
+      "radius": 12
+    },
+    {
+      "id": "forward-pass",
+      "x": 466,
+      "y": 107,
+      "w": 184,
+      "h": 140,
+      "fill": "#FFFFFF",
+      "stroke": "#202020",
+      "radius": 12
+    },
+    {
+      "id": "quantized-field",
+      "x": 700,
+      "y": 94,
+      "w": 95,
+      "h": 355,
+      "fill": "#FFFFFF",
+      "stroke": "#202020",
+      "radius": 12
+    },
+    {
+      "id": "split-field",
+      "x": 835,
+      "y": 121,
+      "w": 142,
+      "h": 120,
+      "fill": "#FFFFFF",
+      "stroke": "#202020",
+      "radius": 12
+    },
+    {
+      "id": "quotient-encoder",
+      "x": 1060,
+      "y": 104,
+      "w": 176,
+      "h": 70,
+      "fill": "#FFFFFF",
+      "stroke": "#202020",
+      "radius": 12
+    },
+    {
+      "id": "remainder-encoder",
+      "x": 1060,
+      "y": 188,
+      "w": 176,
+      "h": 70,
+      "fill": "#FFFFFF",
+      "stroke": "#202020",
+      "radius": 12
+    },
+    {
+      "id": "compressed-file",
+      "x": 1275,
+      "y": 94,
+      "w": 103,
+      "h": 355,
+      "fill": "#FFFFFF",
+      "stroke": "#202020",
+      "radius": 12
+    },
+    {
+      "id": "recombine-field",
+      "x": 835,
+      "y": 312,
+      "w": 142,
+      "h": 122,
+      "fill": "#FFFFFF",
+      "stroke": "#202020",
+      "radius": 12
+    },
+    {
+      "id": "quotient-decoder",
+      "x": 1060,
+      "y": 300,
+      "w": 176,
+      "h": 64,
+      "fill": "#FFFFFF",
+      "stroke": "#202020",
+      "radius": 12
+    },
+    {
+      "id": "remainder-decoder",
+      "x": 1060,
+      "y": 382,
+      "w": 176,
+      "h": 64,
+      "fill": "#FFFFFF",
+      "stroke": "#202020",
+      "radius": 12
+    },
+    {
+      "id": "prefix-tables",
+      "x": 466,
+      "y": 341,
+      "w": 184,
+      "h": 96,
+      "fill": "#FFFFFF",
+      "stroke": "#202020",
+      "radius": 12
+    },
+    {
+      "id": "four-corner-query",
+      "x": 240,
+      "y": 341,
+      "w": 180,
+      "h": 96,
+      "fill": "#FFFFFF",
+      "stroke": "#202020",
+      "radius": 12
+    },
+    {
+      "id": "regional-output",
+      "x": 30,
+      "y": 341,
+      "w": 160,
+      "h": 96,
+      "fill": "#FFFFFF",
+      "stroke": "#202020",
+      "radius": 12
+    }
+  ],
+  "texts": [
+    {
+      "id": "construction-heading",
+      "label": "RangeRectQuant",
+      "x": 222,
+      "y": 24,
+      "w": 573,
+      "h": 40,
+      "size": 33,
+      "color": "#111111"
+    },
+    {
+      "id": "construction-subheading",
+      "label": "lossy",
+      "x": 222,
+      "y": 65,
+      "w": 573,
+      "h": 27,
+      "size": 24,
+      "color": "#111111"
+    },
+    {
+      "id": "encoder-heading",
+      "label": "Encoding",
+      "x": 820,
+      "y": 24,
+      "w": 434,
+      "h": 40,
+      "size": 33,
+      "color": "#111111"
+    },
+    {
+      "id": "encoder-subheading",
+      "label": "lossless",
+      "x": 820,
+      "y": 65,
+      "w": 434,
+      "h": 27,
+      "size": 24,
+      "color": "#111111"
+    },
+    {
+      "id": "decoder-heading",
+      "label": "Decoding",
+      "x": 820,
+      "y": 266,
+      "w": 434,
+      "h": 31,
+      "size": 27,
+      "color": "#111111"
+    },
+    {
+      "id": "source-title",
+      "label": "Input X",
+      "x": 38,
+      "y": 161,
+      "w": 144,
+      "h": 40,
+      "size": 30,
+      "color": "#111111"
+    },
+    {
+      "id": "backward-title",
+      "label": "Backward\nfeasibility",
+      "x": 248,
+      "y": 141,
+      "w": 164,
+      "h": 72,
+      "size": 30,
+      "color": "#111111"
+    },
+    {
+      "id": "forward-title",
+      "label": "Forward\nselection",
+      "x": 474,
+      "y": 141,
+      "w": 168,
+      "h": 72,
+      "size": 30,
+      "color": "#111111"
+    },
+    {
+      "id": "field-title",
+      "label": "Quantized Y",
+      "x": 597.5,
+      "y": 252.5,
+      "w": 300,
+      "h": 38,
+      "size": 31,
+      "color": "#111111",
+      "rotation": 270
+    },
+    {
+      "id": "split-title",
+      "label": "Split",
+      "x": 842,
+      "y": 136,
+      "w": 128,
+      "h": 37,
+      "size": 30,
+      "color": "#111111"
+    },
+    {
+      "id": "split-equation",
+      "label": "Y = qZ + r",
+      "x": 840,
+      "y": 186,
+      "w": 132,
+      "h": 32,
+      "size": 25,
+      "color": "#111111"
+    },
+    {
+      "id": "quotient-encoder-text",
+      "label": "LZMA\nencode",
+      "x": 1065,
+      "y": 111,
+      "w": 166,
+      "h": 56,
+      "size": 28,
+      "color": "#111111"
+    },
+    {
+      "id": "remainder-encoder-text",
+      "label": "LZMA\nencode",
+      "x": 1065,
+      "y": 195,
+      "w": 166,
+      "h": 56,
+      "size": 28,
+      "color": "#111111"
+    },
+    {
+      "id": "quotient-label",
+      "label": "Z",
+      "x": 988,
+      "y": 108,
+      "w": 60,
+      "h": 27,
+      "size": 25,
+      "color": "#111111",
+      "italic": true
+    },
+    {
+      "id": "remainder-label",
+      "label": "r",
+      "x": 988,
+      "y": 192,
+      "w": 60,
+      "h": 27,
+      "size": 25,
+      "color": "#111111",
+      "italic": true
+    },
+    {
+      "id": "file-title",
+      "label": "Bitstream",
+      "x": 1176.5,
+      "y": 252.5,
+      "w": 300,
+      "h": 38,
+      "size": 31,
+      "color": "#111111",
+      "rotation": 270
+    },
+    {
+      "id": "storage-title",
+      "label": "Storage",
+      "x": 1299.5,
+      "y": 252.5,
+      "w": 300,
+      "h": 38,
+      "size": 31,
+      "color": "#111111",
+      "rotation": 270
+    },
+    {
+      "id": "recombine-title",
+      "label": "Merge",
+      "x": 843,
+      "y": 353,
+      "w": 126,
+      "h": 40,
+      "size": 30,
+      "color": "#111111"
+    },
+    {
+      "id": "quotient-decoder-text",
+      "label": "LZMA\ndecode",
+      "x": 1065,
+      "y": 305,
+      "w": 166,
+      "h": 54,
+      "size": 28,
+      "color": "#111111"
+    },
+    {
+      "id": "remainder-decoder-text",
+      "label": "LZMA\ndecode",
+      "x": 1065,
+      "y": 387,
+      "w": 166,
+      "h": 54,
+      "size": 28,
+      "color": "#111111"
+    },
+    {
+      "id": "decoded-quotient-label",
+      "label": "Z",
+      "x": 988,
+      "y": 300,
+      "w": 60,
+      "h": 27,
+      "size": 25,
+      "color": "#111111",
+      "italic": true
+    },
+    {
+      "id": "decoded-remainder-label",
+      "label": "r",
+      "x": 988,
+      "y": 382,
+      "w": 60,
+      "h": 27,
+      "size": 25,
+      "color": "#111111",
+      "italic": true
+    },
+    {
+      "id": "prefix-title",
+      "label": "Prefix tables",
+      "x": 474,
+      "y": 369,
+      "w": 168,
+      "h": 40,
+      "size": 30,
+      "color": "#111111"
+    },
+    {
+      "id": "query-title",
+      "label": "Four-corner\nquery",
+      "x": 248,
+      "y": 353,
+      "w": 164,
+      "h": 72,
+      "size": 30,
+      "color": "#111111"
+    },
+    {
+      "id": "regional-title",
+      "label": "Sum / count",
+      "x": 38,
+      "y": 369,
+      "w": 144,
+      "h": 40,
+      "size": 30,
+      "color": "#111111"
+    }
+  ],
+  "arrows": [
+    {
+      "id": "input-to-backward",
+      "x1": 190,
+      "y1": 180,
+      "x2": 240,
+      "y2": 180
+    },
+    {
+      "id": "backward-to-forward",
+      "x1": 420,
+      "y1": 180,
+      "x2": 466,
+      "y2": 180
+    },
+    {
+      "id": "forward-to-field",
+      "x1": 650,
+      "y1": 180,
+      "x2": 700,
+      "y2": 180
+    },
+    {
+      "id": "field-to-split",
+      "x1": 795,
+      "y1": 180,
+      "x2": 835,
+      "y2": 180
+    },
+    {
+      "id": "quotient-to-encoder",
+      "x1": 977,
+      "y1": 139,
+      "x2": 1060,
+      "y2": 139
+    },
+    {
+      "id": "remainder-to-encoder",
+      "x1": 977,
+      "y1": 223,
+      "x2": 1060,
+      "y2": 223
+    },
+    {
+      "id": "quotient-to-file",
+      "x1": 1236,
+      "y1": 139,
+      "x2": 1275,
+      "y2": 139
+    },
+    {
+      "id": "remainder-to-file",
+      "x1": 1236,
+      "y1": 223,
+      "x2": 1275,
+      "y2": 223
+    },
+    {
+      "id": "file-to-storage",
+      "x1": 1378,
+      "y1": 180,
+      "x2": 1421,
+      "y2": 180
+    },
+    {
+      "id": "storage-to-file",
+      "x1": 1421,
+      "y1": 389,
+      "x2": 1378,
+      "y2": 389
+    },
+    {
+      "id": "file-to-quotient-decoder",
+      "x1": 1275,
+      "y1": 332,
+      "x2": 1236,
+      "y2": 332
+    },
+    {
+      "id": "file-to-remainder-decoder",
+      "x1": 1275,
+      "y1": 414,
+      "x2": 1236,
+      "y2": 414
+    },
+    {
+      "id": "quotient-to-recombine",
+      "x1": 1060,
+      "y1": 332,
+      "x2": 977,
+      "y2": 332
+    },
+    {
+      "id": "remainder-to-recombine",
+      "x1": 1060,
+      "y1": 414,
+      "x2": 977,
+      "y2": 414
+    },
+    {
+      "id": "recombine-to-field",
+      "x1": 835,
+      "y1": 389,
+      "x2": 795,
+      "y2": 389
+    },
+    {
+      "id": "field-to-prefix",
+      "x1": 700,
+      "y1": 389,
+      "x2": 650,
+      "y2": 389
+    },
+    {
+      "id": "prefix-to-queries",
+      "x1": 466,
+      "y1": 389,
+      "x2": 420,
+      "y2": 389
+    },
+    {
+      "id": "queries-to-measurements",
+      "x1": 240,
+      "y1": 389,
+      "x2": 190,
+      "y2": 389
+    }
+  ],
+  "dividers": [
+    {
+      "x": 210,
+      "y1": 24,
+      "y2": 464
+    },
+    {
+      "x": 808,
+      "y1": 24,
+      "y2": 464
+    },
+    {
+      "x": 1398,
+      "y1": 24,
+      "y2": 464
+    }
+  ],
+  "variant": "compact",
+  "text_edit": {
+    "original_words": 129,
+    "compact_words": 39,
+    "removed": "Parameter annotation, module explanations, scan note, range/protection guarantee, mask note, byte-shuffle descriptions, file-component descriptions, and repeated recombination formula. These details remain in the caption and speaker notes."
+  }
+}

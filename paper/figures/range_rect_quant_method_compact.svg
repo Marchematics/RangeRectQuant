@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="18cm" height="5.76cm" viewBox="0 0 1500 480">
+<title>RangeRectQuant method overview</title>
+<desc>Only the construction phase changes the source X to a quantized field Y. Backward remaining-row feasibility precedes forward coarse-first selection, repeated for each row. Protected choices stay exact and can retain nonzero remainders. The two quotient/remainder coding paths are lossless with respect to Y, not X. Decoding recombines Y directly and does not invert the lossy construction. Sum and valid-count prefix tables use decoded Y and the exact missing mask. The figure does not depict the finite-rank coding bound as the implemented LZMA format.</desc>
+<defs>
+<pattern id="upwardDiagonal" patternUnits="userSpaceOnUse" width="9" height="9"><rect width="9" height="9" fill="white"/><path d="M-2 2L2-2 M0 9L9 0 M7 11L11 7" stroke="#BBBBBB" stroke-width="1.1"/></pattern>
+<pattern id="downwardDiagonal" patternUnits="userSpaceOnUse" width="9" height="9"><rect width="9" height="9" fill="white"/><path d="M-2 7L2 11 M0 0L9 9 M7-2L11 2" stroke="#BBBBBB" stroke-width="1.1"/></pattern>
+<marker id="arrowhead" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1L7 4L1 7" fill="none" stroke="#505050" stroke-width="1.1"/></marker>
+</defs>
+<rect width="1500" height="480" fill="white"/>
+<g font-family="Times New Roman,Times,serif">
+<rect id="construction-region" x="222" y="94" width="446" height="167" rx="14" fill="#DEDEDE" stroke="none" stroke-width="1.35"/>
+<rect id="query-region" x="222" y="325" width="446" height="124" rx="14" fill="#E8E8E8" stroke="none" stroke-width="1.35"/>
+<rect id="lossless-encoder-region" x="820" y="94" width="434" height="171" rx="0" fill="url(#upwardDiagonal)" stroke="none" stroke-width="1.35"/>
+<rect id="lossless-decoder-region" x="820" y="297" width="434" height="152" rx="0" fill="url(#downwardDiagonal)" stroke="none" stroke-width="1.35"/>
+<rect id="persistent-storage" x="1421" y="94" width="57" height="355" rx="14" fill="#DEDEDE" stroke="none" stroke-width="1.35"/>
+<path d="M210 24V464" stroke="#444444" stroke-width="1.5" stroke-dasharray="10 10" fill="none"/>
+<path d="M808 24V464" stroke="#444444" stroke-width="1.5" stroke-dasharray="10 10" fill="none"/>
+<path d="M1398 24V464" stroke="#444444" stroke-width="1.5" stroke-dasharray="10 10" fill="none"/>
+<rect id="source-field" x="30" y="118" width="160" height="126" rx="12" fill="#FFFFFF" stroke="#202020" stroke-width="1.35"/>
+<rect id="backward-pass" x="240" y="107" width="180" height="140" rx="12" fill="#FFFFFF" stroke="#202020" stroke-width="1.35"/>
+<rect id="forward-pass" x="466" y="107" width="184" height="140" rx="12" fill="#FFFFFF" stroke="#202020" stroke-width="1.35"/>
+<rect id="quantized-field" x="700" y="94" width="95" height="355" rx="12" fill="#FFFFFF" stroke="#202020" stroke-width="1.35"/>
+<rect id="split-field" x="835" y="121" width="142" height="120" rx="12" fill="#FFFFFF" stroke="#202020" stroke-width="1.35"/>
+<rect id="quotient-encoder" x="1060" y="104" width="176" height="70" rx="12" fill="#FFFFFF" stroke="#202020" stroke-width="1.35"/>
+<rect id="remainder-encoder" x="1060" y="188" width="176" height="70" rx="12" fill="#FFFFFF" stroke="#202020" stroke-width="1.35"/>
+<rect id="compressed-file" x="1275" y="94" width="103" height="355" rx="12" fill="#FFFFFF" stroke="#202020" stroke-width="1.35"/>
+<rect id="recombine-field" x="835" y="312" width="142" height="122" rx="12" fill="#FFFFFF" stroke="#202020" stroke-width="1.35"/>
+<rect id="quotient-decoder" x="1060" y="300" width="176" height="64" rx="12" fill="#FFFFFF" stroke="#202020" stroke-width="1.35"/>
+<rect id="remainder-decoder" x="1060" y="382" width="176" height="64" rx="12" fill="#FFFFFF" stroke="#202020" stroke-width="1.35"/>
+<rect id="prefix-tables" x="466" y="341" width="184" height="96" rx="12" fill="#FFFFFF" stroke="#202020" stroke-width="1.35"/>
+<rect id="four-corner-query" x="240" y="341" width="180" height="96" rx="12" fill="#FFFFFF" stroke="#202020" stroke-width="1.35"/>
+<rect id="regional-output" x="30" y="341" width="160" height="96" rx="12" fill="#FFFFFF" stroke="#202020" stroke-width="1.35"/>
+<path id="input-to-backward" d="M190 180L240 180" fill="none" stroke="#505050" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+<path id="backward-to-forward" d="M420 180L466 180" fill="none" stroke="#505050" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+<path id="forward-to-field" d="M650 180L700 180" fill="none" stroke="#505050" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+<path id="field-to-split" d="M795 180L835 180" fill="none" stroke="#505050" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+<path id="quotient-to-encoder" d="M977 139L1060 139" fill="none" stroke="#505050" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+<path id="remainder-to-encoder" d="M977 223L1060 223" fill="none" stroke="#505050" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+<path id="quotient-to-file" d="M1236 139L1275 139" fill="none" stroke="#505050" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+<path id="remainder-to-file" d="M1236 223L1275 223" fill="none" stroke="#505050" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+<path id="file-to-storage" d="M1378 180L1421 180" fill="none" stroke="#505050" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+<path id="storage-to-file" d="M1421 389L1378 389" fill="none" stroke="#505050" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+<path id="file-to-quotient-decoder" d="M1275 332L1236 332" fill="none" stroke="#505050" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+<path id="file-to-remainder-decoder" d="M1275 414L1236 414" fill="none" stroke="#505050" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+<path id="quotient-to-recombine" d="M1060 332L977 332" fill="none" stroke="#505050" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+<path id="remainder-to-recombine" d="M1060 414L977 414" fill="none" stroke="#505050" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+<path id="recombine-to-field" d="M835 389L795 389" fill="none" stroke="#505050" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+<path id="field-to-prefix" d="M700 389L650 389" fill="none" stroke="#505050" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+<path id="prefix-to-queries" d="M466 389L420 389" fill="none" stroke="#505050" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+<path id="queries-to-measurements" d="M240 389L190 389" fill="none" stroke="#505050" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+<text id="construction-heading" x="508.5" text-anchor="middle" font-size="33" font-style="normal" fill="#111111"><tspan x="508.5" y="54.56">RangeRectQuant</tspan></text>
+<text id="construction-subheading" x="508.5" text-anchor="middle" font-size="24" font-style="normal" fill="#111111"><tspan x="508.5" y="86.18">lossy</tspan></text>
+<text id="encoder-heading" x="1037" text-anchor="middle" font-size="33" font-style="normal" fill="#111111"><tspan x="1037" y="54.56">Encoding</tspan></text>
+<text id="encoder-subheading" x="1037" text-anchor="middle" font-size="24" font-style="normal" fill="#111111"><tspan x="1037" y="86.18">lossless</tspan></text>
+<text id="decoder-heading" x="1037" text-anchor="middle" font-size="27" font-style="normal" fill="#111111"><tspan x="1037" y="290.14">Decoding</tspan></text>
+<text id="source-title" x="110" text-anchor="middle" font-size="30" font-style="normal" fill="#111111"><tspan x="110" y="190.6">Input X</tspan></text>
+<text id="backward-title" x="330" text-anchor="middle" font-size="30" font-style="normal" fill="#111111"><tspan x="330" y="171">Backward</tspan><tspan x="330" y="202.2">feasibility</tspan></text>
+<text id="forward-title" x="558" text-anchor="middle" font-size="30" font-style="normal" fill="#111111"><tspan x="558" y="171">Forward</tspan><tspan x="558" y="202.2">selection</tspan></text>
+<text id="field-title" x="747.5" text-anchor="middle" font-size="31" font-style="normal" fill="#111111" transform="rotate(-90 747.5 271.5)"><tspan x="747.5" y="281.42">Quantized Y</tspan></text>
+<text id="split-title" x="906" text-anchor="middle" font-size="30" font-style="normal" fill="#111111"><tspan x="906" y="164.1">Split</tspan></text>
+<text id="split-equation" x="906" text-anchor="middle" font-size="25" font-style="normal" fill="#111111"><tspan x="906" y="210">Y = qZ + r</tspan></text>
+<text id="quotient-encoder-text" x="1148" text-anchor="middle" font-size="28" font-style="normal" fill="#111111"><tspan x="1148" y="133.4">LZMA</tspan><tspan x="1148" y="162.52">encode</tspan></text>
+<text id="remainder-encoder-text" x="1148" text-anchor="middle" font-size="28" font-style="normal" fill="#111111"><tspan x="1148" y="217.4">LZMA</tspan><tspan x="1148" y="246.52">encode</tspan></text>
+<text id="quotient-label" x="1018" text-anchor="middle" font-size="25" font-style="italic" fill="#111111"><tspan x="1018" y="129.5">Z</tspan></text>
+<text id="remainder-label" x="1018" text-anchor="middle" font-size="25" font-style="italic" fill="#111111"><tspan x="1018" y="213.5">r</tspan></text>
+<text id="file-title" x="1326.5" text-anchor="middle" font-size="31" font-style="normal" fill="#111111" transform="rotate(-90 1326.5 271.5)"><tspan x="1326.5" y="281.42">Bitstream</tspan></text>
+<text id="storage-title" x="1449.5" text-anchor="middle" font-size="31" font-style="normal" fill="#111111" transform="rotate(-90 1449.5 271.5)"><tspan x="1449.5" y="281.42">Storage</tspan></text>
+<text id="recombine-title" x="906" text-anchor="middle" font-size="30" font-style="normal" fill="#111111"><tspan x="906" y="382.6">Merge</tspan></text>
+<text id="quotient-decoder-text" x="1148" text-anchor="middle" font-size="28" font-style="normal" fill="#111111"><tspan x="1148" y="326.4">LZMA</tspan><tspan x="1148" y="355.52">decode</tspan></text>
+<text id="remainder-decoder-text" x="1148" text-anchor="middle" font-size="28" font-style="normal" fill="#111111"><tspan x="1148" y="408.4">LZMA</tspan><tspan x="1148" y="437.52">decode</tspan></text>
+<text id="decoded-quotient-label" x="1018" text-anchor="middle" font-size="25" font-style="italic" fill="#111111"><tspan x="1018" y="321.5">Z</tspan></text>
+<text id="decoded-remainder-label" x="1018" text-anchor="middle" font-size="25" font-style="italic" fill="#111111"><tspan x="1018" y="403.5">r</tspan></text>
+<text id="prefix-title" x="558" text-anchor="middle" font-size="30" font-style="normal" fill="#111111"><tspan x="558" y="398.6">Prefix tables</tspan></text>
+<text id="query-title" x="330" text-anchor="middle" font-size="30" font-style="normal" fill="#111111"><tspan x="330" y="383">Four-corner</tspan><tspan x="330" y="414.20000000000005">query</tspan></text>
+<text id="regional-title" x="110" text-anchor="middle" font-size="30" font-style="normal" fill="#111111"><tspan x="110" y="398.6">Sum / count</tspan></text>
+</g></svg>

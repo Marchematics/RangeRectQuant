@@ -1,0 +1,773 @@
+{
+  "schema": "range-rect-quant-method-layout-v1",
+  "canvas": {
+    "width": 1500,
+    "height": 560,
+    "width_cm": 18,
+    "height_cm": 6.72
+  },
+  "font": "Times New Roman",
+  "source": {
+    "pdf": "/Users/nathmath/dcc/RangeRectQuant/paper/main.pdf",
+    "pdf_sha256": "45d40569f201b96be0c6285ec45c6f1da1e7119714b1de3e07bb8e3f9abf4c4e",
+    "relevant_pages": [
+      3,
+      4,
+      5
+    ],
+    "manuscript": "sections/method.tex",
+    "reference": "/var/folders/w2/s4nzxrcs4rsfpz8rnzmb7n8r0000gn/T/codex-clipboard-05b7e83e-096e-4a17-9b33-d1299843d3b2.png"
+  },
+  "semantics": [
+    "Only the construction phase changes the source X to a quantized field Y.",
+    "Backward remaining-row feasibility precedes forward coarse-first selection, repeated for each row.",
+    "Protected choices stay exact and can retain nonzero remainders.",
+    "The two quotient/remainder coding paths are lossless with respect to Y, not X.",
+    "Decoding recombines Y directly and does not invert the lossy construction.",
+    "Sum and valid-count prefix tables use decoded Y and the exact missing mask.",
+    "The figure does not depict the finite-rank coding bound as the implemented LZMA format."
+  ],
+  "backgrounds": [
+    {
+      "id": "construction-region",
+      "x": 222,
+      "y": 134,
+      "w": 446,
+      "h": 167,
+      "fill": "#DEDEDE",
+      "stroke": "none",
+      "radius": 14
+    },
+    {
+      "id": "query-region",
+      "x": 222,
+      "y": 365,
+      "w": 446,
+      "h": 124,
+      "fill": "#E8E8E8",
+      "stroke": "none",
+      "radius": 14
+    },
+    {
+      "id": "lossless-encoder-region",
+      "x": 820,
+      "y": 134,
+      "w": 434,
+      "h": 171,
+      "fill": "#FFFFFF",
+      "stroke": "none",
+      "radius": 0,
+      "pattern": "upwardDiagonal"
+    },
+    {
+      "id": "lossless-decoder-region",
+      "x": 820,
+      "y": 337,
+      "w": 434,
+      "h": 152,
+      "fill": "#FFFFFF",
+      "stroke": "none",
+      "radius": 0,
+      "pattern": "downwardDiagonal"
+    },
+    {
+      "id": "persistent-storage",
+      "x": 1421,
+      "y": 134,
+      "w": 57,
+      "h": 355,
+      "fill": "#DEDEDE",
+      "stroke": "none",
+      "radius": 14
+    }
+  ],
+  "boxes": [
+    {
+      "id": "source-field",
+      "x": 30,
+      "y": 158,
+      "w": 160,
+      "h": 126,
+      "fill": "#FFFFFF",
+      "stroke": "#202020",
+      "radius": 12
+    },
+    {
+      "id": "backward-pass",
+      "x": 240,
+      "y": 147,
+      "w": 180,
+      "h": 140,
+      "fill": "#FFFFFF",
+      "stroke": "#202020",
+      "radius": 12
+    },
+    {
+      "id": "forward-pass",
+      "x": 466,
+      "y": 147,
+      "w": 184,
+      "h": 140,
+      "fill": "#FFFFFF",
+      "stroke": "#202020",
+      "radius": 12
+    },
+    {
+      "id": "quantized-field",
+      "x": 700,
+      "y": 134,
+      "w": 95,
+      "h": 355,
+      "fill": "#FFFFFF",
+      "stroke": "#202020",
+      "radius": 12
+    },
+    {
+      "id": "split-field",
+      "x": 835,
+      "y": 161,
+      "w": 142,
+      "h": 120,
+      "fill": "#FFFFFF",
+      "stroke": "#202020",
+      "radius": 12
+    },
+    {
+      "id": "quotient-encoder",
+      "x": 1060,
+      "y": 144,
+      "w": 176,
+      "h": 70,
+      "fill": "#FFFFFF",
+      "stroke": "#202020",
+      "radius": 12
+    },
+    {
+      "id": "remainder-encoder",
+      "x": 1060,
+      "y": 228,
+      "w": 176,
+      "h": 70,
+      "fill": "#FFFFFF",
+      "stroke": "#202020",
+      "radius": 12
+    },
+    {
+      "id": "compressed-file",
+      "x": 1275,
+      "y": 134,
+      "w": 103,
+      "h": 355,
+      "fill": "#FFFFFF",
+      "stroke": "#202020",
+      "radius": 12
+    },
+    {
+      "id": "recombine-field",
+      "x": 835,
+      "y": 352,
+      "w": 142,
+      "h": 122,
+      "fill": "#FFFFFF",
+      "stroke": "#202020",
+      "radius": 12
+    },
+    {
+      "id": "quotient-decoder",
+      "x": 1060,
+      "y": 340,
+      "w": 176,
+      "h": 64,
+      "fill": "#FFFFFF",
+      "stroke": "#202020",
+      "radius": 12
+    },
+    {
+      "id": "remainder-decoder",
+      "x": 1060,
+      "y": 422,
+      "w": 176,
+      "h": 64,
+      "fill": "#FFFFFF",
+      "stroke": "#202020",
+      "radius": 12
+    },
+    {
+      "id": "prefix-tables",
+      "x": 466,
+      "y": 381,
+      "w": 184,
+      "h": 96,
+      "fill": "#FFFFFF",
+      "stroke": "#202020",
+      "radius": 12
+    },
+    {
+      "id": "four-corner-query",
+      "x": 240,
+      "y": 381,
+      "w": 180,
+      "h": 96,
+      "fill": "#FFFFFF",
+      "stroke": "#202020",
+      "radius": 12
+    },
+    {
+      "id": "regional-output",
+      "x": 30,
+      "y": 381,
+      "w": 160,
+      "h": 96,
+      "fill": "#FFFFFF",
+      "stroke": "#202020",
+      "radius": 12
+    }
+  ],
+  "texts": [
+    {
+      "id": "construction-heading",
+      "label": "RangeRectQuant",
+      "x": 222,
+      "y": 24,
+      "w": 573,
+      "h": 40,
+      "size": 33,
+      "color": "#111111"
+    },
+    {
+      "id": "construction-subheading",
+      "label": "Field construction (lossy)",
+      "x": 222,
+      "y": 66,
+      "w": 573,
+      "h": 31,
+      "size": 25,
+      "color": "#111111"
+    },
+    {
+      "id": "encoder-heading",
+      "label": "Encoding phase",
+      "x": 820,
+      "y": 24,
+      "w": 434,
+      "h": 40,
+      "size": 33,
+      "color": "#111111"
+    },
+    {
+      "id": "encoder-subheading",
+      "label": "lossless",
+      "x": 820,
+      "y": 66,
+      "w": 434,
+      "h": 31,
+      "size": 25,
+      "color": "#111111"
+    },
+    {
+      "id": "parameters",
+      "label": "B = ⌊ε/4⌋,  q,  U,  protected set P",
+      "x": 227,
+      "y": 102,
+      "w": 436,
+      "h": 30,
+      "size": 24,
+      "color": "#111111"
+    },
+    {
+      "id": "decoder-heading",
+      "label": "Source-free decoding",
+      "x": 820,
+      "y": 306,
+      "w": 434,
+      "h": 31,
+      "size": 27,
+      "color": "#111111"
+    },
+    {
+      "id": "query-heading",
+      "label": "Queries after decoding",
+      "x": 222,
+      "y": 328,
+      "w": 446,
+      "h": 33,
+      "size": 27,
+      "color": "#111111"
+    },
+    {
+      "id": "source-title",
+      "label": "Original\nfield X",
+      "x": 40,
+      "y": 170,
+      "w": 140,
+      "h": 70,
+      "size": 30,
+      "color": "#111111"
+    },
+    {
+      "id": "source-body",
+      "label": "bounded integers",
+      "x": 36,
+      "y": 248,
+      "w": 148,
+      "h": 24,
+      "size": 21,
+      "color": "#111111"
+    },
+    {
+      "id": "backward-title",
+      "label": "Backward\nfeasibility",
+      "x": 248,
+      "y": 153,
+      "w": 164,
+      "h": 60,
+      "size": 28,
+      "color": "#111111"
+    },
+    {
+      "id": "backward-body",
+      "label": "Remaining-row\nfeasible intervals",
+      "x": 247,
+      "y": 228,
+      "w": 166,
+      "h": 50,
+      "size": 22,
+      "color": "#111111"
+    },
+    {
+      "id": "forward-title",
+      "label": "Forward\nselection",
+      "x": 474,
+      "y": 153,
+      "w": 168,
+      "h": 60,
+      "size": 28,
+      "color": "#111111"
+    },
+    {
+      "id": "forward-body",
+      "label": "Coarse if feasible\nfine otherwise\nExact on P",
+      "x": 474,
+      "y": 219,
+      "w": 168,
+      "h": 64,
+      "size": 21.5,
+      "color": "#111111"
+    },
+    {
+      "id": "row-scans",
+      "label": "Per row: right-to-left scan, then left-to-right scan",
+      "x": 222,
+      "y": 301,
+      "w": 446,
+      "h": 25,
+      "size": 20.5,
+      "color": "#111111"
+    },
+    {
+      "id": "field-title",
+      "label": "Quantized field Y",
+      "x": 582,
+      "y": 294,
+      "w": 300,
+      "h": 36,
+      "size": 30,
+      "color": "#111111",
+      "rotation": 270
+    },
+    {
+      "id": "field-body",
+      "label": "bounded integer pixels",
+      "x": 610,
+      "y": 298,
+      "w": 300,
+      "h": 28,
+      "size": 23,
+      "color": "#111111",
+      "rotation": 270
+    },
+    {
+      "id": "split-title",
+      "label": "Split",
+      "x": 842,
+      "y": 176,
+      "w": 128,
+      "h": 37,
+      "size": 30,
+      "color": "#111111"
+    },
+    {
+      "id": "split-equation",
+      "label": "Y = qZ + r",
+      "x": 840,
+      "y": 226,
+      "w": 132,
+      "h": 32,
+      "size": 25,
+      "color": "#111111"
+    },
+    {
+      "id": "quotient-encoder-text",
+      "label": "Byte shuffle\nLZMA encoder",
+      "x": 1065,
+      "y": 151,
+      "w": 166,
+      "h": 56,
+      "size": 25,
+      "color": "#111111"
+    },
+    {
+      "id": "remainder-encoder-text",
+      "label": "Byte shuffle\nLZMA encoder",
+      "x": 1065,
+      "y": 235,
+      "w": 166,
+      "h": 56,
+      "size": 25,
+      "color": "#111111"
+    },
+    {
+      "id": "quotient-label",
+      "label": "Z",
+      "x": 988,
+      "y": 148,
+      "w": 60,
+      "h": 27,
+      "size": 25,
+      "color": "#111111",
+      "italic": true
+    },
+    {
+      "id": "remainder-label",
+      "label": "r",
+      "x": 988,
+      "y": 232,
+      "w": 60,
+      "h": 27,
+      "size": 25,
+      "color": "#111111",
+      "italic": true
+    },
+    {
+      "id": "file-title",
+      "label": "Compressed file",
+      "x": 1158,
+      "y": 294,
+      "w": 300,
+      "h": 36,
+      "size": 30,
+      "color": "#111111",
+      "rotation": 270
+    },
+    {
+      "id": "file-components",
+      "label": "streams, masks, metadata",
+      "x": 1183,
+      "y": 298,
+      "w": 300,
+      "h": 28,
+      "size": 22,
+      "color": "#111111",
+      "rotation": 270
+    },
+    {
+      "id": "file-config",
+      "label": "config. and integrity checks",
+      "x": 1206,
+      "y": 300,
+      "w": 300,
+      "h": 24,
+      "size": 20,
+      "color": "#111111",
+      "rotation": 270
+    },
+    {
+      "id": "storage-title",
+      "label": "Persistent storage",
+      "x": 1299.5,
+      "y": 294,
+      "w": 300,
+      "h": 35,
+      "size": 28,
+      "color": "#111111",
+      "rotation": 270
+    },
+    {
+      "id": "recombine-title",
+      "label": "Recombine",
+      "x": 839,
+      "y": 365,
+      "w": 134,
+      "h": 35,
+      "size": 27,
+      "color": "#111111"
+    },
+    {
+      "id": "recombine-equation",
+      "label": "Y = qZ + r",
+      "x": 840,
+      "y": 424,
+      "w": 132,
+      "h": 32,
+      "size": 25,
+      "color": "#111111"
+    },
+    {
+      "id": "quotient-decoder-text",
+      "label": "LZMA decoder\nByte unshuffle",
+      "x": 1065,
+      "y": 345,
+      "w": 166,
+      "h": 54,
+      "size": 25,
+      "color": "#111111"
+    },
+    {
+      "id": "remainder-decoder-text",
+      "label": "LZMA decoder\nByte unshuffle",
+      "x": 1065,
+      "y": 427,
+      "w": 166,
+      "h": 54,
+      "size": 25,
+      "color": "#111111"
+    },
+    {
+      "id": "decoded-quotient-label",
+      "label": "Z",
+      "x": 988,
+      "y": 340,
+      "w": 60,
+      "h": 27,
+      "size": 25,
+      "color": "#111111",
+      "italic": true
+    },
+    {
+      "id": "decoded-remainder-label",
+      "label": "r",
+      "x": 988,
+      "y": 422,
+      "w": 60,
+      "h": 27,
+      "size": 25,
+      "color": "#111111",
+      "italic": true
+    },
+    {
+      "id": "prefix-title",
+      "label": "Prefix tables",
+      "x": 474,
+      "y": 390,
+      "w": 168,
+      "h": 37,
+      "size": 29,
+      "color": "#111111"
+    },
+    {
+      "id": "prefix-body",
+      "label": "sum / valid count",
+      "x": 472,
+      "y": 440,
+      "w": 172,
+      "h": 28,
+      "size": 23,
+      "color": "#111111"
+    },
+    {
+      "id": "query-title",
+      "label": "Four-corner\nqueries",
+      "x": 248,
+      "y": 396,
+      "w": 164,
+      "h": 64,
+      "size": 29,
+      "color": "#111111"
+    },
+    {
+      "id": "regional-title",
+      "label": "Regional\nsum / count",
+      "x": 36,
+      "y": 387,
+      "w": 148,
+      "h": 59,
+      "size": 28,
+      "color": "#111111"
+    },
+    {
+      "id": "regional-body",
+      "label": "any rectangle",
+      "x": 36,
+      "y": 450,
+      "w": 148,
+      "h": 22,
+      "size": 21,
+      "color": "#111111"
+    },
+    {
+      "id": "exact-mask-note",
+      "label": "Exact missing mask supplies valid-sample counts",
+      "x": 222,
+      "y": 490,
+      "w": 446,
+      "h": 25,
+      "size": 21,
+      "color": "#111111"
+    },
+    {
+      "id": "joint-guarantee",
+      "label": "0 ≤ Y ≤ U,   Y = X on P,   |prefix error| ≤ B  ⇒  every rectangular sum error ≤ ε",
+      "x": 30,
+      "y": 524,
+      "w": 1448,
+      "h": 30,
+      "size": 25,
+      "color": "#111111"
+    }
+  ],
+  "arrows": [
+    {
+      "id": "input-to-backward",
+      "x1": 190,
+      "y1": 220,
+      "x2": 240,
+      "y2": 220
+    },
+    {
+      "id": "backward-to-forward",
+      "x1": 420,
+      "y1": 220,
+      "x2": 466,
+      "y2": 220
+    },
+    {
+      "id": "forward-to-field",
+      "x1": 650,
+      "y1": 220,
+      "x2": 700,
+      "y2": 220
+    },
+    {
+      "id": "field-to-split",
+      "x1": 795,
+      "y1": 220,
+      "x2": 835,
+      "y2": 220
+    },
+    {
+      "id": "quotient-to-encoder",
+      "x1": 977,
+      "y1": 179,
+      "x2": 1060,
+      "y2": 179
+    },
+    {
+      "id": "remainder-to-encoder",
+      "x1": 977,
+      "y1": 263,
+      "x2": 1060,
+      "y2": 263
+    },
+    {
+      "id": "quotient-to-file",
+      "x1": 1236,
+      "y1": 179,
+      "x2": 1275,
+      "y2": 179
+    },
+    {
+      "id": "remainder-to-file",
+      "x1": 1236,
+      "y1": 263,
+      "x2": 1275,
+      "y2": 263
+    },
+    {
+      "id": "file-to-storage",
+      "x1": 1378,
+      "y1": 220,
+      "x2": 1421,
+      "y2": 220
+    },
+    {
+      "id": "storage-to-file",
+      "x1": 1421,
+      "y1": 429,
+      "x2": 1378,
+      "y2": 429
+    },
+    {
+      "id": "file-to-quotient-decoder",
+      "x1": 1275,
+      "y1": 372,
+      "x2": 1236,
+      "y2": 372
+    },
+    {
+      "id": "file-to-remainder-decoder",
+      "x1": 1275,
+      "y1": 454,
+      "x2": 1236,
+      "y2": 454
+    },
+    {
+      "id": "quotient-to-recombine",
+      "x1": 1060,
+      "y1": 372,
+      "x2": 977,
+      "y2": 372
+    },
+    {
+      "id": "remainder-to-recombine",
+      "x1": 1060,
+      "y1": 454,
+      "x2": 977,
+      "y2": 454
+    },
+    {
+      "id": "recombine-to-field",
+      "x1": 835,
+      "y1": 429,
+      "x2": 795,
+      "y2": 429
+    },
+    {
+      "id": "field-to-prefix",
+      "x1": 700,
+      "y1": 429,
+      "x2": 650,
+      "y2": 429
+    },
+    {
+      "id": "prefix-to-queries",
+      "x1": 466,
+      "y1": 429,
+      "x2": 420,
+      "y2": 429
+    },
+    {
+      "id": "queries-to-measurements",
+      "x1": 240,
+      "y1": 429,
+      "x2": 190,
+      "y2": 429
+    }
+  ],
+  "dividers": [
+    {
+      "x": 210,
+      "y1": 28,
+      "y2": 504
+    },
+    {
+      "x": 808,
+      "y1": 28,
+      "y2": 504
+    },
+    {
+      "x": 1398,
+      "y1": 28,
+      "y2": 504
+    }
+  ]
+}

@@ -40,7 +40,7 @@ def frontier():
     if (data['status']!='COMPLETE_FIXED_40_LOCATION_MATRIX' or
         any(r['qualifying_locations']['RangeRectQuant']!=40 for r in data['frontier'])):
         raise ValueError('Plot requires complete fixed matrix and forty verified main files at every point')
-    fig,axes=plt.subplots(1,3,figsize=(6,2.9),sharey=True)
+    fig,axes=plt.subplots(1,3,figsize=(6,2.25),sharey=True)
     for ax,size in zip(axes,(256,512,1024)):
         rows=[r for r in data['frontier'] if r['size']==size]
         for method in COLORS:
@@ -55,7 +55,7 @@ def frontier():
     handles,labels=axes[0].get_legend_handles_labels()
     fig.legend(handles,labels,loc='upper center',bbox_to_anchor=(.5,1),ncol=3,
                fontsize=8,columnspacing=1.2,handlelength=2)
-    fig.subplots_adjust(left=.10,right=.98,bottom=.18,top=.74,wspace=.12)
+    fig.subplots_adjust(left=.10,right=.98,bottom=.23,top=.72,wspace=.12)
     save_figure(fig,OUT/'frontier')
 
 
@@ -101,7 +101,7 @@ def closest():
     names=['Stable sigma–delta','Sigma–delta + clip','Sigma–delta + clip + integer',
            'Projected sigma–delta','Prefix rounding','Prefix rounding + clip','RangeRectQuant']
     colors=['#4EA6A0','#D88F8A','#B64342','#8C80B1','#8EAD03','#BD9B3F','#0F4D92']
-    fig,axes=plt.subplots(1,2,figsize=(6,3))
+    fig,axes=plt.subplots(1,2,figsize=(6,2.2))
     x=np.arange(7)
     for e,shift,hatch in ((100,-.18,'///'),(1000,.18,None)):
         grouped=[[r for r in rows if r['configuration']==dict(family=m,epsilon=e)] for m in methods]
@@ -113,8 +113,8 @@ def closest():
             if not all(r['legal_at'][str(e)] for r in group):
                 axes[1].plot(i+shift,bpp[i]+.12,'x',color='black',markersize=4,markeredgewidth=.7)
     axes[0].axhline(1,color='black',linestyle='--',linewidth=.8)
-    axes[0].set_yscale('log'); axes[0].set_ylabel('Worst regional error / budget',fontsize=9)
-    axes[1].set_ylabel('Complete size (bits/pixel)',fontsize=9); axes[1].set_ylim(bottom=0)
+    axes[0].set_yscale('log'); axes[0].set_ylabel('Worst regional error\n/ budget',fontsize=9)
+    axes[1].set_ylabel('Complete size\n(bits/pixel)',fontsize=9); axes[1].set_ylim(bottom=0)
     for ax in axes:
         ax.set_xticks(x,[str(i+1) for i in x]); ax.set_xlabel('Construction',fontsize=9); axes_style(ax)
     from matplotlib.patches import Patch
@@ -125,7 +125,7 @@ def closest():
     fig.text(.07,.015,'  '.join(f'{i+1}: {name}' for i,name in enumerate(names[:2]))+'\n'+
              '  '.join(f'{i+3}: {name}' for i,name in enumerate(names[2:4]))+'\n'+
              '  '.join(f'{i+5}: {name}' for i,name in enumerate(names[4:])),fontsize=7.4,linespacing=1.5)
-    fig.subplots_adjust(left=.10,right=.98,bottom=.33,top=.81,wspace=.4)
+    fig.subplots_adjust(left=.10,right=.98,bottom=.41,top=.83,wspace=.4)
     save_figure(fig,OUT/'closest')
 
 
@@ -135,7 +135,7 @@ def mechanism():
     with np.load(path,allow_pickle=False) as z:
         x,y,widths,p=(z[k] for k in ('x','y','widths','protected'))
     fine=(y%200!=0)&~p
-    fig,axes=plt.subplots(1,3,figsize=(6,2.85))
+    fig,axes=plt.subplots(1,3,figsize=(6,2.4))
     source=axes[0].imshow(x,cmap='viridis',vmin=0,vmax=10000,rasterized=True)
     axes[0].set_title('Source built area',fontsize=9)
     prefix=(y-x).cumsum(0).cumsum(1)
@@ -150,7 +150,7 @@ def mechanism():
         bar=fig.colorbar(artist,ax=ax,orientation='horizontal',fraction=.07,pad=.035,ticks=ticks)
         bar.ax.tick_params(labelsize=6.5,length=2); bar.set_label(label,fontsize=7)
     fig.text(.045,.015,'Cairo; budget 1000 m²; coarse step 200 m². Red: unprotected fine pixels.',fontsize=8)
-    fig.subplots_adjust(left=.04,right=.96,bottom=.23,top=.88,wspace=.32)
+    fig.subplots_adjust(left=.04,right=.96,bottom=.20,top=.90,wspace=.32)
     save_figure(fig,OUT/'mechanism')
 
 
