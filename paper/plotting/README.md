@@ -1,52 +1,48 @@
-# Saved-data manuscript figures
+# Saved-data four-column figures
 
-## Current expanded figures
-
-```sh
-python make_research_figures.py frontier mechanism closest water scaling protected
-python make_research_tables.py
-python make_review_figure.py
-```
-
-Run these scripts from this directory or use their absolute paths. They read
-saved reports only. The current provenance receipt is under
-`../figures/research/`; the protected table is under `../tables/`.
-Four figures appear in the ten-page article. The original plotting workflow
-below remains available for its historical three-figure manuscript.
-
-## Original four-location figures
-
-Run from any directory:
+From the repository root:
 
 ```sh
-/Users/nathmath/dcc/LinewiseROI/.venv/bin/python \
-  /Users/nathmath/dcc/RangeRectQuant/paper/plotting/make_figures.py
+../LinewiseROI/.venv/bin/python paper/plotting/make_research_figures.py \
+  frontier mechanism closest protected scaling water closest_fullpage line_grid_fullpage
+../LinewiseROI/.venv/bin/python paper/plotting/make_review_figure.py
+../LinewiseROI/.venv/bin/python paper/plotting/make_experiment_atlas.py
 ```
 
-Use `--figure heldout_rates`, `--figure field_example`, or `--figure precision_rate`
-for an individual export. No codec, optimizer, decoder, acquisition, or Git
-operation is called. The bundled Python has no Matplotlib; the existing
-LinewiseROI environment supplies NumPy and Matplotlib without installation.
+The scripts read saved reports, per-file JSONs and one saved field array only.
+They never run an experiment, optimizer, acquisition, decoder or GPU.
+`reference_grids.py` binds data to panels. Receipts record every input/script/
+output hash and exact displayed values. Missing coverage, tight-budget water
+losses and the exact-search timeout are retained. No uncertainty is invented.
 
-`figure_data.json` records exact plotted numbers, definitions, dimensions,
-original input SHA256 bindings, complete packet fees, saved-array checks,
-script hashes, and PDF/PNG hashes. `../notes/FIGURE_PROVENANCE.md` records
-interpretation, attribution, and delegated visual review.
+The ten-page article keeps Figure 1, then uses a 1×4 frontier, a 2×4 coding/step
+grid and a 1×4 closest-construction comparison. Forty city names replace the
+former three-object bar axis. Locations are alphabetical, ten per panel, with
+both budgets. The seven-page `../figures/research/experiment_atlas.pdf` collects
+68 panels in 4×4, 2×4 and 1×4 layouts. Page captions and scope are in
+`../notes/EXPERIMENT_ATLAS_GUIDE.md`.
 
-## Attribution and modifications
+## Reference and modifications
 
-Plotting style and layout patterns are adapted from **Chen Liu (ChenLiu-1996),
-[figures4papers](https://github.com/ChenLiu-1996/figures4papers)**, commit
-`f0bb7559abe90f5e1828797126d4d133c1bd47d7`, under
-[CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/).
-The adapted conventions are minimal spines, Arial/Helvetica-like sans typography,
-the `#0F4D92` proposed-method palette and pink comparator palette, direct bar
-annotations, separated legends, and normalized heatmap/colorbar encoding.
-Actual inspected scripts are enumerated in the provenance manifest.
+Code/layout conventions adapt Chen Liu (ChenLiu-1996),
+[figures4papers](https://github.com/ChenLiu-1996/figures4papers), commit
+`f0bb7559abe90f5e1828797126d4d133c1bd47d7`, under CC BY-NC 4.0.
+Inspected scripts include `figure_VIGIL/plot_ablation.py`,
+`figure_ophthal_review/plot_trend.py`, and the comparison/bar scripts named in
+`paper_plot_style.py`. `LICENSE.figures4papers.txt` retains the license.
 
-Modifications: paper-sized six-inch panels instead of the reference's large
-canvases; physical-unit axis labels; complete-byte rates; fine percentage with
-an explicit valid-sample denominator; shared physical-value normalization;
-symmetric signed prefix normalization; and deterministic PDF/PNG exports.
-No reference experiment data or figures are reused. This attribution applies
-to the adapted plotting material, not to the scientific source dataset.
+The supplied references set Times serif type, all four spines, pastel thin
+curves, downward triangles, dotted grids and boxed shared legends. Six-inch
+canvases preserve printed font sizes. Text, ticks, curves and bars are vector
+objects; field maps are raster layers. Modifications include physical units,
+complete-file fees, all-location bars, explicit timing scope and fixed-canvas
+clipping checks. No reference numerical data are reused.
+
+## Historical plots
+
+`make_figures.py` and `figure_data.json` retain the earlier four-location study.
+Use `--figure heldout_rates`, `field_example` or `precision_rate` for an
+individual historical view. Image checkpoints and old provenance remain;
+they are not the current article/atlas. Re-running historical scripts uses
+the shared current style. Existing LinewiseROI Python supplies Matplotlib
+and NumPy without installation.

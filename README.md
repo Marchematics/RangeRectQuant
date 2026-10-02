@@ -12,10 +12,18 @@ Citation sources and full ordered BibTeX records are documented in
 `paper/notes/references_20261002/ADDED_REFERENCES.md`. This bibliography update
 preserves the experimental results and the official ten-page format.
 
-The selected compact method overview is **Figure 1**; results are Figures 2–5.
+The selected compact method overview is **Figure 1**; results are Figures 2–4.
 Its vector PDF, editable PowerPoint, SVG, preview, and layout specification
 are under `paper/figures/`. Integration checks are recorded in
 `paper/notes/FIGURE1_INTEGRATION_20261002.md`.
+
+Current plots follow the supplied references: Times serif, fully boxed axes,
+thin pastel triangle-marked curves and boxed shared legends, in **1×4 and 2×4**
+grids. Forty city objects replace the three-category bar view. The ten-page
+article has 16 experimental panels. The seven-page
+`paper/figures/research/experiment_atlas.pdf` collects 68 saved-data panels,
+including 4×4 full-page views. Captions and checks are in
+`paper/notes/EXPERIMENT_ATLAS_GUIDE.md` and `FIGURE_GRID_REVISION_20261002.md`.
 
 The revised introduction and literature review follow later regional measurements,
 accumulated error, physical constraints, and completion-guided precision. Revision
