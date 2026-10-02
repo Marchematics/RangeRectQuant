@@ -17,6 +17,10 @@ Its vector PDF, editable PowerPoint, SVG, preview, and layout specification
 are under `paper/figures/`. Integration checks are recorded in
 `paper/notes/FIGURE1_INTEGRATION_20261002.md`.
 
+The revised introduction and literature review follow later regional measurements,
+accumulated error, physical constraints, and completion-guided precision. Revision
+checks are in `paper/notes/NARRATIVE_REVISION_20261002.md`; the article remains ten pages.
+
 ## Expanded study (2026-10-02)
 
 - Forty new built-surface locations × three sizes × eight budgets: **960/960**
