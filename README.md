@@ -6,6 +6,12 @@ sum. Backward remaining-row intervals make the construction linear in field size
 The private repository contains source, native cropped data, complete-file results,
 failure records, a ten-page DCC article, and saved-data plotting scripts.
 
+The current article includes **22 references**, with eight verified recent
+DCC, SC, SIGMOD/PACMMOD, TVCG, TPDS, and ACM Computing Surveys additions.
+Citation sources and full ordered BibTeX records are documented in
+`paper/notes/references_20261002/ADDED_REFERENCES.md`. This bibliography update
+preserves the experimental results and the official ten-page format.
+
 ## Expanded study (2026-10-02)
 
 - Forty new built-surface locations × three sizes × eight budgets: **960/960**
