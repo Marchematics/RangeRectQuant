@@ -2,14 +2,13 @@
 
 ## Existing evidence
 
-The private repository contains the complete code, native cropped sources,
-fixed metadata selection, attempt ledgers, source-free decoder logs, exact
-region audits and failed configurations. GitHub release assets additionally
-hold every original paid file and complete official source-product downloads.
-Extract the source ZIP and paid-file ZIPs into one parent directory, preserving
-`RangeRectQuant/.aris/evidence/expanded_20261002/` paths. The source ZIP
-also contains the small sibling `LinewiseROI/experiments` dependency set;
-it contains no virtual environment, credential store or Git database.
+The repository contains code, native cropped sources, fixed metadata selection,
+attempt ledgers, decoder logs, exact region audits, and failed configurations.
+The GitHub releases were removed on 2026-10-04. Original paid files and complete
+source-product downloads remain locally retained. The independent-decoding
+example below requires those local packets; plotting uses the saved repository
+records. Historical controls also use the sibling `LinewiseROI/experiments`
+sources identified in the command below.
 
 The paper compiles from `RangeRectQuant/paper` with the existing official
 class and saved figure PDFs:
