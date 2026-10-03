@@ -14,6 +14,6 @@ figures, and manuscript.
 
 ![Experimental overview: rates, precision, protected samples, and scaling](paper/figures/research/line_grid_fullpage.png)
 
-[Extended experimental figures (PDF)](paper/figures/research/experiment_atlas.pdf).
+**[experiment_atlas.pdf](paper/figures/research/experiment_atlas.pdf)** — seven-page collection of experimental figures.
 Plotting attribution and licensing are retained in `paper/plotting/`;
 upstream data provenance is recorded with the acquisition manifests.
