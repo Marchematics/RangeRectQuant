@@ -13,7 +13,8 @@ contains the implementation, processed data, saved results, figures, and DCC pap
   [source arrays](results/closest_mechanism_20261002/mechanism_example.npz).
   The arrays contain source `x`, reconstruction `y`, allowed-state counts
   `widths`, and the `protected` mask; budget 1000 m², step 200 m².
-- **Figures 3–5 and atlas:** `paper/figures/research/`; plotting code and
+- **Experimental plot collection:** [experiment_atlas.pdf](paper/figures/research/experiment_atlas.pdf).
+- **Figures 3–5:** `paper/figures/research/`; plotting code and
   input/output checksums are in `paper/plotting/` and the figure provenance files.
 - **Method code:** `src/`; experiment and control code: `experiments/`, `controls/`.
 - **Data and results:** `data/`, `results/`. Acquisition and reproduction details:
