@@ -9,6 +9,7 @@ figures, and manuscript.
 - **Paper:** [PDF](paper/main.pdf) · [LaTeX](paper/main.tex).
 - **Reproduction:** [experiment guide](docs/EXPANDED_REPRODUCIBILITY_20261002.md)
   · [plotting guide](paper/plotting/README.md).
+- **Step selection:** [derivation and validation](DERIVATION_PACKAGE.md).
 
 ## experiment_atlas.pdf
 

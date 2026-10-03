@@ -17,8 +17,8 @@ output hash and exact displayed values. Missing coverage, tight-budget water
 losses and the exact-search timeout are retained. No uncertainty is invented.
 
 The ten-page article keeps Figure 1, then shows a 1×4 spatial precision example
-at the method/evaluation boundary, a 1×4 frontier, a 2×4 coding/step grid and
-a 1×4 closest-construction comparison. The spatial example uses the original
+at the method/evaluation boundary, a 1×4 closest-construction comparison,
+a 1×4 frontier and a 2×4 coding/step grid. The spatial example uses the original
 `mechanism.pdf` directly. The coding/step grid uses a 6×3.6-inch canvas with
 unchanged font sizes, values and labels; its previous taller version is retained.
 Forty city names replace the
