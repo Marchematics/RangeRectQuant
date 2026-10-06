@@ -25,8 +25,14 @@ separation example, not an empirical file-rate comparison. Figure 2 keeps the
 method overview in the method section, on a separate page from Figure 1.
 Figures 3–6 show a 1×4 spatial precision example at the
 method/evaluation boundary, a 1×4 closest-construction comparison, a 1×4
-frontier and a 1×3 coding/step summary. The spatial example uses the original
-`mechanism.pdf` directly. `make_core_mechanism_figure.py` draws the exact
+frontier and the restored 2×4 coding/step grid. The spatial example uses the
+original `mechanism.pdf` directly. Figure 6 uses the unchanged
+`review_mechanism_compact.pdf`, on a 6×3.6-inch canvas. Its city bars retain
+alphabetical order, ten locations per panel, and both budgets; its four step
+panels retain each city's curves at all eight divisors. The taller eight-panel
+version also remains in the repository.
+
+The three-panel alternative remains archived. `make_core_mechanism_figure.py` draws the exact
 empirical distribution of coding gains at all forty locations, then median
 file size and fine-pixel percentage across the four separate cities at all
 eight step divisors. Shading spans the observed city minimum and maximum;
@@ -35,10 +41,7 @@ enclosed axes and distinct line styles. The six-inch canvas uses 9-point
 axis labels and 8.5-point ticks. Its receipt exports every original city value
 and the exact summaries, alongside source, input and output hashes.
 
-The earlier 2×4 coding/step grids remain in the repository, including the
-6×3.6-inch compact version and the taller version. Their city bars retain
-alphabetical order, ten locations per panel, and both budgets. The
-seven-page `../figures/research/experiment_atlas.pdf` collects
+The seven-page `../figures/research/experiment_atlas.pdf` collects
 68 panels in 4×4, 2×4 and 1×4 layouts. Page captions and scope are in
 `../notes/EXPERIMENT_ATLAS_GUIDE.md`.
 
