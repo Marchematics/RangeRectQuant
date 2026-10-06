@@ -100,7 +100,8 @@ class FigureGrids(unittest.TestCase):
             self.assertEqual([t.get_fontsize() for t in before.get_xticklabels()],
                              [t.get_fontsize() for t in after.get_xticklabels()])
         evaluation = (ROOT/"paper/sections/evaluation.tex").read_text()
-        self.assertIn("figures/research/review_mechanism_compact.pdf", evaluation)
+        self.assertTrue((ROOT/"paper/figures/research/review_mechanism_compact.pdf").is_file())
+        self.assertIn("figures/research/core_mechanism.pdf", evaluation)
 
     def test_coding_gain_label_is_explicit_and_fits_the_fixed_canvas(self):
         figure = review_mechanism_compact()

@@ -7,6 +7,7 @@ From the repository root:
   frontier mechanism closest protected scaling water closest_fullpage line_grid_fullpage
 ../LinewiseROI/.venv/bin/python paper/plotting/make_review_figure.py
 ../LinewiseROI/.venv/bin/python paper/plotting/make_compact_review_figure.py
+../LinewiseROI/.venv/bin/python paper/plotting/make_core_mechanism_figure.py
 ../LinewiseROI/.venv/bin/python paper/plotting/make_experiment_atlas.py
 ../LinewiseROI/.venv/bin/python paper/plotting/make_coordination_example.py
 ```
@@ -24,13 +25,20 @@ separation example, not an empirical file-rate comparison. Figure 2 keeps the
 method overview in the method section, on a separate page from Figure 1.
 Figures 3–6 show a 1×4 spatial precision example at the
 method/evaluation boundary, a 1×4 closest-construction comparison, a 1×4
-frontier and a 2×4 coding/step grid. The spatial example uses the original
-`mechanism.pdf` directly. The coding/step grid uses a 6×3.6-inch canvas with
-unchanged font sizes and plotted values. Its gain axis now explicitly names
-quotient–remainder coding; the previous taller version is retained.
-Forty city names replace the
-former three-object bar axis. Locations are alphabetical, ten per panel, with
-both budgets. The seven-page `../figures/research/experiment_atlas.pdf` collects
+frontier and a 1×3 coding/step summary. The spatial example uses the original
+`mechanism.pdf` directly. `make_core_mechanism_figure.py` draws the exact
+empirical distribution of coding gains at all forty locations, then median
+file size and fine-pixel percentage across the four separate cities at all
+eight step divisors. Shading spans the observed city minimum and maximum;
+it is not a confidence interval. Both budgets retain the shared boxed legend,
+enclosed axes and distinct line styles. The six-inch canvas uses 9-point
+axis labels and 8.5-point ticks. Its receipt exports every original city value
+and the exact summaries, alongside source, input and output hashes.
+
+The earlier 2×4 coding/step grids remain in the repository, including the
+6×3.6-inch compact version and the taller version. Their city bars retain
+alphabetical order, ten locations per panel, and both budgets. The
+seven-page `../figures/research/experiment_atlas.pdf` collects
 68 panels in 4×4, 2×4 and 1×4 layouts. Page captions and scope are in
 `../notes/EXPERIMENT_ATLAS_GUIDE.md`.
 
