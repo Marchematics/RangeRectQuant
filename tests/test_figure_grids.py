@@ -11,6 +11,7 @@ sys.path.insert(0, str(ROOT/"paper/plotting"))
 import reference_grids as grids
 from paper_plot_style import apply_publication_style, plt
 from make_compact_review_figure import review_mechanism_compact
+from make_coordination_example import coordination_example, bradley_hand_font
 
 
 class FigureGrids(unittest.TestCase):
@@ -19,6 +20,26 @@ class FigureGrids(unittest.TestCase):
 
     def tearDown(self):
         plt.close("all")
+
+    def test_opening_example_uses_bradley_hand_without_changing_its_values(self):
+        try:
+            bradley_hand_font()
+        except ValueError as error:
+            if 'Failed to find font' not in str(error):
+                raise
+            self.skipTest('Install Bradley Hand to regenerate Figure 1')
+        figure = coordination_example()
+        report = json.loads((ROOT/"results/coordination_example_20261007/report.json").read_text())
+        self.assertEqual(len(figure.axes), 4)
+        np.testing.assert_allclose(figure.get_size_inches(), [6, 1.15])
+        for ax, key in zip(figure.axes, ("x", "y", "error", "prefix")):
+            values = np.array(report['example'][key]).ravel()
+            expected = [f'{int(v):+d}' if key == 'error' else str(int(v)) for v in values]
+            self.assertEqual([t.get_text() for t in ax.texts], expected)
+            for text in [ax.title, *ax.texts]:
+                self.assertEqual(text.get_fontproperties().get_name(), 'Bradley Hand')
+                self.assertEqual(text.get_fontproperties().get_file(), bradley_hand_font().get_file())
+        self.assertEqual(plt.rcParams['font.family'], ['serif'])
 
     def test_frontier_preserves_missing_coverage_and_water_crossover(self):
         figure = grids.frontier()

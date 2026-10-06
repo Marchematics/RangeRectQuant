@@ -23,6 +23,9 @@ The ten-page article starts with a 1×4 numbered checkerboard illustration
 `results/coordination_example_20261007/report.json`; this is a certificate
 separation example, not an empirical file-rate comparison. Figure 2 keeps the
 method overview in the method section, on a separate page from Figure 1.
+Figure 1 uses Bradley Hand for panel labels and cell values. Install that font
+to regenerate it, or set `BRADLEY_HAND_FONT` to a licensed local font file.
+The font is embedded in the PDF; its standalone file is not redistributed.
 Figures 3–6 show a 1×4 spatial precision example at the
 method/evaluation boundary, a 1×4 closest-construction comparison, a 1×4
 frontier and the restored 2×4 coding/step grid. The spatial example uses the
