@@ -20,7 +20,8 @@ The ten-page article keeps Figure 1, then shows a 1×4 spatial precision example
 at the method/evaluation boundary, a 1×4 closest-construction comparison,
 a 1×4 frontier and a 2×4 coding/step grid. The spatial example uses the original
 `mechanism.pdf` directly. The coding/step grid uses a 6×3.6-inch canvas with
-unchanged font sizes, values and labels; its previous taller version is retained.
+unchanged font sizes and plotted values. Its gain axis now explicitly names
+quotient–remainder coding; the previous taller version is retained.
 Forty city names replace the
 former three-object bar axis. Locations are alphabetical, ten per panel, with
 both budgets. The seven-page `../figures/research/experiment_atlas.pdf` collects

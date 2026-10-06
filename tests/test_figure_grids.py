@@ -96,10 +96,22 @@ class FigureGrids(unittest.TestCase):
             self.assertEqual([t.get_text() for t in before.get_xticklabels()],
                              [t.get_text() for t in after.get_xticklabels()])
             self.assertEqual(before.title.get_fontsize(), after.title.get_fontsize())
+            self.assertEqual(before.get_ylabel(), after.get_ylabel())
             self.assertEqual([t.get_fontsize() for t in before.get_xticklabels()],
                              [t.get_fontsize() for t in after.get_xticklabels()])
         evaluation = (ROOT/"paper/sections/evaluation.tex").read_text()
         self.assertIn("figures/research/review_mechanism_compact.pdf", evaluation)
+
+    def test_coding_gain_label_is_explicit_and_fits_the_fixed_canvas(self):
+        figure = review_mechanism_compact()
+        figure.canvas.draw()
+        label = figure.axes[0].yaxis.label
+        self.assertEqual(label.get_text(), 'Quotient–remainder\ncoding gain (%)')
+        box = label.get_window_extent(figure.canvas.get_renderer())
+        self.assertGreaterEqual(box.x0, 0)
+        self.assertGreaterEqual(box.y0, 0)
+        self.assertLessEqual(box.x1, figure.bbox.width)
+        self.assertLessEqual(box.y1, figure.bbox.height)
 
     def test_closest_comparison_shows_every_city_method_and_budget(self):
         figure = grids.closest_fullpage()

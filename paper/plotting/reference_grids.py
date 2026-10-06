@@ -142,7 +142,7 @@ def gain_panels(axes):
         axes_style(ax, categorical=True); ax.tick_params(axis="x", labelsize=6.7, pad=2)
         ax.set_title(f"({chr(97+col)}) Locations {col*10+1}–{col*10+10}", pad=5)
         if col: ax.tick_params(labelleft=False)
-    axes[0].set_ylabel("Split-file reduction (%)")
+    axes[0].set_ylabel("Quotient–remainder\ncoding gain (%)")
     return [Patch(facecolor=BUDGET_COLORS[e], edgecolor="#555555", linewidth=.35,
                   hatch="///" if e == 100 else None, label=f"Budget {e} m²") for e in (100, 1000)]
 
