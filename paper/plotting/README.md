@@ -8,6 +8,7 @@ From the repository root:
 ../LinewiseROI/.venv/bin/python paper/plotting/make_review_figure.py
 ../LinewiseROI/.venv/bin/python paper/plotting/make_compact_review_figure.py
 ../LinewiseROI/.venv/bin/python paper/plotting/make_experiment_atlas.py
+../LinewiseROI/.venv/bin/python paper/plotting/make_coordination_example.py
 ```
 
 The scripts read saved reports, per-file JSONs and one saved field array only.
@@ -16,9 +17,14 @@ They never run an experiment, optimizer, acquisition, decoder or GPU.
 output hash and exact displayed values. Missing coverage, tight-budget water
 losses and the exact-search timeout are retained. No uncertainty is invented.
 
-The ten-page article keeps Figure 1, then shows a 1×4 spatial precision example
-at the method/evaluation boundary, a 1×4 closest-construction comparison,
-a 1×4 frontier and a 2×4 coding/step grid. The spatial example uses the original
+The ten-page article starts with a 1×4 numbered checkerboard illustration
+(Figure 1). It reads the saved analytical check in
+`results/coordination_example_20261007/report.json`; this is a certificate
+separation example, not an empirical file-rate comparison. Figure 2 keeps the
+method overview in the method section, on a separate page from Figure 1.
+Figures 3–6 show a 1×4 spatial precision example at the
+method/evaluation boundary, a 1×4 closest-construction comparison, a 1×4
+frontier and a 2×4 coding/step grid. The spatial example uses the original
 `mechanism.pdf` directly. The coding/step grid uses a 6×3.6-inch canvas with
 unchanged font sizes and plotted values. Its gain axis now explicitly names
 quotient–remainder coding; the previous taller version is retained.

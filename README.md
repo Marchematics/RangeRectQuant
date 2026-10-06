@@ -1,6 +1,6 @@
 # RangeRectQuant
 
-Compression of bounded integer fields with accurate sums for every rectangle.
+Compress bounded integer fields once, with accurate sums for every future rectangle.
 This repository contains the code, data, core experimental results, extended
 figures, and manuscript.
 
