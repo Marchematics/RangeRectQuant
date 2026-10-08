@@ -1,47 +1,12 @@
-# RangeRectQuant DCC manuscript
+# Figures and plotting code
 
-`main.tex` and `sections/` are the canonical, editable article. `main.pdf` is its
-compiled draft. The official DCC class and bibliography style are retained
-unchanged. Figures are derived from saved experimental outputs, using the
-requested figures4papers style and figure types. There is no separate
-supplement required to read or compile the article.
+`figures/` contains the core experimental plots, extended figures, and editable
+method diagrams. `plotting/` contains their saved-data generation scripts,
+attribution, and licensing.
 
-## Build
+- [Plotting guide](plotting/README.md)
+- [Experimental atlas](figures/research/experiment_atlas.pdf)
+- [Atlas captions and measurement scope](../docs/EXPERIMENT_ATLAS_GUIDE.md)
 
-From this directory, with an existing LaTeX installation:
-
-```sh
-latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
-```
-
-The saved figure PDFs and verified bibliography are included. Plot regeneration
-requires NumPy/Matplotlib and the corresponding repository evidence files, not
-new experiments; see `plotting/README.md`. `make figures PYTHON=/path/to/python`
-selects an existing environment. The textual/evidence check is
-`python3 notes/check_manuscript.py` from this directory, inside the full research
-repository. A paper-only source archive compiles without the repository data;
-its evidence checker and plot regeneration need the full repository.
-
-## Draft status
-
-The supplied author order is Jiahao Zhang, Xinling Wen, and corresponding author
-Yu Chen. All are listed at Zhengzhou University of Aeronautics; the supplied
-contact is chenyu@zua.edu.cn. The compiled article has ten total pages including
-references, under the unchanged official class. It has not been submitted.
-The repository remains private.
-
-The article reports the specified complete-size comparison and geographic
-holdout result. It does not claim a best-paper award or field-wide codec SOTA.
-Scientific evidence and verification: `notes/PAPER_HANDOFF.md`,
-`notes/LITERATURE_NOTES.md`, `notes/FIGURE_PROVENANCE.md`, and the research
-repository's saved reports. No unpublished supplemental dependency or public
-code-release promise is added to the manuscript.
-
-## Plotting attribution
-
-Chen Liu, figures4papers, commit f0bb7559abe90f5e1828797126d4d133c1bd47d7:
-https://github.com/ChenLiu-1996/figures4papers . Adapted plotting material retains
-CC BY-NC4.0 attribution; the license is preserved in
-`plotting/LICENSE.figures4papers.txt`. Source-data and scientific-code rights
-are not relicensed by this attribution. The official template provenance is
-recorded in `template/PROVENANCE.md`.
+The full article, LaTeX sources, and editorial checks are kept locally and are
+excluded from this repository.

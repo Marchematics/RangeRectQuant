@@ -94,6 +94,8 @@ class FigureGrids(unittest.TestCase):
             np.testing.assert_array_equal(ax.images[0].get_array(), expected)
             self.assertEqual(ax.get_aspect(), 1.0)
 
+    @unittest.skipUnless((ROOT/"paper/sections/method.tex").is_file(),
+                         'Private manuscript is not included in the repository')
     def test_main_text_places_the_spatial_example_after_feasibility(self):
         method = (ROOT/"paper/sections/method.tex").read_text()
         figure = r"\includegraphics[width=\linewidth]{figures/research/mechanism.pdf}"
@@ -120,12 +122,14 @@ class FigureGrids(unittest.TestCase):
             self.assertEqual(before.get_ylabel(), after.get_ylabel())
             self.assertEqual([t.get_fontsize() for t in before.get_xticklabels()],
                              [t.get_fontsize() for t in after.get_xticklabels()])
-        evaluation = (ROOT/"paper/sections/evaluation.tex").read_text()
         self.assertTrue((ROOT/"paper/figures/research/review_mechanism_compact.pdf").is_file())
-        self.assertIn("figures/research/review_mechanism_compact.pdf", evaluation)
-        self.assertNotIn("figures/research/core_mechanism.pdf", evaluation)
-        self.assertIn("(a--d)", evaluation)
-        self.assertIn("(e--h)", evaluation)
+        manuscript = ROOT/"paper/sections/evaluation.tex"
+        if manuscript.is_file():
+            evaluation = manuscript.read_text()
+            self.assertIn("figures/research/review_mechanism_compact.pdf", evaluation)
+            self.assertNotIn("figures/research/core_mechanism.pdf", evaluation)
+            self.assertIn("(a--d)", evaluation)
+            self.assertIn("(e--h)", evaluation)
 
     def test_coding_gain_label_is_explicit_and_fits_the_fixed_canvas(self):
         figure = review_mechanism_compact()

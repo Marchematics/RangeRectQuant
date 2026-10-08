@@ -46,7 +46,7 @@ and the exact summaries, alongside source, input and output hashes.
 
 The seven-page `../figures/research/experiment_atlas.pdf` collects
 68 panels in 4×4, 2×4 and 1×4 layouts. Page captions and scope are in
-`../notes/EXPERIMENT_ATLAS_GUIDE.md`.
+`../../docs/EXPERIMENT_ATLAS_GUIDE.md`.
 
 ## Reference and modifications
 

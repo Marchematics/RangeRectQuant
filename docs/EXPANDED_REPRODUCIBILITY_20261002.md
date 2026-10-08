@@ -10,12 +10,9 @@ example below requires those local packets; plotting uses the saved repository
 records. Historical controls also use the sibling `LinewiseROI/experiments`
 sources identified in the command below.
 
-The paper compiles from `RangeRectQuant/paper` with the existing official
-class and saved figure PDFs:
-
-```sh
-latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
-```
+The repository provides experiment data, results, figures, and plotting code.
+The full manuscript and its build inputs are kept locally, outside the shared
+repository contents.
 
 ## Independent decoding
 
@@ -57,7 +54,6 @@ portable installation.
 python -W error::ResourceWarning -m unittest discover -s tests -v
 python paper/plotting/make_research_figures.py frontier mechanism closest water scaling protected
 python paper/plotting/make_research_tables.py
-(cd paper && python notes/check_manuscript.py)
 ```
 
 The supplied-source import manifest and original acquisition records are

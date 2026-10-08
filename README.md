@@ -2,11 +2,10 @@
 
 Compress bounded integer fields once, with accurate sums for every future rectangle.
 This repository contains the code, data, core experimental results, extended
-figures, and manuscript.
+figures. The full manuscript and its LaTeX sources are not included.
 
 - **Code and experiments:** `src/`, `experiments/`, `controls/`.
 - **Data and results:** `data/`, `results/`.
-- **Paper:** [PDF](paper/main.pdf) · [LaTeX](paper/main.tex).
 - **Reproduction:** [experiment guide](docs/EXPANDED_REPRODUCIBILITY_20261002.md)
   · [plotting guide](paper/plotting/README.md).
 - **Step selection:** [derivation and validation](DERIVATION_PACKAGE.md).
